@@ -1,16 +1,16 @@
 /* impostazioni principali del layout */
 
 body{
-    background-color: #e4e4e4;
+    background-color: #596666;
     font: 13px/20px "Open Sans", Arial, sans-serif;
 }
 
 #page{
-    background-color: white;
+    background-color: #bebebe;
 }
 
 #header, #footer{
-    background-color: #1c345a;
+    background-color: #FF9933;
     color: white;
 
 }
@@ -51,20 +51,21 @@ a:visited{
 
 a:hover{
     font-weight: bold;
-
+	text-decoration: none;
 }
 
 input{
-    border: 1px solid #1c345a;
+    border: 2px solid #596666;
+	background-color: #FFF5E6;
 }
 
 input[type=submit], button{
     color: #ffffff;
-    background-color: #1c345a;
+    background-color: #596666;
     height: 2em;
     font-weight: bold;
     border-radius: 1em;
-    border: 1px solid #1c345a;
+    border: 2px solid #FF9933;
     min-width: 100px;
     margin-bottom: 10px;
     margin-top: 5px;
