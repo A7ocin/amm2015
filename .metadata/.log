@@ -1,0 +1,1902 @@
+!SESSION 2013-02-19 16:54:23.125 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=it_IT
+Command-line arguments:  -os linux -ws gtk -arch x86 -data /home/amm/development
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 16:54:33.673
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 16:54:33.673
+!MESSAGE A conflict occurred for CTRL+SHIFT+Z:
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
+		Redo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		ActionHandler(RetargetAction(redo)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,gtk,system)
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.php.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2013-02-19 16:55:03.996
+!MESSAGE Project facet jst.java has not been defined. It is used in plugin org.eclipse.php.core.
+
+!ENTRY org.eclipse.wst.validation 4 0 2013-02-19 16:55:04.505
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1050)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1007)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1285)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	... 12 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2013-02-19 16:55:04.507
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1050)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1007)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1285)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.validation 4 0 2013-02-19 16:55:04.507
+!MESSAGE IWAE0100E Extension configuration error. An internal error has happened, the validator org.eclipse.php.ui has incorrectly configured the validation extension point.
+
+!ENTRY org.eclipse.ui 4 4 2013-02-19 16:55:05.795
+!MESSAGE Unable to find view with id: org.zend.php.framework.ui.views.mvc, when creating perspective org.eclipse.php.perspective
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-02-19 16:55:12.454
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-02-19 16:55:12.454
+!MESSAGE Conflict for 'org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu':
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@686764,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@433cb1),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@18915b3)),sourcePriority=1064960)
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@5bdd9f,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@433cb1),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@18915b3)),sourcePriority=1064960)
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 16:55:12.455
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 16:55:12.455
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 16:55:13.714
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.html.ui, propertyPage: org.eclipse.wst.html.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 16:55:13.719
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.ui.browser 2 0 2013-02-19 16:56:02.683
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.eclipse.php.debug.core 4 4 2013-02-19 17:00:54.433
+!MESSAGE class org.eclipse.php.internal.debug.core.xdebug.dbgp.model.DBGpTarget : Failed to send stop URL: http://localhost/eclipse-test/index.php?XDEBUG_SESSION_STOP_NO_EXEC=ECLIPSE_DBGP&KEY=13612894407311
+org.eclipse.ui.PartInitException: Could not launch external web browser for http://localhost/eclipse-test/index.php?XDEBUG_SESSION_STOP_NO_EXEC=ECLIPSE_DBGP&KEY=13612894407311. Check the Web Browser preferences.
+	at org.eclipse.ui.internal.browser.SystemBrowserInstance.openURL(SystemBrowserInstance.java:37)
+	at org.eclipse.php.internal.debug.core.xdebug.dbgp.model.DBGpTarget.sendStopDebugURL(DBGpTarget.java:637)
+	at org.eclipse.php.internal.debug.core.xdebug.dbgp.model.DBGpTarget.terminate(DBGpTarget.java:619)
+	at org.eclipse.debug.internal.core.commands.TerminateCommand.execute(TerminateCommand.java:30)
+	at org.eclipse.debug.internal.core.commands.ForEachCommand.doExecute(ForEachCommand.java:31)
+	at org.eclipse.debug.core.commands.AbstractDebugCommand$1.run(AbstractDebugCommand.java:213)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!SESSION 2013-02-19 17:14:51.081 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=it_IT
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2013-02-19 17:17:02.993
+!MESSAGE Project facet jst.java has not been defined. It is used in plugin org.eclipse.php.core.
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:17:07.491
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:17:07.492
+!MESSAGE A conflict occurred for CTRL+SHIFT+Z:
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
+		Redo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@1eee968)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,gtk,system)
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.php.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.debug.ui.actions.PopupInspectAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+
+!ENTRY org.eclipse.ui.browser 2 0 2013-02-19 17:17:13.210
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-02-19 17:26:57.012
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-02-19 17:26:57.012
+!MESSAGE Conflict for 'org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu':
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@f61a95,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@525e69),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@aa3647)),sourcePriority=1064960)
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@14b6102,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@525e69),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@aa3647)),sourcePriority=1064960)
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:26:57.015
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:26:57.015
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:27:00.640
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.html.ui, propertyPage: org.eclipse.wst.html.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:27:00.640
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.wst.sse.core 4 4 2013-02-19 17:27:14.209
+!MESSAGE assertion failed: 
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: 
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:110)
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:96)
+	at org.eclipse.jface.text.Position.<init>(Position.java:62)
+	at org.eclipse.jface.text.TypedPosition.<init>(TypedPosition.java:45)
+	at org.eclipse.wst.sse.ui.internal.provisional.style.StructuredPresentationReconciler$InternalListener.documentAboutToBeChanged(StructuredPresentationReconciler.java:340)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument._fireDocumentAboutToChange(BasicStructuredDocument.java:389)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.fireDocumentAboutToChanged(BasicStructuredDocument.java:1120)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.internalReplaceText(BasicStructuredDocument.java:1912)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.replaceText(BasicStructuredDocument.java:2423)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.replaceText(BasicStructuredDocument.java:2406)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument.access$2(JobSafeStructuredDocument.java:1)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument$3.run(JobSafeStructuredDocument.java:141)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.sse.ui.EditorExecutionContext.execute(EditorExecutionContext.java:149)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument.replaceText(JobSafeStructuredDocument.java:144)
+	at org.eclipse.wst.sse.core.internal.text.BasicStructuredDocument.replace(BasicStructuredDocument.java:2368)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument.access$0(JobSafeStructuredDocument.java:1)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument$1.run(JobSafeStructuredDocument.java:103)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.wst.sse.ui.EditorExecutionContext.execute(EditorExecutionContext.java:149)
+	at org.eclipse.wst.sse.core.internal.text.JobSafeStructuredDocument.replace(JobSafeStructuredDocument.java:106)
+	at org.eclipse.php.internal.ui.wizards.UntitledPHPDocumentWizard.performFinish(UntitledPHPDocumentWizard.java:117)
+	at org.eclipse.ui.internal.actions.NewWizardShortcutAction.run(NewWizardShortcutAction.java:132)
+	at org.eclipse.jface.action.Action.runWithEvent(Action.java:498)
+	at org.eclipse.jface.action.ActionContributionItem.handleWidgetSelection(ActionContributionItem.java:584)
+	at org.eclipse.jface.action.ActionContributionItem.access$2(ActionContributionItem.java:501)
+	at org.eclipse.jface.action.ActionContributionItem$5.handleEvent(ActionContributionItem.java:411)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3554)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3179)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SESSION 2013-02-19 17:29:22.618 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=it_IT
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2013-02-19 17:29:34.047
+!MESSAGE Project facet jst.java has not been defined. It is used in plugin org.eclipse.php.core.
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:29:36.665
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:29:36.665
+!MESSAGE A conflict occurred for CTRL+SHIFT+Z:
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
+		Redo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@1402e47)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,gtk,system)
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.php.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.debug.ui.actions.PopupInspectAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-02-19 17:29:41.073
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-02-19 17:29:41.073
+!MESSAGE Conflict for 'org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu':
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@1fa10a8,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@3ed9ea),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@18110a1)),sourcePriority=1064960)
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@5ba354,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@3ed9ea),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@18110a1)),sourcePriority=1064960)
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:29:41.080
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:29:41.080
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:32:48.774
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:32:48.774
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.774
+!MESSAGE Software being installed: Dali Java Persistence Tools - EclipseLink Support (Optional) 2.2.2.v200911250220-65A9AkF77g8OFL7BB7 (org.eclipse.jpt.eclipselink.feature.feature.group 2.2.2.v200911250220-65A9AkF77g8OFL7BB7)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.774
+!MESSAGE Missing requirement: Dali Java Persistence Tools - DB UI 1.1.100.v200906070220 (org.eclipse.jpt.db.ui 1.1.100.v200906070220) requires 'bundle org.eclipse.datatools.connectivity.ui [1.1.0,1.2.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:32:48.774
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.774
+!MESSAGE From: Dali Java Persistence Tools - EclipseLink Support (Optional) 2.2.2.v200911250220-65A9AkF77g8OFL7BB7 (org.eclipse.jpt.eclipselink.feature.feature.group 2.2.2.v200911250220-65A9AkF77g8OFL7BB7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.774
+!MESSAGE To: org.eclipse.jpt.feature.feature.group [2.2.2,3.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:32:48.775
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.775
+!MESSAGE From: Dali Java Persistence Tools 2.2.2.v200911250220-7L7OAPFBBoPS0TBgXV1je (org.eclipse.jpt.feature.feature.group 2.2.2.v200911250220-7L7OAPFBBoPS0TBgXV1je)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.775
+!MESSAGE To: org.eclipse.jpt.db.ui [1.1.100.v200906070220]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:32:48.778
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:32:48.778
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.778
+!MESSAGE Software being installed: Dali Java Persistence Tools - EclipseLink Support (Optional) 2.2.2.v200911250220-65A9AkF77g8OFL7BB7 (org.eclipse.jpt.eclipselink.feature.feature.group 2.2.2.v200911250220-65A9AkF77g8OFL7BB7)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.778
+!MESSAGE Missing requirement: Dali Java Persistence Tools - DB UI 1.1.100.v200906070220 (org.eclipse.jpt.db.ui 1.1.100.v200906070220) requires 'bundle org.eclipse.datatools.connectivity.ui [1.1.0,1.2.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:32:48.778
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.778
+!MESSAGE From: Dali Java Persistence Tools - EclipseLink Support (Optional) 2.2.2.v200911250220-65A9AkF77g8OFL7BB7 (org.eclipse.jpt.eclipselink.feature.feature.group 2.2.2.v200911250220-65A9AkF77g8OFL7BB7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.778
+!MESSAGE To: org.eclipse.jpt.feature.feature.group [2.2.2,3.0.0)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:32:48.778
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.778
+!MESSAGE From: Dali Java Persistence Tools 2.2.2.v200911250220-7L7OAPFBBoPS0TBgXV1je (org.eclipse.jpt.feature.feature.group 2.2.2.v200911250220-7L7OAPFBBoPS0TBgXV1je)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:32:48.778
+!MESSAGE To: org.eclipse.jpt.db.ui [1.1.100.v200906070220]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:33:28.428
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.428
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE Missing requirement: WSDL Model 1.2.1.v200908101510 (org.eclipse.wst.wsdl 1.2.1.v200908101510) requires 'bundle org.eclipse.emf.ecore [2.2.0,2.6.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.428
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE From: WST Web Core 3.1.1.v200908120400-7H77FDAAT7oGlfz0dFV3j0BgbCD7 (org.eclipse.wst.web_core.feature.feature.group 3.1.1.v200908120400-7H77FDAAT7oGlfz0dFV3j0BgbCD7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE To: org.eclipse.wst.ws_core.feature.feature.group [3.1.1.v200908101838-7L7RFTVFGtGcn6gr-qvfA9462A]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.428
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE To: org.eclipse.wst.web_core.feature.feature.group [3.1.1.v200908120400-7H77FDAAT7oGlfz0dFV3j0BgbCD7]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.428
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE From: WST Web Services Core 3.1.1.v200908101838-7L7RFTVFGtGcn6gr-qvfA9462A (org.eclipse.wst.ws_core.feature.feature.group 3.1.1.v200908101838-7L7RFTVFGtGcn6gr-qvfA9462A)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.428
+!MESSAGE To: org.eclipse.wst.wsdl [1.2.1.v200908101510]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:33:28.431
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.431
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.431
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.431
+!MESSAGE Missing requirement: WSDL Model 1.2.1.v200908101510 (org.eclipse.wst.wsdl 1.2.1.v200908101510) requires 'bundle org.eclipse.emf.ecore [2.2.0,2.6.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.431
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.431
+!MESSAGE From: WST Web Core 3.1.1.v200908120400-7H77FDAAT7oGlfz0dFV3j0BgbCD7 (org.eclipse.wst.web_core.feature.feature.group 3.1.1.v200908120400-7H77FDAAT7oGlfz0dFV3j0BgbCD7)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.431
+!MESSAGE To: org.eclipse.wst.ws_core.feature.feature.group [3.1.1.v200908101838-7L7RFTVFGtGcn6gr-qvfA9462A]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.431
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.432
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FSpEVw2xXR0CtKvX6bG6a2qU)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.432
+!MESSAGE To: org.eclipse.wst.web_core.feature.feature.group [3.1.1.v200908120400-7H77FDAAT7oGlfz0dFV3j0BgbCD7]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:33:28.432
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.432
+!MESSAGE From: WST Web Services Core 3.1.1.v200908101838-7L7RFTVFGtGcn6gr-qvfA9462A (org.eclipse.wst.ws_core.feature.feature.group 3.1.1.v200908101838-7L7RFTVFGtGcn6gr-qvfA9462A)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:33:28.432
+!MESSAGE To: org.eclipse.wst.wsdl [1.2.1.v200908101510]
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:37:05.065
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.html.ui, propertyPage: org.eclipse.wst.html.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:37:05.065
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2013-02-19 17:37:10.792 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=it_IT
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2013-02-19 17:37:48.363
+!MESSAGE Project facet jst.java has not been defined. It is used in plugin org.eclipse.php.core.
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:37:52.019
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:37:52.019
+!MESSAGE A conflict occurred for CTRL+SHIFT+Z:
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
+		Redo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@1aeda92)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,gtk,system)
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.php.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.debug.ui.actions.PopupInspectAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:38:13.391
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.391
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.391
+!MESSAGE Software being installed: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.391
+!MESSAGE Missing requirement: Java EMF Model Utilities 2.0.201.v201001252130 (org.eclipse.jem.util 2.0.201.v201001252130) requires 'bundle com.ibm.icu [3.8.1.1,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.391
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.392
+!MESSAGE From: WST Common Core 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN (org.eclipse.wst.common_core.feature.feature.group 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.392
+!MESSAGE To: org.eclipse.jem.util [2.0.201.v201001252130]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.392
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.392
+!MESSAGE From: WST Common UI 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV (org.eclipse.wst.common_ui.feature.feature.group 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.392
+!MESSAGE To: org.eclipse.wst.common_core.feature.feature.group [3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.392
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.392
+!MESSAGE From: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.392
+!MESSAGE To: org.eclipse.wst.common_ui.feature.feature.group [3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:38:13.404
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.404
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE Software being installed: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE Missing requirement: Java EMF Model Utilities 2.0.201.v201001252130 (org.eclipse.jem.util 2.0.201.v201001252130) requires 'bundle com.ibm.icu [3.8.1.1,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.404
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE From: WST Common Core 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN (org.eclipse.wst.common_core.feature.feature.group 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE To: org.eclipse.jem.util [2.0.201.v201001252130]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.404
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE From: WST Common UI 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV (org.eclipse.wst.common_ui.feature.feature.group 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE To: org.eclipse.wst.common_core.feature.feature.group [3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:38:13.404
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE From: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:38:13.404
+!MESSAGE To: org.eclipse.wst.common_ui.feature.feature.group [3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:39:24.083
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.084
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE Software being installed: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE Missing requirement: Java EMF Model Utilities 2.0.201.v201001252130 (org.eclipse.jem.util 2.0.201.v201001252130) requires 'bundle com.ibm.icu [3.8.1.1,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.084
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE From: WST Common Core 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN (org.eclipse.wst.common_core.feature.feature.group 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE To: org.eclipse.jem.util [2.0.201.v201001252130]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.084
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE From: WST Common UI 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV (org.eclipse.wst.common_ui.feature.feature.group 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE To: org.eclipse.wst.common_core.feature.feature.group [3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.084
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE From: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.084
+!MESSAGE To: org.eclipse.wst.common_ui.feature.feature.group [3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:39:24.088
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.088
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE Software being installed: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE Missing requirement: Java EMF Model Utilities 2.0.201.v201001252130 (org.eclipse.jem.util 2.0.201.v201001252130) requires 'bundle com.ibm.icu [3.8.1.1,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.088
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE From: WST Common Core 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN (org.eclipse.wst.common_core.feature.feature.group 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE To: org.eclipse.jem.util [2.0.201.v201001252130]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.088
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE From: WST Common UI 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV (org.eclipse.wst.common_ui.feature.feature.group 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE To: org.eclipse.wst.common_core.feature.feature.group [3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:39:24.088
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE From: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:39:24.088
+!MESSAGE To: org.eclipse.wst.common_ui.feature.feature.group [3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:42:08.326
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2013-02-19 17:42:08.333
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Code Generation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Sample Ecore Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Ecore Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF - Eclipse Modeling Framework Core Runtime" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Ecore Mapping Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Ecore Code Generator UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF - Eclipse Modeling Framework Runtime and Tools" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Edit UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Ecore Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF - Eclipse Modeling Framework SDK" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Ecore Code Generator" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Common" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Model Converter" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Documentation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Common UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Code Generation UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Mapping UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.333
+!MESSAGE "EMF Edit Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:42:08.333
+!MESSAGE The following software cannot be installed because it is intended for use only in Plug-in Development Environment (PDE) target platforms. Please deselect these items and retry the operation.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:08.333
+!MESSAGE EMF RAP Edit UI 2.8.0.v20130125-0826 (org.eclipse.emf.rap.edit.ui.feature.group 2.8.0.v20130125-0826)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:08.333
+!MESSAGE If provisioning a target platform then try disabling the option 'Include required software'
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:42:08.350
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2013-02-19 17:42:08.350
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Code Generation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Sample Ecore Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Ecore Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF - Eclipse Modeling Framework Core Runtime" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Ecore Mapping Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Ecore Code Generator UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF - Eclipse Modeling Framework Runtime and Tools" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Edit UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Ecore Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF - Eclipse Modeling Framework SDK" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.350
+!MESSAGE "EMF Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Ecore Code Generator" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Common" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Model Converter" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Documentation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Common UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Code Generation UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Mapping UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:08.351
+!MESSAGE "EMF Edit Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:42:08.351
+!MESSAGE The following software cannot be installed because it is intended for use only in Plug-in Development Environment (PDE) target platforms. Please deselect these items and retry the operation.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:08.351
+!MESSAGE EMF RAP Edit UI 2.8.0.v20130125-0826 (org.eclipse.emf.rap.edit.ui.feature.group 2.8.0.v20130125-0826)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:08.351
+!MESSAGE If provisioning a target platform then try disabling the option 'Include required software'
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:42:55.539
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2013-02-19 17:42:55.539
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.539
+!MESSAGE "EMF - Eclipse Modeling Framework Core Runtime" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF - Eclipse Modeling Framework Runtime and Tools" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF - Eclipse Modeling Framework SDK" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Code Generation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Code Generation UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Common" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Common UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Documentation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Ecore Code Generator" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Ecore Code Generator UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.540
+!MESSAGE "EMF Ecore Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Ecore Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Ecore Mapping Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Edit Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Edit UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Mapping UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Model Converter" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.542
+!MESSAGE "EMF Sample Ecore Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:42:55.542
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.542
+!MESSAGE Software being installed: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.542
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120822-0329 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120822-0329) requires 'bundle org.eclipse.xtext [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.542
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120917-0741 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120917-0741) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.542
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20130212-0719 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20130212-0719) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:42:55.542
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.542
+!MESSAGE From: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.543
+!MESSAGE To: org.eclipse.emf.codegen.ecore.xtext 0.0.0
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:42:55.544
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2013-02-19 17:42:55.544
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF - Eclipse Modeling Framework Core Runtime" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF - Eclipse Modeling Framework Runtime and Tools" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF - Eclipse Modeling Framework SDK" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Code Generation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Code Generation UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Common" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Common UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Documentation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Ecore Code Generator" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Ecore Code Generator UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Ecore Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Ecore Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Ecore Mapping Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Edit Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Edit UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Mapping UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Model Converter" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:42:55.544
+!MESSAGE "EMF Sample Ecore Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:42:55.544
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.544
+!MESSAGE Software being installed: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.544
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120822-0329 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120822-0329) requires 'bundle org.eclipse.xtext [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.544
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120917-0741 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120917-0741) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.544
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20130212-0719 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20130212-0719) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:42:55.544
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.544
+!MESSAGE From: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:42:55.545
+!MESSAGE To: org.eclipse.emf.codegen.ecore.xtext 0.0.0
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:43:05.090
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2013-02-19 17:43:05.090
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF - Eclipse Modeling Framework Core Runtime" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF - Eclipse Modeling Framework Runtime and Tools" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF - Eclipse Modeling Framework SDK" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF Code Generation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF Code Generation UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF Common" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF Common UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF Documentation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.090
+!MESSAGE "EMF Ecore Code Generator" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Ecore Code Generator UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Ecore Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Ecore Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Ecore Mapping Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Edit Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Edit UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Mapping UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Model Converter" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.091
+!MESSAGE "EMF Sample Ecore Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:43:05.091
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.091
+!MESSAGE Software being installed: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.091
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120822-0329 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120822-0329) requires 'bundle org.eclipse.xtext [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.091
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120917-0741 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120917-0741) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.093
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20130212-0719 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20130212-0719) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:43:05.093
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.093
+!MESSAGE From: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.093
+!MESSAGE To: org.eclipse.emf.codegen.ecore.xtext 0.0.0
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:43:05.093
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 1 10001 2013-02-19 17:43:05.094
+!MESSAGE Your original request has been modified.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF - Eclipse Modeling Framework Core Runtime" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF - Eclipse Modeling Framework Runtime and Tools" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF - Eclipse Modeling Framework SDK" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Code Generation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Code Generation UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Common" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Common UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Documentation" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Ecore Code Generator" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Ecore Code Generator UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Ecore Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Ecore Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Ecore Mapping Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Edit" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Edit Data Binding" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Edit UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Mapping" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Mapping UI" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Model Converter" is already installed, so an update will be performed instead.
+!SUBENTRY 2 org.eclipse.equinox.p2.operations 1 10003 2013-02-19 17:43:05.094
+!MESSAGE "EMF Sample Ecore Editor" is already installed, so an update will be performed instead.
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:43:05.094
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.094
+!MESSAGE Software being installed: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.094
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120822-0329 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120822-0329) requires 'bundle org.eclipse.xtext [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.094
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20120917-0741 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20120917-0741) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.094
+!MESSAGE Missing requirement: EMF Ecore Code Generator Xtext Integration 1.0.0.v20130212-0719 (org.eclipse.emf.codegen.ecore.xtext 1.0.0.v20130212-0719) requires 'bundle org.eclipse.emf.mwe2.runtime [2.3.0,3.0.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:43:05.094
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.094
+!MESSAGE From: EMF - Eclipse Modeling Framework Xcore UI 1.0.1.v20130212-0719 (org.eclipse.emf.ecore.xcore.ui.feature.group 1.0.1.v20130212-0719)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:43:05.094
+!MESSAGE To: org.eclipse.emf.codegen.ecore.xtext 0.0.0
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:44:18.963
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.html.ui, propertyPage: org.eclipse.wst.html.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:44:18.963
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2013-02-19 17:44:23.923 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=it_IT
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.wst.common.project.facet.core 4 0 2013-02-19 17:44:43.415
+!MESSAGE Project facet jst.java has not been defined. It is used in plugin org.eclipse.php.core.
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:44:47.709
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:44:47.709
+!MESSAGE A conflict occurred for CTRL+SHIFT+Z:
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
+		Redo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@726b0c)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,gtk,system)
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.php.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.debug.ui.actions.PopupInspectAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:45:34.757
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.757
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE Missing requirement: Java EMF Model Utilities 2.0.201.v201001252130 (org.eclipse.jem.util 2.0.201.v201001252130) requires 'bundle com.ibm.icu [3.8.1.1,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.757
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE From: WST Common Core 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN (org.eclipse.wst.common_core.feature.feature.group 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE To: org.eclipse.jem.util [2.0.201.v201001252130]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.757
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE From: WST Common UI 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV (org.eclipse.wst.common_ui.feature.feature.group 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE To: org.eclipse.wst.common_core.feature.feature.group [3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.757
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE To: org.eclipse.wst.ws_ui.feature.feature.group [3.1.2.v200911241834-7I6FPpEtEnGx_Csz-6wI8hoH_MRt]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.757
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE From: WST Web Services UI 3.1.2.v200911241834-7I6FPpEtEnGx_Csz-6wI8hoH_MRt (org.eclipse.wst.ws_ui.feature.feature.group 3.1.2.v200911241834-7I6FPpEtEnGx_Csz-6wI8hoH_MRt)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE To: org.eclipse.wst.xml_ui.feature.feature.group [3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.757
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE From: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.757
+!MESSAGE To: org.eclipse.wst.common_ui.feature.feature.group [3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:45:34.763
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.763
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.763
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.763
+!MESSAGE Missing requirement: Java EMF Model Utilities 2.0.201.v201001252130 (org.eclipse.jem.util 2.0.201.v201001252130) requires 'bundle com.ibm.icu [3.8.1.1,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.763
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.763
+!MESSAGE From: WST Common Core 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN (org.eclipse.wst.common_core.feature.feature.group 3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.763
+!MESSAGE To: org.eclipse.jem.util [2.0.201.v201001252130]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.763
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.763
+!MESSAGE From: WST Common UI 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV (org.eclipse.wst.common_ui.feature.feature.group 3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.763
+!MESSAGE To: org.eclipse.wst.common_core.feature.feature.group [3.1.1.v200908102300-7B77FZ6F7RZHKDIwRlOwUN]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.764
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.764
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.764
+!MESSAGE To: org.eclipse.wst.ws_ui.feature.feature.group [3.1.2.v200911241834-7I6FPpEtEnGx_Csz-6wI8hoH_MRt]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.764
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.764
+!MESSAGE From: WST Web Services UI 3.1.2.v200911241834-7I6FPpEtEnGx_Csz-6wI8hoH_MRt (org.eclipse.wst.ws_ui.feature.feature.group 3.1.2.v200911241834-7I6FPpEtEnGx_Csz-6wI8hoH_MRt)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.764
+!MESSAGE To: org.eclipse.wst.xml_ui.feature.feature.group [3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:45:34.764
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.764
+!MESSAGE From: Eclipse XML Editors and Tools 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo (org.eclipse.wst.xml_ui.feature.feature.group 3.1.1.v200907161031-7H6FMbDxtkMs9OeLGF98LRhdPKeo)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:45:34.764
+!MESSAGE To: org.eclipse.wst.common_ui.feature.feature.group [3.1.1.v200908102300-7B5FRHDhdMOGnoekn4gtEJxSmPxV]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:47:21.013
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:21.013
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.013
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.013
+!MESSAGE Missing requirement: Simple Web Plug-in 1.1.301.v200911302230 (org.eclipse.wst.web 1.1.301.v200911302230) requires 'bundle com.ibm.icu [3.4.4,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:21.013
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.013
+!MESSAGE From: WST Web Core 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0 (org.eclipse.wst.web_core.feature.feature.group 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.013
+!MESSAGE To: org.eclipse.wst.web [1.1.301.v200911302230]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:21.013
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.013
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.013
+!MESSAGE To: org.eclipse.wst.web_core.feature.feature.group [3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:47:21.014
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:21.014
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.014
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.014
+!MESSAGE Missing requirement: Simple Web Plug-in 1.1.301.v200911302230 (org.eclipse.wst.web 1.1.301.v200911302230) requires 'bundle com.ibm.icu [3.4.4,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:21.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.014
+!MESSAGE From: WST Web Core 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0 (org.eclipse.wst.web_core.feature.feature.group 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.014
+!MESSAGE To: org.eclipse.wst.web [1.1.301.v200911302230]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:21.014
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.015
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:21.015
+!MESSAGE To: org.eclipse.wst.web_core.feature.feature.group [3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:47:29.342
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:29.342
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.342
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.342
+!MESSAGE Missing requirement: Simple Web Plug-in 1.1.301.v200911302230 (org.eclipse.wst.web 1.1.301.v200911302230) requires 'bundle com.ibm.icu [3.4.4,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:29.342
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.342
+!MESSAGE From: WST Web Core 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0 (org.eclipse.wst.web_core.feature.feature.group 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.342
+!MESSAGE To: org.eclipse.wst.web [1.1.301.v200911302230]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:29.342
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.342
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.342
+!MESSAGE To: org.eclipse.wst.web_core.feature.feature.group [3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0]
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2013-02-19 17:47:29.346
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:29.346
+!MESSAGE Cannot complete the install because one or more required items could not be found.
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.346
+!MESSAGE Software being installed: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.346
+!MESSAGE Missing requirement: Simple Web Plug-in 1.1.301.v200911302230 (org.eclipse.wst.web 1.1.301.v200911302230) requires 'bundle com.ibm.icu [3.4.4,4.1.0)' but it could not be found
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:29.346
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.346
+!MESSAGE From: WST Web Core 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0 (org.eclipse.wst.web_core.feature.feature.group 3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.346
+!MESSAGE To: org.eclipse.wst.web [1.1.301.v200911302230]
+!SUBENTRY 2 org.eclipse.equinox.p2.director 4 1 2013-02-19 17:47:29.346
+!MESSAGE Cannot satisfy dependency:
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.346
+!MESSAGE From: Eclipse Web Developer Tools 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3 (org.eclipse.wst.web_ui.feature.feature.group 3.1.1.v200908120400-7R77FStEVw2z07WtDz-OZrhL5C-3)
+!SUBENTRY 3 org.eclipse.equinox.p2.director 4 0 2013-02-19 17:47:29.346
+!MESSAGE To: org.eclipse.wst.web_core.feature.feature.group [3.1.1.v200908120400-7H77FDCAT7oGlivgHN1M2RkCBHz0]
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:51:20.170
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.html.ui, propertyPage: org.eclipse.wst.html.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.ui 2 2 2013-02-19 17:51:20.170
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2013-02-19 17:51:26.193 -----------------------------------------------
+eclipse.buildId=I20120502-2000
+java.version=1.7.0_13
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=it_IT
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:51:54.855
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:51:54.855
+!MESSAGE A conflict occurred for CTRL+SHIFT+Z:
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
+		Redo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@15f77bb)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,gtk,system)
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.php.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.debug.ui.actions.PopupInspectAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-02-19 17:52:53.695
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-02-19 17:52:53.695
+!MESSAGE Conflict for 'org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu':
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@1286b4c,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@1a706fc),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@100f31)),sourcePriority=1064960)
+HandlerActivation(commandId=org.eclipse.dltk.ui.edit.text.script.refactor.quickMenu,
+	handler=org.eclipse.dltk.internal.ui.actions.refactoring.RefactorActionGroup$3@9c66de,
+	expression=AndExpression(ActivePartExpression(org.eclipse.php.internal.ui.explorer.PHPExplorerPart@1a706fc),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@100f31)),sourcePriority=1064960)
+
+!ENTRY org.eclipse.jface 2 0 2013-02-19 17:52:53.698
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-02-19 17:52:53.698
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.dltk.ui.edit.text.script.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.dltk.ui.category.refactoring,Refactor - DLTK,DLTK Refactoring Actions,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.ui.actions.RenameAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.dltk.ui.context.views,,,system)
+
+!ENTRY org.eclipse.wst.validation 4 0 2013-02-19 17:53:05.182
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1050)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1007)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1285)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	... 12 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2013-02-19 17:53:05.183
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.validation.Validator$V2.getValidator(Validator.java:1050)
+	at org.eclipse.wst.validation.Validator$V2.getDelegatedValidator(Validator.java:1007)
+	at org.eclipse.wst.validation.Validator$V2.validationStarting(Validator.java:1285)
+	at org.eclipse.wst.validation.internal.ValBuilderJob$4.visit(ValBuilderJob.java:172)
+	at org.eclipse.wst.validation.internal.ValManager.accept(ValManager.java:750)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.run(ValBuilderJob.java:176)
+	at org.eclipse.wst.validation.internal.ValBuilderJob.runInWorkspace(ValBuilderJob.java:126)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:38)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.wst.validation 4 0 2013-02-19 17:53:05.183
+!MESSAGE IWAE0100E Extension configuration error. An internal error has happened, the validator org.eclipse.php.ui has incorrectly configured the validation extension point.
+
+!ENTRY org.eclipse.ui.workbench 2 0 2013-02-19 17:55:31.869
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2013-02-19 17:55:31.869
+!MESSAGE Conflict for 'org.eclipse.wst.sse.ui.cleanup.document':
+HandlerActivation(commandId=org.eclipse.wst.sse.ui.cleanup.document,
+	handler=org.eclipse.wst.html.ui.internal.edit.ui.CleanupDocumentHandler@d6b018,
+	expression=org.eclipse.core.internal.expressions.ReferenceExpression@1fc4dca8,sourcePriority=64)
+HandlerActivation(commandId=org.eclipse.wst.sse.ui.cleanup.document,
+	handler=org.eclipse.wst.html.ui.internal.edit.ui.CleanupDocumentHandler@c30779,
+	expression=org.eclipse.core.internal.expressions.ReferenceExpression@7b705257,sourcePriority=64)
+
+!ENTRY org.eclipse.wst.sse.ui 4 4 2013-02-19 17:55:56.473
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExecutableExtension(ValidatorMetaData.java:151)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExtension(ValidatorMetaData.java:173)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createValidator(ValidatorMetaData.java:196)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:260)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:250)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:697)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	... 10 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2013-02-19 17:55:56.474
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:356)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExecutableExtension(ValidatorMetaData.java:151)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExtension(ValidatorMetaData.java:173)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createValidator(ValidatorMetaData.java:196)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:260)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:250)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:697)
+
+!ENTRY org.eclipse.jface 4 0 2013-02-19 17:57:12.961
+!MESSAGE Unhandled event loop exception during blocked modal context.
+!STACK 0
+org.eclipse.swt.SWTException: Failed to execute runnable (java.lang.NullPointerException)
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:138)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:3529)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3182)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.block(ModalContext.java:173)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:388)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:507)
+	at org.eclipse.ui.internal.progress.ProgressMonitorJobsDialog.run(ProgressMonitorJobsDialog.java:275)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.disconnectFromWorkspace(IDEWorkbenchAdvisor.java:515)
+	at org.eclipse.ui.internal.ide.application.IDEWorkbenchAdvisor.postShutdown(IDEWorkbenchAdvisor.java:348)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3028)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1123)
+	at org.eclipse.ui.internal.Workbench.access$15(Workbench.java:1040)
+	at org.eclipse.ui.internal.Workbench$25.run(Workbench.java:1284)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1282)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1254)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:727)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$0(WorkbenchWindow.java:715)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.run(WorkbenchWindow.java:867)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:865)
+	at org.eclipse.jface.window.Window.handleShellCloseEvent(Window.java:741)
+	at org.eclipse.jface.window.Window$3.shellClosed(Window.java:687)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1276)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1300)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1285)
+	at org.eclipse.swt.widgets.Shell.closeWidget(Shell.java:617)
+	at org.eclipse.swt.widgets.Shell.gtk_delete_event(Shell.java:1191)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1750)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5116)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4369)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8295)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1192)
+	at org.eclipse.swt.internal.gtk.OS._g_main_context_iteration(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.g_main_context_iteration(OS.java:2332)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3177)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2701)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2665)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2499)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:679)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:668)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:124)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:601)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.php.internal.server.ui.Activator$1.run(Activator.java:65)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:35)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:135)
+	... 58 more
+!SESSION 2015-03-03 12:25:29.230 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_75
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=it_IT
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.equinox.p2.reconciler.dropins 4 0 2015-03-03 12:25:49.538
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "reference:file:plugins/org.eclipse.equinox.p2.reconciler.dropins_1.1.200.dist.jar" by thread "Start Level Event Dispatcher".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1088)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:564)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1206)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.suspendBundle(PackageAdminImpl.java:326)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.processDelta(PackageAdminImpl.java:467)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.doResolveBundles(PackageAdminImpl.java:251)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl$1.run(PackageAdminImpl.java:174)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 8 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1088)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.suspend(AbstractBundle.java:564)
+	at org.eclipse.osgi.framework.internal.core.Framework.suspendBundle(Framework.java:1206)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.suspendBundle(PackageAdminImpl.java:326)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.processDelta(PackageAdminImpl.java:467)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl.doResolveBundles(PackageAdminImpl.java:251)
+	at org.eclipse.osgi.framework.internal.core.PackageAdminImpl$1.run(PackageAdminImpl.java:174)
+	at java.lang.Thread.run(Thread.java:745)
+
+!ENTRY org.eclipse.core.resources 4 567 2015-03-03 12:26:01.671
+!MESSAGE Workspace restored, but some problems occurred.
+!SUBENTRY 1 org.eclipse.core.resources 4 567 2015-03-03 12:26:01.672
+!MESSAGE Could not read metadata for 'eclipse-test'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The project description file (.project) for 'eclipse-test' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:851)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:874)
+	at org.eclipse.core.internal.resources.SaveManager.restoreMetaInfo(SaveManager.java:854)
+	at org.eclipse.core.internal.resources.SaveManager.restore(SaveManager.java:703)
+	at org.eclipse.core.internal.resources.SaveManager.startup(SaveManager.java:1528)
+	at org.eclipse.core.internal.resources.Workspace.startup(Workspace.java:2502)
+	at org.eclipse.core.internal.resources.Workspace.open(Workspace.java:2251)
+	at org.eclipse.core.resources.ResourcesPlugin.start(ResourcesPlugin.java:439)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl$1.run(BundleContextImpl.java:711)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.startActivator(BundleContextImpl.java:702)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.start(BundleContextImpl.java:683)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.startWorker(BundleHost.java:381)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:300)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:440)
+	at org.eclipse.osgi.internal.loader.BundleLoader.setLazyTrigger(BundleLoader.java:263)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:107)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:469)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:216)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.SingleSourcePackage.loadClass(SingleSourcePackage.java:35)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:461)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:125)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:353)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:180)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:629)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:584)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1438)
+!SUBENTRY 2 org.eclipse.core.resources 4 567 2015-03-03 12:26:01.672
+!MESSAGE The project description file (.project) for 'eclipse-test' is missing.  This file contains important information about the project.  The project will not function properly until this file is restored.
+
+!ENTRY org.eclipse.jface 2 0 2015-03-03 12:26:10.396
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-03 12:26:10.396
+!MESSAGE A conflict occurred for CTRL+SHIFT+Z:
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.redo,Redo,
+		Redo the last operation,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		LegacyHandlerWrapper(ActionHandler(action=org.eclipse.ui.texteditor.TextOperationAction@9f047b)),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,gtk,system)
+Binding(CTRL+SHIFT+Z,
+	ParameterizedCommand(Command(org.eclipse.php.debug.ui.commands.Inspect,Inspect,
+		Inspect result of evaluating selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		ActionDelegateHandlerProxy(null,org.eclipse.php.internal.debug.ui.actions.PopupInspectAction),
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialogAndWindow,,,system)
+
+!ENTRY org.eclipse.wst.sse.ui 4 4 2015-03-03 12:26:11.153
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:194)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:176)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExecutableExtension(ValidatorMetaData.java:151)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExtension(ValidatorMetaData.java:173)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createValidator(ValidatorMetaData.java:196)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:260)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:250)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:697)
+Caused by: java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	... 10 more
+!SUBENTRY 1 org.eclipse.equinox.registry 4 1 2015-03-03 12:26:11.153
+!MESSAGE Plug-in org.eclipse.php.ui was unable to load class org.eclipse.wst.html.core.internal.validation.HTMLValidator.
+!STACK 0
+java.lang.ClassNotFoundException: org.eclipse.wst.html.core.internal.validation.HTMLValidator
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:501)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:421)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:412)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:107)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:358)
+	at org.eclipse.osgi.internal.loader.BundleLoader.loadClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleHost.loadClass(BundleHost.java:229)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.loadClass(AbstractBundle.java:1212)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:174)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:905)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:243)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:55)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExecutableExtension(ValidatorMetaData.java:151)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createExtension(ValidatorMetaData.java:173)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorMetaData.createValidator(ValidatorMetaData.java:196)
+	at org.eclipse.wst.sse.ui.internal.reconcile.validator.ValidatorStrategy.reconcile(ValidatorStrategy.java:260)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DocumentRegionProcessor.process(DocumentRegionProcessor.java:321)
+	at org.eclipse.wst.sse.ui.internal.reconcile.StructuredRegionProcessor.process(StructuredRegionProcessor.java:250)
+	at org.eclipse.wst.sse.ui.internal.reconcile.DirtyRegionProcessor$BackgroundThread.run(DirtyRegionProcessor.java:697)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-03-03 12:26:18.902
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://download.eclipse.org/tools/pdt/updates/release.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:96)
+	at org.eclipse.equinox.internal.p2.metadata.repository.MetadataRepositoryManager.loadRepository(MetadataRepositoryManager.java:92)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.doLoad(LoadMetadataRepositoryJob.java:117)
+	at org.eclipse.equinox.p2.ui.LoadMetadataRepositoryJob.runModal(LoadMetadataRepositoryJob.java:102)
+	at org.eclipse.equinox.internal.p2.ui.sdk.PreloadingRepositoryHandler$2.runModal(PreloadingRepositoryHandler.java:83)
+	at org.eclipse.equinox.p2.operations.ProvisioningJob.run(ProvisioningJob.java:177)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.metadata.repository 4 1000 2015-03-03 12:26:18.902
+!MESSAGE No repository found at http://download.eclipse.org/tools/pdt/updates/release.
+
+!ENTRY org.eclipse.equinox.p2.transport.ecf 2 0 2015-03-03 12:29:15.700
+!MESSAGE Connection to http://download.eclipse.org/modeling/emf/emf/updates/2.10/core/R201405190339/p2.index failed on Socket closed. Retry attempt 0 started
+!STACK 0
+java.net.SocketException: Socket closed
+	at java.net.SocketInputStream.read(SocketInputStream.java:190)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at java.io.BufferedInputStream.fill(BufferedInputStream.java:235)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:254)
+	at org.apache.commons.httpclient.HttpParser.readRawLine(HttpParser.java:78)
+	at org.apache.commons.httpclient.HttpParser.readLine(HttpParser.java:106)
+	at org.apache.commons.httpclient.HttpConnection.readLine(HttpConnection.java:1116)
+	at org.apache.commons.httpclient.MultiThreadedHttpConnectionManager$HttpConnectionAdapter.readLine(MultiThreadedHttpConnectionManager.java:1413)
+	at org.apache.commons.httpclient.HttpMethodBase.readStatusLine(HttpMethodBase.java:1973)
+	at org.apache.commons.httpclient.HttpMethodBase.readResponse(HttpMethodBase.java:1735)
+	at org.apache.commons.httpclient.HttpMethodBase.execute(HttpMethodBase.java:1098)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer$GzipGetMethod.execute(HttpClientRetrieveFileTransfer.java:120)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeWithRetry(HttpMethodDirector.java:398)
+	at org.apache.commons.httpclient.HttpMethodDirector.executeMethod(HttpMethodDirector.java:171)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:397)
+	at org.apache.commons.httpclient.HttpClient.executeMethod(HttpClient.java:346)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.performConnect(HttpClientRetrieveFileTransfer.java:1129)
+	at org.eclipse.ecf.provider.filetransfer.httpclient.HttpClientRetrieveFileTransfer.openStreams(HttpClientRetrieveFileTransfer.java:699)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:889)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.AbstractRetrieveFileTransfer.sendRetrieveRequest(AbstractRetrieveFileTransfer.java:576)
+	at org.eclipse.ecf.provider.filetransfer.retrieve.MultiProtocolRetrieveAdapter.sendRetrieveRequest(MultiProtocolRetrieveAdapter.java:106)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.sendRetrieveRequest(FileReader.java:422)
+	at org.eclipse.equinox.internal.p2.transport.ecf.FileReader.readInto(FileReader.java:355)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:101)
+	at org.eclipse.equinox.internal.p2.transport.ecf.RepositoryTransport.download(RepositoryTransport.java:156)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadIndexFile(AbstractRepositoryManager.java:721)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:640)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.phases.Sizing.completePhase(Sizing.java:91)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:241)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:239)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:178)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:84)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:230)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 4 0 2015-03-03 12:29:15.902
+!MESSAGE Extension registry not found
+!STACK 0
+java.lang.RuntimeException
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getAllSuffixes(AbstractRepositoryManager.java:427)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:642)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.phases.Sizing.completePhase(Sizing.java:91)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:241)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:239)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:178)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:84)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:230)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 4 0 2015-03-03 12:29:15.902
+!MESSAGE Unexpected error loading extension: org.eclipse.equinox.p2.artifact.repository.compositeRepository
+!STACK 0
+java.lang.IllegalStateException: BundleContext is no longer valid
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.checkValid(BundleContextImpl.java:931)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.getServiceReference(BundleContextImpl.java:528)
+	at org.eclipse.equinox.internal.p2.core.helpers.ServiceHelper.getService(ServiceHelper.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getPreferences(AbstractRepositoryManager.java:495)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.remember(AbstractRepositoryManager.java:869)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:168)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:638)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.restoreSpecialRepositories(ArtifactRepositoryManager.java:127)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.restoreRepositories(AbstractRepositoryManager.java:1004)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.sortSuffixes(AbstractRepositoryManager.java:1089)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:642)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.phases.Sizing.completePhase(Sizing.java:91)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:241)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:239)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:178)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:84)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:230)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-03-03 12:29:15.903
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://download.eclipse.org/modeling/emf/emf/updates/2.10.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.phases.Sizing.completePhase(Sizing.java:91)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:241)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:239)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:178)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:84)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:230)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 1000 2015-03-03 12:29:15.903
+!MESSAGE No repository found at http://download.eclipse.org/modeling/emf/emf/updates/2.10.
+
+!ENTRY org.eclipse.equinox.p2.artifact.repository 4 0 2015-03-03 12:29:15.903
+!MESSAGE Unexpected error loading extension: org.eclipse.equinox.p2.artifact.repository.compositeRepository
+!STACK 0
+java.lang.IllegalStateException: BundleContext is no longer valid
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.checkValid(BundleContextImpl.java:931)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.getServiceReference(BundleContextImpl.java:528)
+	at org.eclipse.equinox.internal.p2.core.helpers.ServiceHelper.getService(ServiceHelper.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getPreferences(AbstractRepositoryManager.java:495)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.remember(AbstractRepositoryManager.java:869)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:168)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:638)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.phases.Sizing.completePhase(Sizing.java:91)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:241)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:239)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:178)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:84)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:230)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.equinox.p2.core 4 0 2015-03-03 12:29:15.903
+!MESSAGE Provisioning exception
+!STACK 1
+org.eclipse.equinox.p2.core.ProvisionException: No repository found at http://download.eclipse.org/modeling/emf/emf/updates/.
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.fail(AbstractRepositoryManager.java:393)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:675)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.load(CompositeArtifactRepository.java:474)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.addChild(CompositeArtifactRepository.java:171)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepository.<init>(CompositeArtifactRepository.java:95)
+	at org.eclipse.equinox.internal.p2.artifact.repository.CompositeArtifactRepositoryFactory.load(CompositeArtifactRepositoryFactory.java:116)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.factoryLoad(ArtifactRepositoryManager.java:73)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:758)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:651)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.phases.Sizing.completePhase(Sizing.java:91)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:241)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:239)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:178)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:84)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:230)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.equinox.p2.artifact.repository 4 1000 2015-03-03 12:29:15.903
+!MESSAGE No repository found at http://download.eclipse.org/modeling/emf/emf/updates/.
+
+!ENTRY org.eclipse.equinox.p2.engine 4 4 2015-03-03 12:29:15.903
+!MESSAGE An error occurred while committing the engine session for profile: PlatformProfile.
+!SUBENTRY 1 org.eclipse.equinox.p2.engine 4 0 2015-03-03 12:29:15.903
+!MESSAGE An error occurred while undoing the org.eclipse.equinox.internal.p2.engine.phases.Sizing phase.
+!STACK 0
+java.lang.IllegalStateException: BundleContext is no longer valid
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.checkValid(BundleContextImpl.java:931)
+	at org.eclipse.osgi.framework.internal.core.BundleContextImpl.getServiceReference(BundleContextImpl.java:528)
+	at org.eclipse.equinox.internal.p2.core.helpers.ServiceHelper.getService(ServiceHelper.java:63)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.getPreferences(AbstractRepositoryManager.java:495)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.remember(AbstractRepositoryManager.java:834)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.addRepository(AbstractRepositoryManager.java:133)
+	at org.eclipse.equinox.internal.p2.repository.helpers.AbstractRepositoryManager.loadRepository(AbstractRepositoryManager.java:657)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:104)
+	at org.eclipse.equinox.internal.p2.artifact.repository.ArtifactRepositoryManager.loadRepository(ArtifactRepositoryManager.java:100)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getLoadedArtifactRepositories(ProvisioningContext.java:160)
+	at org.eclipse.equinox.p2.engine.ProvisioningContext.getArtifactRepositories(ProvisioningContext.java:143)
+	at org.eclipse.equinox.internal.p2.engine.phases.Sizing.completePhase(Sizing.java:91)
+	at org.eclipse.equinox.internal.p2.engine.Phase.postPerform(Phase.java:241)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollBackPhase(EngineSession.java:239)
+	at org.eclipse.equinox.internal.p2.engine.EngineSession.rollback(EngineSession.java:178)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:84)
+	at org.eclipse.equinox.internal.p2.engine.Engine.perform(Engine.java:44)
+	at org.eclipse.equinox.internal.p2.ui.ProvUI.getSize(ProvUI.java:230)
+	at org.eclipse.equinox.internal.p2.ui.dialogs.SizeComputingWizardPage$1.run(SizeComputingWizardPage.java:63)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)

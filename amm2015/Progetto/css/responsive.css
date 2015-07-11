@@ -1,0 +1,889 @@
+/* impostazioni principali del layout */
+
+body{
+    background-color: #e4e4e4;
+    font: 13px/20px "Open Sans", Arial, sans-serif;
+}
+
+#page{
+    background-color: white;
+}
+
+#header, #footer{
+    background-color: #1c345a;
+    color: white;
+
+}
+
+#footer p{
+    display: block; 
+    margin: auto;   
+}
+
+#menu ul li a:link{
+    color: white;
+}
+
+.validator{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+
+
+h2, h3, h4, h5, h6 {
+    color: #1c345a;
+    margin: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+a:link{
+    text-decoration: underline;
+    color: #9e1616;
+}
+
+a:visited{
+    text-decoration: underline;
+    color: #9e1616;
+}
+
+a:hover{
+    font-weight: bold;
+
+}
+
+input{
+    border: 1px solid #1c345a;
+}
+
+input[type=submit], button{
+    color: #ffffff;
+    background-color: #1c345a;
+    height: 2em;
+    font-weight: bold;
+    border-radius: 1em;
+    border: 1px solid #1c345a;
+    min-width: 100px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+
+}
+
+input[type=submit]:hover, button:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+label.full{
+    display: inline-block;
+    width: 70%;
+}
+
+label{
+    display: inline-block;
+    width: 30%;
+}
+
+.input-form{
+    line-height: 3em;
+    border-bottom: 1px solid #1c345a;
+}
+
+
+.input-form input[type=text], .input-form input[type=password]{
+    display: inline-block;
+    width:59%;
+}
+
+.input-form select{
+    display: inline-block;
+    width:59%;
+    border: 1px solid #1c345a;
+    background-color: #ffffff;
+}
+
+.input-form input[type=submit], .input-form button{
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.btn-group input[type=submit], .btn-group button{
+    display: inline-block;
+}
+
+.btn-group{
+    text-align: center;
+}
+
+/* stile delle tabelle */
+
+table {
+    border: 1px solid #1c345a;
+    border-collapse: collapse;
+    margin-top:10px;
+    line-height: 1.2em;
+    width: 100%;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+th, td {
+    border: 1px solid #1c345a;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+th{
+    background-color: #1c345a;
+    color: white;
+    font-weight: bold;
+}
+
+.esami-col-small{
+    width: 10%;
+}
+
+.esami-col-large{
+    width: 15%;
+}
+
+.iscrizione-col-small{
+    width: 9%;
+}
+
+.iscrizione-col-large{
+    width: 20%;
+}
+
+.reg-col-small{
+    width: 10%;
+}
+
+.reg-col-large{
+    width: 20%;
+}
+
+.commissione-col{
+    width: 50%;
+}
+
+tr, td{
+    background-color: #e8ebee;
+}
+
+tr.alt-row, tr.alt-row td{
+    background-color: #bbc2ce;
+}
+
+/* decorazioni degli elementi */
+
+.xhtml {
+    padding-left: 20px;
+    margin-left: 10px;
+    background: url('../images/img19.gif') no-repeat left center;
+}
+
+.css {
+    padding-left: 20px;
+    margin-left: 10px;
+    background: url('../images/img20.gif') no-repeat left center;
+}
+
+#sidebar1 li {
+    list-style: none;
+}
+
+#sidebar2 ol  {
+    padding-left: 20px;
+}
+
+
+
+#sidebar1 ul, #sidebar2 ul{
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+
+
+.icon-title{
+
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    padding-top: 3px;
+    margin-top: 15px;
+}
+
+.panel, .panel-mini{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.panel li a:link, .panel-mini li a:link{
+    text-decoration:  none;
+    color: #9e1616;
+}
+
+
+.none{
+    list-style: none;
+}
+.no-space{
+    padding: 0px;
+    margin: 0px;
+}
+
+.clear{
+    clear: both; 
+    width: 0px; 
+    height: 0px;
+}
+
+.error li {
+    list-style: none;
+}
+
+/* stile per i messaggi di errore */
+
+.error{
+    width: 90%;
+    background-color: #f5a5a5;
+    border: 5px solid #9e1616;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+.error div{
+    margin: 0px;
+    background: url('../images/no.png') no-repeat left top;
+    min-height: 32px;
+    
+}
+
+/* stile per i messaggi di conferma */
+
+.confirm{
+    width: 90%;
+    background-color: #c7edce;
+    border: 5px solid #36956e;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+    margin-top: 5px;
+}
+.confirm div{
+    margin: 0px;
+    background: url('../images/ok.png') no-repeat left top;
+    min-height: 32px;
+}
+
+/* gestione dei dispositivi */
+
+@media only screen and (min-width: 1024px) {
+
+
+    #page {
+        width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+        margin-bottom:25px;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+    }
+
+    #sidebar1 {
+        float: left;
+        width: 19%;
+        padding-left: 1%;
+
+    }
+
+    #sidebar2 {
+        float: right;
+        width: 19%;
+        padding-right: 1%;
+    }
+
+    #content {
+        margin-left: 21%;
+        margin-right: 21%;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        min-height: 300px;
+    }
+
+
+
+    /* social bar */
+
+    .social{
+        width: 100%;
+    }
+
+    .social ul{
+        display: block;
+        float: right;
+        margin-right: 10px;
+    }
+
+    .social ul li{
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+
+    }
+
+    .social ul li a:link{
+        color: transparent;
+    }
+
+    #facebook{
+        background-image: url('../images/fb.png');
+        background-repeat: no-repeat;
+    }
+
+    #twitter{
+        background-image: url('../images/twitter.png');
+        background-repeat: no-repeat;
+    }
+
+    #linkedin{
+        background-image: url('../images/linkedin.png');
+        background-repeat: no-repeat;
+    }
+
+    /* header */
+
+    select.menu {
+        display: none;
+    }
+
+    #header{
+        clear: both;
+    }
+
+    #header, #footer{
+        height: 100px;
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 900px;
+        left: -20px;
+        border-bottom: 10px solid #9e1616;
+        box-shadow: 0 0 10px rgba(0,0,0,.2);
+
+    }
+
+    #logo{
+        position: absolute;
+    }
+
+    #footer p{
+        position: absolute;
+        margin-top: 10px;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 900px;
+    }
+
+
+    #menu{
+        position: relative;
+        float: right;
+        display: inline-block;
+
+    }
+
+    #menu ul{
+        position: relative;
+        display: inline-block;
+        list-style: none;
+
+
+    }
+
+    #menu ul li{
+        position: relative;
+        display: inline-block;
+        color: white;
+    }
+
+    #menu a:link, #menu a:visited{
+        color: white;
+    }
+
+    .social p{
+        margin: 10px;
+        float: left;
+    }
+
+    p.logout a:link, p.logout a:visited{
+        padding-left: 18px;
+    }
+    
+    p.logout{
+        background: url('../images/logout.png') no-repeat left center;
+    }
+
+    #header:before, #footer:before {
+        left: 0;
+        border-width: 20px 0 0 20px;
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #1c345a transparent transparent transparent;
+        margin-top: 110px;
+
+    }
+
+    #header:after, #footer:after {
+        right: 0;
+        border-width: 20px 20px 0px 0px;
+        content: "";
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: #1c345a transparent transparent transparent;
+        margin-top: 110px;
+
+    }
+
+
+    div#logo h1 {
+        background-image: url('../images/logo.jpg');
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 100px;
+        vertical-align: middle;
+        padding-left: 100px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        line-height: 100px;
+        color: #ffffff;
+        display: block;
+    }
+
+    .icon-title{
+        padding-left: 38px;
+    }
+
+    #categories h2{
+        background-image: url('../images/navigazione-mini.png');
+    }
+
+    #external h2{
+        background-image: url('../images/ext-mini.png');
+
+    }
+
+    #h-personali{
+        background-image: url('../images/anagrafica-mini.png');
+    }
+
+    #h-home{
+        background-image: url('../images/home-mini.png');
+    }
+
+    #h-esami{
+        background-image: url('../images/libretto-mini.png')
+    }
+
+    #h-iscrizione{
+        background-image: url('../images/iscrizione-mini.png')
+    }
+
+    #h-cerca{
+        background-image: url('../images/cerca-mini.png')
+    }
+
+    #h-dip{
+        background-image: url('../images/exec-mini.png')
+    }
+
+    #sidebar2 h2{
+        background-image: url('../images/help-mini.png');
+    }
+
+    #pnl-anagrafica{
+        background-image: url('../images/anagrafica.png');
+        background-repeat: no-repeat;
+
+    }
+
+    #pnl-anagrafica-docenti{
+        background-image: url('../images/anagrafica.png');
+        background-repeat: no-repeat;
+
+    }
+
+    #pnl-anagrafica-studenti{
+        background-image: url('../images/anagrafica.png');
+        background-repeat: no-repeat;
+
+    }
+
+    #pnl-libretto{
+        background-image: url('../images/libretto.png');
+        background-repeat: no-repeat;
+
+    }
+
+    #pnl-iscrizione{
+        background-image: url('../images/iscrizione.png');
+        background-repeat: no-repeat;
+
+    }
+
+    #pnl-cerca{
+        background-image: url('../images/cerca.png');
+        background-repeat: no-repeat;
+
+    }
+
+    #pnl-dipartimenti{
+        background-image: url('../images/exec.png');
+        background-repeat: no-repeat;
+
+    }
+
+    .panel li{
+        display: block;
+        width: 400px;
+        height: 130px;
+        margin:auto;
+        margin-top: 15px;
+        border: 1px solid #1c345a;
+        position: relative;
+    }
+
+    .panel li a{
+        display: block;
+        position: absolute;
+        /* per allineare il testo a meta' di un block il trucco e' usare
+           una line-height della stessa altezza del blocco */
+        line-height: 130px;
+        vertical-align: middle;
+        padding-left: 150px;
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px){
+    body{
+        font: 18px/20px "Open Sans", Arial, sans-serif;
+    }
+    #header, footer{
+        padding: 10px;
+        min-height: 50px;
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 10px solid #9e1616;
+        margin: 0px;
+        background-color: #1c345a;
+    } 
+
+    #sidebar1 {
+        float: left;
+        width: 200px;
+        padding-left: 5px;
+        padding-right: 10px;
+
+    }
+
+    #sidebar1 li {
+        margin-bottom: 10px;
+    }
+
+    #sidebar2 {
+        float: left;
+        clear:both;
+        width: 200px;
+        padding-left: 5px;
+        padding-right: 10px;
+    }
+
+    #sidebar1 ul{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #content {
+        margin-left: 200px;
+        margin-right: 5px;
+        padding-bottom: 10px;
+    }
+
+    #logo{
+        position: absolute;
+    }
+
+    #menu{
+        position: relative;
+        float: right;
+        display: inline-block;
+
+    }
+
+    #menu ul{
+        position: relative;
+        display: inline-block;
+        list-style: none;
+
+
+    }
+
+    #menu ul li{
+        position: relative;
+        display: inline-block;
+        color: white;
+        margin-left: 20px;  
+    }
+
+    select.menu {
+        display: none;
+    }
+
+    .social{
+        display: none;
+    }
+
+    #footer p{
+        text-align: center;
+    }
+
+    footer a:link, footer a:visited{
+        color: white;
+    }
+
+    div#logo h1 {
+        background-repeat: no-repeat;
+        background-position: center left;
+        vertical-align: middle;
+        line-height: 50px;
+        padding-left: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #ffffff;
+        display: block;
+    }
+
+    #pnl-anagrafica{
+        background-image: url('../images/anagrafica.png');
+        background-repeat: no-repeat;
+    }
+
+    #pnl-anagrafica-docenti{
+        background-image: url('../images/anagrafica.png');
+        background-repeat: no-repeat;
+    }
+
+    #pnl-anagrafica-studenti{
+        background-image: url('../images/anagrafica.png');
+        background-repeat: no-repeat;
+    }
+
+    #pnl-libretto{
+        background-image: url('../images/libretto.png');
+        background-repeat: no-repeat;
+    }
+
+    #pnl-iscrizione{
+        background-image: url('../images/iscrizione.png');
+        background-repeat: no-repeat;
+    }
+
+    #pnl-cerca{
+        background-image: url('../images/cerca.png');
+        background-repeat: no-repeat;
+    }
+
+    #pnl-dipartimenti{
+        background-image: url('../images/exec.png');
+        background-repeat: no-repeat;
+    }
+
+    .panel li{
+        display: block;
+        width: 400px;
+        height: 130px;
+        margin:auto;
+        margin-top: 15px;
+        border: 1px solid #1c345a;
+        position: relative;
+    }
+
+    .panel li a{
+        display: block;
+        position: absolute;
+        /* per allineare il testo a meta' di un block il trucco e' usare
+           una line-height della stessa altezza del blocco */
+        line-height: 130px;
+        vertical-align: middle;
+        padding-left: 150px;
+        font-size: 1.2em;
+    }
+    
+     #menu a:link, #menu a:visited{
+        color: white;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        font: 18px/20px "Open Sans", Arial, sans-serif;
+    }
+    #header, footer{
+        padding: 10px;
+        min-height: 50px;
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-bottom: 10px solid #9e1616;
+        margin: 0px;
+        background-color: #1c345a;
+    } 
+
+    #sidebar1 {
+        display: none;
+
+    }
+
+
+    #sidebar2 {
+        display: none;
+    }
+
+    #sidebar1 ul{
+        margin: 0px;
+        padding: 0px;
+    }
+
+    #content {
+        padding-bottom: 10px;
+    }
+
+    #logo{
+        text-align: center;
+    }
+
+    #menu{
+        display: none;
+
+    }
+
+    select.menu {
+        width: 100%;
+    }
+
+    .social{
+        display: none;
+    }
+
+    #footer p{
+        text-align: center;
+    }
+
+    footer a:link, footer a:visited{
+        color: white;
+    }
+
+    .validator{
+        display: none;  
+    }
+
+    div#logo h1 {
+        background-repeat: no-repeat;
+        background-position: center left;
+        vertical-align: middle;
+        line-height: 50px;
+        padding-left: 10px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #ffffff;
+        display: block;
+    }
+
+    #pnl-anagrafica{
+        background-image: url('../images/anagrafica-mini.png');
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+    }
+
+    #pnl-anagrafica-docenti{
+        background-image: url('../images/anagrafica-mini.png');
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+    }
+
+    #pnl-anagrafica-studenti{
+        background-image: url('../images/anagrafica-mini.png');
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+
+    }
+
+    #pnl-libretto{
+        background-image: url('../images/libretto-mini.png');
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+
+    }
+
+    #pnl-iscrizione{
+        background-image: url('../images/iscrizione-mini.png');
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+    }
+
+    #pnl-cerca{
+        background-image: url('../images/cerca-mini.png');
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+    }
+
+    #pnl-dipartimenti{
+        background-image: url('../images/exec-mini.png');
+        background-repeat: no-repeat;
+        background-position: 15px 15px;
+    }
+
+    .panel li{
+        display: block;
+        width: 98%;
+        height: 70px;
+        margin:auto;
+        margin-top: 15px;
+        border: 1px solid #1c345a;
+        position: relative;
+    }
+
+    .panel li a{
+        display: block;
+        position: absolute;
+        /* per allineare il testo a meta' di un block il trucco e' usare
+           una line-height della stessa altezza del blocco */
+        line-height: 70px;
+        vertical-align: middle;
+        padding-left: 150px;
+        font-size: 1.2em;
+    }
+    
+     #menu a:link, #menu a:visited{
+        color: white;
+    }
+}

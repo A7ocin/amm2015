@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;/eclipse-test/NewFile.html&apos; to &apos;NewFile.php&apos;&#x0A;- Original element: &apos;NewFile.html&apos;" description="Rename resource &apos;NewFile.html&apos;" flags="7" id="org.eclipse.dltk.ui.rename.resource" input="NewFile.html" name="NewFile.php" stamp="1361292927356" version="1.0"/>
+</session>
