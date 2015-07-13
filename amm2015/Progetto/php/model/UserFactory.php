@@ -176,7 +176,7 @@ class UserFactory {
             $mysqli->close();
             return null;
         }
-
+		
         $administrator = self::caricaAdministratorDaStmt($stmt);
         if (isset($administrator)) {
             // ho trovato un docente
@@ -262,17 +262,17 @@ class UserFactory {
         }
         $result = $mysqli->query($query);
         if ($mysqli->errno > 0) {
-            error_log("[getListaDocenti] impossibile eseguire la query");
+            error_log("[getListaAdministrator] impossibile eseguire la query");
             $mysqli->close();
-            return $docenti;
+            return $administrator;
         }
 
         while ($row = $result->fetch_array()) {
-            $docenti[] = self::creaDocenteDaArray($row);
+            $administrator[] = self::creaAdministratorDaArray($row);
         }
 
         $mysqli->close();
-        return $docenti;
+        return $administrator;
     }
 
     /**
@@ -434,7 +434,7 @@ class UserFactory {
                 return self::caricaStudenteDaStmt($stmt);
                 break;
                 
-            case User::Administrator:
+            case User::Administrator: 
                 $query = "select 
                administrator.id administrator_id,
                administrator.nome administrator_nome,
@@ -721,7 +721,7 @@ class UserFactory {
         return $stmt->affected_rows;
     }
     
-     private function salvaAdministrator(Docente $d, mysqli_stmt $stmt) {
+     private function salvaAdministrator(Administrator $a, mysqli_stmt $stmt) {
         $query = " update administrator set 
                     password = ?,
                     nome = ?,
@@ -744,18 +744,18 @@ class UserFactory {
         }
 
         if (!$stmt->bind_param('sssssssssiii', 
-                $d->getPassword(), 
-                $d->getNome(), 
-                $d->getCognome(), 
-                $d->getEmail(), 
-                $d->getCitta(),
-                $d->getProvincia(),
-                $d->getCap(), 
-                $d->getVia(), 
-                $d->getRicevimento(),
-                $d->getNumeroCivico(), 
-                $d->getDipartimento()->getId(),
-                $d->getId())) {
+                $a->getPassword(), 
+                $a->getNome(), 
+                $a->getCognome(), 
+                $a->getEmail(), 
+                $a->getCitta(),
+                $a->getProvincia(),
+                $a->getCap(), 
+                $a->getVia(), 
+                $a->getRicevimento(),
+                $a->getNumeroCivico(), 
+                $a->getDipartimento()->getId(),
+                $a->getId())) {
             error_log("[salvaAdministrator] impossibile" .
                     " effettuare il binding in input");
             return 0;

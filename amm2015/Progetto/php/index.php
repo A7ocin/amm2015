@@ -63,7 +63,7 @@ class FrontController {
                 case 'administrator':
                     $controller = new AdministratorController();
                     if (isset($_SESSION[BaseController::role]) &&
-                        $_SESSION[BaseController::role] != User::Docente)  {
+                        $_SESSION[BaseController::role] != User::Administrator)  {
                         self::write403();
                     }
                     $controller->handleInput($request);

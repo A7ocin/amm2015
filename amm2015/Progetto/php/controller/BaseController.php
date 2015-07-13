@@ -167,12 +167,12 @@ class BaseController {
                 $this->showHomeDocente($vd);
                 break;
 
-            case User::Amministratore:
+            /*case User::Amministratore:
                 $this->showHomeAmministratore($vd);
-                break;
+                break;*/
                 
             case User::Administrator:
-                $this->showHomeAmministratore($vd);
+                $this->showHomeAdministrator($vd);
                 break;
         }
     }
