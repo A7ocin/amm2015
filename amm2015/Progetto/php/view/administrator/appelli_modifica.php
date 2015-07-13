@@ -1,6 +1,6 @@
 <div class="input-form">
     <h3>Modifica appello</h3>
-    <form method="post" action="docente/appelli_modifica<?= $vd->scriviToken('?')?>">
+    <form method="post" action="administrator/appelli_modifica<?= $vd->scriviToken('?')?>">
         <input type="hidden" name="appello" value="<?= $mod_appello->getId() ?>"/>
         <label for="insegnamento">Insegnamento</label>
         <select name="insegnamento" id="insegnamento">

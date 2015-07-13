@@ -11,7 +11,7 @@
         }
         ?>
     </ol>
-    <form method="get" action="docente/appelli<?= $vd->scriviToken('?')?>">
+    <form method="get" action="administrator/appelli<?= $vd->scriviToken('?')?>">
         <button type="submit" name="cmd" value="a_annulla">Chiudi</button>
     </form>
 

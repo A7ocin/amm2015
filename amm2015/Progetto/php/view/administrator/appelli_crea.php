@@ -1,6 +1,6 @@
 <div class="input-form">
     <h3>Crea appello</h3>
-    <form method="post" action="docente/appelli_crea<?= $vd->scriviToken('?')?>">
+    <form method="post" action="administrator/appelli_crea<?= $vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="a_nuovo"/>
         <label for="insegnamento">Insegnamento</label>
         <select name="insegnamento" id="insegnamento">

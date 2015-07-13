@@ -17,7 +17,7 @@
     if (count($commissione) == 0) {
         ?>
         <p>
-            Nessun docente inserito
+            Nessun administrator inserito
         </p>
     <?php } else { ?>
         <table>
@@ -42,7 +42,7 @@
                             <?= $membro->getCognome() ?>
                         </td>
                         <td>
-                            <a href="docente/reg_esami_step2?elenco=<?= $elenco_id ?>&index=<?= $i ?>&cmd=r_del_commissione<?= $vd->scriviToken('&')?>" title="Elimina l'appello">
+                            <a href="administrator/reg_esami_step2?elenco=<?= $elenco_id ?>&index=<?= $i ?>&cmd=r_del_commissione<?= $vd->scriviToken('&')?>" title="Elimina l'appello">
                                 <img  src="../images/delete-action.png" alt="Elimina">
                             </a>
                         </td>
@@ -54,15 +54,15 @@
             </tbody>
         </table>
     <?php } ?>
-    <form method="post" action="docente/reg_esami_step2?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>">
+    <form method="post" action="administrator/reg_esami_step2?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>">
 
         <label for="nuovo-membro">Nuovo Membro</label>
         <select name="nuovo-membro" id="nuovo-membro">
             <?php
             $i = 0;
-            foreach ($docenti as $docente) {
+            foreach ($docenti as $administrator) {
                 ?>
-                <option value="<?= $docente->getId() ?>"><?= $docente->getCognome() ?> <?= $docente->getNome() ?></option>
+                <option value="<?= $administrator->getId() ?>"><?= $administrator->getCognome() ?> <?= $administrator->getNome() ?></option>
                 <?php
                 $i++;
             }
@@ -74,10 +74,10 @@
 
 </div>
 <div >
-    <form method="post" action="docente/reg_esami_step3?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>">
+    <form method="post" action="administrator/reg_esami_step3?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>">
         <button class="avanti" type="submit" name="cmd" value="r_save_commissione">Avanti</button>
     </form>
-    <form method="get" action="docente/reg_esami" class="inline">
+    <form method="get" action="administrator/reg_esami" class="inline">
         <?= $vd->scriviToken('', ViewDescriptor::post)?>
         <button class="indietro" type="submit" name="cmd" value="r_indietro">Indietro</button>
     </form>

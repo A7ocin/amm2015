@@ -27,13 +27,13 @@
     ?>
 </ul>
 <div class="input-form">
-    <form action="docente/reg_esami_step1?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>" method="get">
+    <form action="administrator/reg_esami_step1?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>" method="get">
         <input type="submit" name="r_modifica" value="Modifica"/>
     </form>
 </div>
 <div class="input-form">
     <h3>Nuovo Esame</h3>
-    <form method="post" action="docente/reg_esami_step3?&elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>">
+    <form method="post" action="administrator/reg_esami_step3?&elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>">
         <label for="matricola">Matricola</label>
         <input name="matricola" id="matricola" type="text"/>
         <br/>
@@ -82,7 +82,7 @@ if (count($sel_esami) == 0) {
                     <td><?= $statino->getStudente()->getNome() ?></td>
                     <td><?= $statino->getVoto() ?></td>
                     <td>
-                        <a href="docente/reg_esami_step3?elenco=<?= $elenco_id ?>&index=<?= $i ?>&cmd=r_del_esame<?= $vd->scriviToken('&')?>" title="Elimina lo statino">
+                        <a href="administrator/reg_esami_step3?elenco=<?= $elenco_id ?>&index=<?= $i ?>&cmd=r_del_esame<?= $vd->scriviToken('&')?>" title="Elimina lo statino">
                             <img  src="../images/delete-action.png" alt="Elimina">
                         </a>
                     </td>
@@ -93,7 +93,7 @@ if (count($sel_esami) == 0) {
             ?>
         </tbody>
     </table>
-    <form method="get" action="docente/reg_esami_step3">
+    <form method="get" action="administrator/reg_esami_step3">
         <?= $vd->scriviToken('', ViewDescriptor::post)?>
         <input type="hidden" name="elenco" value="<?= $elenco_id ?>"/>
         <div class="btn-group">

@@ -1,4 +1,4 @@
-<p>Gestione docente - <?= $user->getNome().' '.$user->getCognome() ?></p>
+<p>Administrator's page - <?= $user->getNome().' '.$user->getCognome() ?></p>
 <p class="logout">
-    <a href="docente?cmd=logout">Logout</a>
+    <a href="administrator?cmd=logout">Logout</a>
 </p>

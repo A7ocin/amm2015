@@ -43,7 +43,7 @@ class AdministratorController extends BaseController {
                     $_SESSION[BaseController::user], $_SESSION[BaseController::role]);
 
             // verifico quale sia la sottopagina della categoria
-            // Docente da servire ed imposto il descrittore 
+            // Administrator da servire ed imposto il descrittore 
             // della vista per caricare i "pezzi" delle pagine corretti
             // tutte le variabili che vengono create senza essere utilizzate 
             // direttamente in questo switch, sono quelle che vengono poi lette
@@ -441,18 +441,18 @@ class AdministratorController extends BaseController {
                             // richiesta di aggiungere un nuovo membro
                             $index = filter_var($request['nuovo-membro'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($index) &&
-                                    ($new_docente = UserFactory::instance()->cercaUtentePerId($index, User::Docente)) != null) {
-                                // docente trovato
-                                // aggiungiamo il docente alla lista
-                                if (!$_SESSION[self::elenco][$elenco_id]->getTemplate()->aggiungiMembroCommissione($new_docente)) {
-                                    $msg[] = '<li>Il docente specificato &egrave; gi&agrave; in lista </li>';
+                                    ($new_administrator = UserFactory::instance()->cercaUtentePerId($index, User::Administrator)) != null) {
+                                // administrator trovato
+                                // aggiungiamo il administrator alla lista
+                                if (!$_SESSION[self::elenco][$elenco_id]->getTemplate()->aggiungiMembroCommissione($new_administrator)) {
+                                    $msg[] = '<li>Il administrator specificato &egrave; gi&agrave; in lista </li>';
                                 } else {
                                     // copiamo la nuova commissione nella variabile della vista
                                     $commissione = $_SESSION[self::elenco][$elenco_id]->getTemplate()->getCommissione();
                                 }
                             } else {
-                                // docente non trovato
-                                $msg[] = '<li>Impossibile trovare il  docente specificato </li>';
+                                // administrator non trovato
+                                $msg[] = '<li>Impossibile trovare il  administrator specificato </li>';
                             }
                             $this->creaFeedbackUtente($msg, $vd, "Membro aggiunto in commissione");
                         }
@@ -465,9 +465,9 @@ class AdministratorController extends BaseController {
                         if (isset($elenco_id)) {
                             $index = filter_var($request['index'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($index) && $index >= 0 && $index < count($commissione)) {
-                                $old_docente = $_SESSION[self::elenco][$elenco_id]->getTemplate()->getCommissione()[$index];
-                                if (!$_SESSION[self::elenco][$elenco_id]->getTemplate()->rimuoviMembroCommissione($old_docente)) {
-                                    $msg[] = '<li>Il docente specificato non &egrave; in lista </li>';
+                                $old_administrator = $_SESSION[self::elenco][$elenco_id]->getTemplate()->getCommissione()[$index];
+                                if (!$_SESSION[self::elenco][$elenco_id]->getTemplate()->rimuoviMembroCommissione($old_administrator)) {
+                                    $msg[] = '<li>Il administrator specificato non &egrave; in lista </li>';
                                 } else {
                                     // copiamo la nuova commissione nella variabile della vista
                                     $commissione = $_SESSION[self::elenco][$elenco_id]->getTemplate()->getCommissione();

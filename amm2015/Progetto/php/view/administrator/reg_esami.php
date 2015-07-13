@@ -37,19 +37,19 @@ if (isset($elenchi_attivi) && count($elenchi_attivi) > 0) {
                     <td>
                         <ul class="none no-space">
                             <?php
-                            foreach ($elenco->getTemplate()->getCommissione() as $docente) {
-                                echo '<li>' . $docente->getNome() . ' ' . $docente->getCognome() . '</li>';
+                            foreach ($elenco->getTemplate()->getCommissione() as $administrator) {
+                                echo '<li>' . $administrator->getNome() . ' ' . $administrator->getCognome() . '</li>';
                             }
                             ?>
                         </ul>
                     </td>
                     <td>
-                        <a href="docente/reg_esami_step1?elenco=<?= $elenco->getId() ?><?= $vd->scriviToken('&')?>" title="Modifica l'elenco">
+                        <a href="administrator/reg_esami_step1?elenco=<?= $elenco->getId() ?><?= $vd->scriviToken('&')?>" title="Modifica l'elenco">
                             <img  src="../images/edit-action.png" alt="Modifica">
                         </a>
                     </td>
                     <td>
-                        <a href="docente/reg_esami?cmd=r_del_elenco&elenco=<?= $elenco->getId() ?><?= $vd->scriviToken('&')?>" title="Elimina l'elenco">
+                        <a href="administrator/reg_esami?cmd=r_del_elenco&elenco=<?= $elenco->getId() ?><?= $vd->scriviToken('&')?>" title="Elimina l'elenco">
                             <img  src="../images/delete-action.png" alt="Elimina">
                         </a>
                     </td>
@@ -66,7 +66,7 @@ if (isset($elenchi_attivi) && count($elenchi_attivi) > 0) {
 }
 ?>
 <div class="input-form">
-    <form method="get" action="docente/reg_esami_step1">
+    <form method="get" action="administrator/reg_esami_step1">
         <?= $vd->scriviToken('', ViewDescriptor::post)?>
         <input type="hidden" name="cmd" value="r_nuovo"/>
         <input type="submit" value="Nuovo Elenco"/>

@@ -7,7 +7,7 @@
 <div class="input-form">
     <h3>Passo 1: Selezione Insegnamento</h3>
     <p>Selezionare uno fra i seguenti insegnamenti</p>
-    <form method="post" action="docente/reg_esami_step2?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>" class="inline">
+    <form method="post" action="administrator/reg_esami_step2?elenco=<?= $elenco_id ?><?= $vd->scriviToken('&')?>" class="inline">
         <?php foreach ($insegnamenti as $insegnamento) { ?>
 
             <input type="radio" id="<?= $insegnamento->getCodice() ?>"
@@ -19,7 +19,7 @@
         
         <button class="avanti" type="submit" name="cmd" value="r_sel_insegnamento">Avanti</button>
     </form>
-    <form method="get" action="docente/reg_esami" class="inline">
+    <form method="get" action="administrator/reg_esami" class="inline">
         <?= $vd->scriviToken('', ViewDescriptor::post)?>
         <button class="indietro" type="submit" name="cmd" value="r_indietro">Indietro</button>
     </form>

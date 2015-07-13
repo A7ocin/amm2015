@@ -13,9 +13,9 @@ foreach($esami as $esame){
     $element['cognome'] = $esame->getStudente()->getCognome();
     $element['voto'] = $esame->getVoto();
     $element['commissione'] = array();
-    foreach($esame->getCommissione() as $docente){
-         /* @var $docente Docente */
-        $element['commissione'][] =  $docente->getNome() . ' ' . $docente->getCognome();
+    foreach($esame->getCommissione() as $administrator){
+         /* @var $administrator Administrator */
+        $element['commissione'][] =  $administrator->getNome() . ' ' . $administrator->getCognome();
     }
     $json['esami'][] = $element;
     

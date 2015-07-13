@@ -6,7 +6,7 @@
 </div>
 <div class="input-form">
     <h3>Filtro</h3>
-    <form method="post" action="docente/el_esami<?= $vd->scriviToken('?') ?>">
+    <form method="post" action="administrator/el_esami<?= $vd->scriviToken('?') ?>">
         <label for="insegnamento">Insegnamento</label>
         <select name="insegnamento" id="insegnamento">
             <option value="qualsiasi">Qualsiasi</option>

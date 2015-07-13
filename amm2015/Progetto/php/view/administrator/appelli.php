@@ -30,17 +30,17 @@
                     <td><?= $appello->getData()->format('d/m/Y') ?></td>
                     <td><?= $appello->getCapienza() ?></td>
                     <td>
-                        <a href="docente/appelli_iscritti?appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Visualizza la lista degli iscritti">
+                        <a href="administrator/appelli_iscritti?appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Visualizza la lista degli iscritti">
                             <?= $appello->numeroIscritti() ?>
                         </a>
                     </td>
                     <td>
-                        <a href="docente/appelli_modifica?appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Modifica l'appello">
+                        <a href="administrator/appelli_modifica?appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Modifica l'appello">
                             <img  src="../images/edit-action.png" alt="Modifica">
                         </a>
                     </td>
                     <td>
-                        <a href="docente/appelli?cmd=a_cancella&appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Elimina l'appello">
+                        <a href="administrator/appelli?cmd=a_cancella&appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Elimina l'appello">
                             <img  src="../images/delete-action.png" alt="Elimina">
                         </a>
                     </td>
@@ -56,7 +56,7 @@
 <?php } ?>
 <div class="input-form">
 
-    <form method="post" action="docente/appelli_crea<?= $vd->scriviToken('?') ?>">
+    <form method="post" action="administrator/appelli_crea<?= $vd->scriviToken('?') ?>">
         <button type="submit"name="cmd" value="a_crea">Crea Appello</button>
     </form>
 

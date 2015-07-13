@@ -9,7 +9,7 @@
 <div class="input-form">
     <h3>Ufficio</h3>
 
-    <form method="post" action="docente/anagrafica<?= '?'.$vd->scriviToken()?>">
+    <form method="post" action="administrator/anagrafica<?= '?'.$vd->scriviToken()?>">
         <input type="hidden" name="cmd" value="ufficio"/>
         <label for="dipartimento">Dipartimento</label>
         <select name="dipartimento" id="dipartimento">
@@ -39,7 +39,7 @@
 <div class="input-form">
     <h3>Contatti</h3>
 
-    <form method="post" action="docente/anagrafica<?=$vd->scriviToken('?')?>">
+    <form method="post" action="administrator/anagrafica<?=$vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="contatti"/>
         <label for="email">Email:</label>
         <input type="text" name="email" id="email"value="<?= $user->getEmail() ?>"/>
@@ -53,7 +53,7 @@
 
 <div class="input-form">
     <h3>Password</h3>
-    <form method="post" action="docente/anagrafica<?= $vd->scriviToken('?')?>">
+    <form method="post" action="administrator/anagrafica<?= $vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="password"/>
         <label for="pass1">Nuova Password:</label>
         <input type="password" name="pass1" id="pass1"/>
