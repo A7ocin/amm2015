@@ -4,6 +4,7 @@
 include_once 'controller/BaseController.php';
 include_once 'controller/StudenteController.php';
 include_once 'controller/DocenteController.php';
+include_once 'controller/AdministratorController.php';
 
 date_default_timezone_set("Europe/Rome");
 // punto unico di accesso all'applicazione
@@ -51,6 +52,16 @@ class FrontController {
                     // ai docenti ed agli amminstratori
                     // il controllo viene fatto dal controller apposito
                     $controller = new DocenteController();
+                    if (isset($_SESSION[BaseController::role]) &&
+                        $_SESSION[BaseController::role] != User::Docente)  {
+                        self::write403();
+                    }
+                    $controller->handleInput($request);
+                    break;
+                    
+                // administrator
+                case 'administrator':
+                    $controller = new AdministratorController();
                     if (isset($_SESSION[BaseController::role]) &&
                         $_SESSION[BaseController::role] != User::Docente)  {
                         self::write403();

@@ -3,6 +3,7 @@
 include_once 'User.php';
 include_once 'Docente.php';
 include_once 'Studente.php';
+include_once 'Administrator.php';
 include_once 'CorsoDiLaureaFactory.php';
 include_once 'DipartimentoFactory.php';
 
@@ -138,6 +139,50 @@ class UserFactory {
             $mysqli->close();
             return $docente;
         }
+        
+        // ora cerco un admin
+        $query = "select 
+               administrator.id administrator_id,
+               administrator.nome administrator_nome,
+               administrator.cognome administrator_cognome,
+               administrator.email administrator_email,
+               administrator.citta administrator_citta,
+               administrator.cap administrator_cap,
+               administrator.via administrator_via,
+               administrator.provincia administrator_provincia,
+               administrator.numero_civico administrator_numero_civico,
+               administrator.ricevimento administrator_ricevimento,
+               administrator.username administrator_username,
+               administrator.password administrator_password,
+               dipartimenti.id dipartimenti_id,
+               dipartimenti.nome dipartimenti_nome
+               
+               from administrator 
+               join dipartimenti on administrator.dipartimento_id = dipartimenti.id
+               where administrator.username = ? and administrator.password = ?";
+
+        $stmt = $mysqli->stmt_init();
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[loadUser] impossibile" .
+                    " inizializzare il prepared statement");
+            $mysqli->close();
+            return null;
+        }
+
+        if (!$stmt->bind_param('ss', $username, $password)) {
+            error_log("[loadUser] impossibile" .
+                    " effettuare il binding in input");
+            $mysqli->close();
+            return null;
+        }
+
+        $administrator = self::caricaAdministratorDaStmt($stmt);
+        if (isset($administrator)) {
+            // ho trovato un docente
+            $mysqli->close();
+            return $administrator;
+        }
     }
 
     /**
@@ -169,6 +214,51 @@ class UserFactory {
             error_log("[getListaDocenti] impossibile inizializzare il database");
             $mysqli->close();
             return $docenti;
+        }
+        $result = $mysqli->query($query);
+        if ($mysqli->errno > 0) {
+            error_log("[getListaDocenti] impossibile eseguire la query");
+            $mysqli->close();
+            return $docenti;
+        }
+
+        while ($row = $result->fetch_array()) {
+            $docenti[] = self::creaDocenteDaArray($row);
+        }
+
+        $mysqli->close();
+        return $docenti;
+    }
+    
+    /**
+     * Restituisce un array con gli admin presenti nel sistema
+     * @return array
+     */
+    public function &getListaAdministrator() {
+        $administrator = array();
+        $query = "select 
+               administrator.id administrator_id,
+               administrator.nome administrator_nome,
+               administrator.cognome administrator_cognome,
+               administrator.email administrator_email,
+               administrator.citta administrator_citta,
+               administrator.cap administrator_cap,
+               administrator.via administrator_via,
+               administrator.provincia administrator_provincia,
+               administrator.numero_civico administrator_numero_civico,
+               administrator.ricevimento administrator_ricevimento,
+               administrator.username administrator_username,
+               administrator.password administrator_password,
+               dipartimenti.id dipartimenti_id,
+               dipartimenti.nome dipartimenti_nome
+               
+               from administrator 
+               join dipartimenti on administrator.dipartimento_id = dipartimenti.id";
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[getListaAdministrator] impossibile inizializzare il database");
+            $mysqli->close();
+            return $administrator;
         }
         $result = $mysqli->query($query);
         if ($mysqli->errno > 0) {
@@ -343,6 +433,48 @@ class UserFactory {
 
                 return self::caricaStudenteDaStmt($stmt);
                 break;
+                
+            case User::Administrator:
+                $query = "select 
+               administrator.id administrator_id,
+               administrator.nome administrator_nome,
+               administrator.cognome administrator_cognome,
+               administrator.email administrator_email,
+               administrator.citta administrator_citta,
+               administrator.cap administrator_cap,
+               administrator.via administrator_via,
+               administrator.provincia administrator_provincia,
+               administrator.numero_civico administrator_numero_civico,
+               administrator.ricevimento administrator_ricevimento,
+               administrator.username administrator_username,
+               administrator.password administrator_password,
+               dipartimenti.id dipartimenti_id,
+               dipartimenti.nome dipartimenti_nome
+               
+               from administrator 
+               join dipartimenti on administrator.dipartimento_id = dipartimenti.id
+               where administrator.id = ?";
+
+                $stmt = $mysqli->stmt_init();
+                $stmt->prepare($query);
+                if (!$stmt) {
+                    error_log("[cercaUtentePerId] impossibile" .
+                            " inizializzare il prepared statement");
+                    $mysqli->close();
+                    return null;
+                }
+
+                if (!$stmt->bind_param('i', $intval)) {
+                    error_log("[loadUser] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return null;
+                }
+
+                $toRet =  self::caricaAdministratorDaStmt($stmt);
+                $mysqli->close();
+                return $toRet;
+                break;
 
             case User::Docente:
                 $query = "select 
@@ -440,6 +572,26 @@ class UserFactory {
         $docente->setDipartimento(DipartimentoFactory::instance()->creaDaArray($row));
         return $docente;
     }
+    
+    public function creaAdministratorDaArray($row) {
+        $administrator = new Administrator();
+        $administrator->setId($row['administrator_id']);
+        $administrator->setNome($row['administrator_nome']);
+        $administrator->setCognome($row['administrator_cognome']);
+        $administrator->setEmail($row['administrator_email']);
+        $administrator->setCap($row['administrator_cap']);
+        $administrator->setCitta($row['administrator_citta']);
+        $administrator->setVia($row['administrator_via']);
+        $administrator->setProvincia($row['administrator_provincia']);
+        $administrator->setNumeroCivico($row['administrator_numero_civico']);
+        $administrator->setRicevimento($row['administrator_ricevimento']);
+        $administrator->setRuolo(User::Administrator);
+        $administrator->setUsername($row['administrator_username']);
+        $administrator->setPassword($row['administrator_password']);
+
+        $administrator->setDipartimento(DipartimentoFactory::instance()->creaDaArray($row));
+        return $administrator;
+    }
 
     /**
      * Salva i dati relativi ad un utente sul db
@@ -462,6 +614,9 @@ class UserFactory {
                 break;
             case User::Docente:
                 $count = $this->salvaDocente($user, $stmt);
+                break;
+            case User::Administrator:
+                $count = $this->salvaAdministrator($user, $stmt);
         }
 
         $stmt->close();
@@ -565,6 +720,55 @@ class UserFactory {
 
         return $stmt->affected_rows;
     }
+    
+     private function salvaAdministrator(Docente $d, mysqli_stmt $stmt) {
+        $query = " update administrator set 
+                    password = ?,
+                    nome = ?,
+                    cognome = ?,
+                    email = ?,
+                    citta = ?,
+                    provincia = ?,
+                    cap = ?,
+                    via = ?,
+                    ricevimento = ?,
+                    numero_civico = ?,
+                    dipartimento_id = ?
+                    where administrator.id = ?
+                    ";
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[salvaAdministrator] impossibile" .
+                    " inizializzare il prepared statement");
+            return 0;
+        }
+
+        if (!$stmt->bind_param('sssssssssiii', 
+                $d->getPassword(), 
+                $d->getNome(), 
+                $d->getCognome(), 
+                $d->getEmail(), 
+                $d->getCitta(),
+                $d->getProvincia(),
+                $d->getCap(), 
+                $d->getVia(), 
+                $d->getRicevimento(),
+                $d->getNumeroCivico(), 
+                $d->getDipartimento()->getId(),
+                $d->getId())) {
+            error_log("[salvaAdministrator] impossibile" .
+                    " effettuare il binding in input");
+            return 0;
+        }
+
+        if (!$stmt->execute()) {
+            error_log("[caricaIscritti] impossibile" .
+                    " eseguire lo statement");
+            return 0;
+        }
+
+        return $stmt->affected_rows;
+    }
 
     /**
      * Carica un docente eseguendo un prepared statement
@@ -608,6 +812,45 @@ class UserFactory {
         $stmt->close();
 
         return self::creaDocenteDaArray($row);
+    }
+    
+    private function caricaAdministratorDaStmt(mysqli_stmt $stmt) {
+
+        if (!$stmt->execute()) {
+            error_log("[caricaAdministratorDaStmt] impossibile" .
+                    " eseguire lo statement");
+            return null;
+        }
+
+        $row = array();
+        $bind = $stmt->bind_result(
+                $row['administrator_id'], 
+                $row['administrator_nome'], 
+                $row['administrator_cognome'], 
+                $row['administrator_email'], 
+                $row['administrator_citta'],
+                $row['administrator_cap'],
+                $row['administrator_via'],
+                $row['administrator_provincia'], 
+                $row['administrator_numero_civico'],
+                $row['administrator_ricevimento'],
+                $row['administrator_username'], 
+                $row['administrator_password'], 
+                $row['administrator_id'], 
+                $row['administrator_nome']);
+        if (!$bind) {
+            error_log("[caricaAdministratorDaStmt] impossibile" .
+                    " effettuare il binding in output");
+            return null;
+        }
+
+        if (!$stmt->fetch()) {
+            return null;
+        }
+
+        $stmt->close();
+
+        return self::creaAdministratorDaArray($row);
     }
 
     /**

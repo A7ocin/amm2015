@@ -1,4 +1,4 @@
-<h2 id="help" class="icon-title">Istruzioni</h2>
+<h2 id="help" class="icon-title">Help</h2>
 <?php
 switch ($vd->getSottoPagina()) {
     case 'anagrafica': ?>
@@ -82,21 +82,17 @@ switch ($vd->getSottoPagina()) {
         <?php  default:
         ?>
         <p>
-            Seleziona una delle  seguentifunzionalit&agrave; disponibili per 
-            la gestione dei tuoi esami:
+            Welcome to your 3D world! Here you can:
         </p>
         <ol>
             <li>
-                <strong>Anagrafica</strong> per modificare i tuoi dati 
-                anagrafici e la tua password.
+                <strong>My Infos:</strong> view and edit your personal informations.
             </li>
             <li>
-                <strong>Libretto</strong> per visualizzare gli esami gi&agrave;
-                sostenuti.
+                <strong>View bought models:</strong> list all the models bought by you.
             </li>
             <li>
-                <strong>Iscrizione</strong> per iscriversi ad un appello
-                di esame.
+                <strong>Shop:</strong> view and buy new awesome 3d models! :-)
             </li>
         </ol>
         <?php break; ?>

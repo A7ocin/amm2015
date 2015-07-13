@@ -87,7 +87,7 @@ class BaseController {
      */
     protected function showLoginPage($vd) {
         // mostro la pagina di login
-        $vd->setTitolo("esAMMi - login");
+        $vd->setTitolo("TTDM - login");
         $vd->setMenuFile(basename(__DIR__) . '/../view/login/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/login/logo.php');
         $vd->setLeftBarFile(basename(__DIR__) . '/../view/login/leftBar.php');
@@ -125,6 +125,16 @@ class BaseController {
         $vd->setRightBarFile(basename(__DIR__) . '/../view/docente/rightBar.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/docente/content.php');
     }
+    
+    protected function showHomeAdministrator($vd) {
+        // mostro la home dei docenti
+        $vd->setTitolo("FUNZIONA");
+        $vd->setMenuFile(basename(__DIR__) . '/../view/administrator/menu.php');
+        $vd->setLogoFile(basename(__DIR__) . '/../view/administrator/logo.php');
+        $vd->setLeftBarFile(basename(__DIR__) . '/../view/administrator/leftBar.php');
+        $vd->setRightBarFile(basename(__DIR__) . '/../view/administrator/rightBar.php');
+        $vd->setContentFile(basename(__DIR__) . '/../view/administrator/content.php');
+    }
 
     /**
      * Imposta la vista master.php per visualizzare la pagina di gestione
@@ -158,6 +168,10 @@ class BaseController {
                 break;
 
             case User::Amministratore:
+                $this->showHomeAmministratore($vd);
+                break;
+                
+            case User::Administrator:
                 $this->showHomeAmministratore($vd);
                 break;
         }

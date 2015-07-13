@@ -14,6 +14,11 @@ class User {
      * Costante che definisce il ruolo studente
      */
     const Studente = 2;
+    
+    /**
+     * Costante che definisce il ruolo administrator
+     */
+    const Administrator = 3;
 
     
     /**

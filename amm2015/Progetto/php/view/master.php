@@ -54,7 +54,7 @@ if (!$vd->isJson()) {
                     <!--  header -->
                     <div id="header">
                         <div id="logo">
-                            <h1>EsAMMi</h1>
+                            <h1>TTDM: The Third Dimension's Market</h1>
                         </div>
 
                         <!-- select per la versione del menu mobile -->
@@ -85,14 +85,12 @@ if (!$vd->isJson()) {
                             ?>
                         </li>
                         <li id="external">
-                            <h2 class="icon-title">Link esterni</h2>
+                            <h2 class="icon-title">External links</h2>
                             <ul>
-                                <li><a href="http://www.unica.it/">Universit&agrave; di Cagliari</a></li>
-                                <li><a href="http://www.unica.it/">Facolt&agrave;</a></li>
-
+                                <li><a href="http://www.unica.it/">University of Cagliari</a></li>
+                                <li><a href="http://www.unica.it/">CS faculty website</a></li>
                             </ul>
                         </li>
-
                     </ul>
                 </div>
 
@@ -146,7 +144,7 @@ if (!$vd->isJson()) {
                 <footer>
                     <div id="footer">
                         <p>
-                            Applicazione d'esempio per l'esame di Amministrazione di Sistema
+                            System Administration 2015 Project by Nicola Garau.
                         </p>
 
 

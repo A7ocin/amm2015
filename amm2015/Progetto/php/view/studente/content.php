@@ -14,20 +14,20 @@ switch ($vd->getSottoPagina()) {
     default:
         
         ?>
-        <h2 class="icon-title" id="h-home">Pannello di Controllo</h2>
+        <h2 class="icon-title" id="h-home">Your 3D world</h2>
         <p>
-            Benvenuto, <?= $user->getNome() ?>
+            Welcome, <?= $user->getNome() ?>
         </p>
         <p>
-            Scegli una fra le seguenti sezioni:
+            Select one of the following:
         </p>
         <ul class="panel">
             <li><a href="studente/anagrafica<?= $vd->scriviToken('?')?>" id="pnl-anagrafica">
-                    Anagrafica
+                    My Infos
                 </a>
             </li>
-            <li><a href="studente/esami<?= $vd->scriviToken('?')?>" id="pnl-libretto">Libretto</a></li>
-            <li><a href="studente/iscrizione<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">Iscrizione</a></li>
+            <li><a href="studente/esami<?= $vd->scriviToken('?')?>" id="pnl-libretto">View bought models</a></li>
+            <li><a href="studente/iscrizione<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">Shop</a></li>
         </ul>
         <?php
         break;
