@@ -71,7 +71,7 @@ class AdministratorController extends BaseController {
                         $msg = array();
                         $models = ModelFactory::instance()->getModelsPerAdministrator($user);
                         $mod_model = $this->getModello($request, $msg);
-                        $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
+                        //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         if (!isset($mod_model)) {
                             $vd->setSottoPagina('appelli');
                         } else {

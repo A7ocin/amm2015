@@ -4,43 +4,35 @@
     <li><strong>Cognome:</strong> <?= $user->getCognome() ?></li>
 </ul>
 
-<?php if (count($appelli) > 0) { ?>
+<?php if (count($models) > 0) { ?>
     <table>
         <thead>
             <tr>
-                <th class="iscrizione-col-large">Insegnamento</th>
-                <th class="iscrizione-col-small">Codice</th>
-                <th class="iscrizione-col-small">Crediti</th>
-                <th class="iscrizione-col-small">Data</th>
-                <th class="iscrizione-col-small">Capienza</th>
-                <th class="iscrizione-col-small">Iscritti</th>
-                <th class="iscrizione-col-small">Modifica</th>
-                <th class="iscrizione-col-small">Cancella</th>
+                <th class="iscrizione-col-small">ID</th>
+                <th class="iscrizione-col-small">Date</th>
+                <th class="iscrizione-col-small">Dimension</th>
+                <th class="iscrizione-col-small">Name</th>
+                <th class="iscrizione-col-small">Edit Model</th>
+                <th class="iscrizione-col-small">Delete Model</th>
             </tr>
         </thead>
         <tbody>
             <?php
             $i = 0;
-            foreach ($appelli as $appello) {
+            foreach ($models as $model) {
                 ?>
                 <tr <?= $i % 2 == 0 ? 'class="alt-row"' : '' ?>>
-                    <td><?= $appello->getInsegnamento()->getTitolo() ?></td>
-                    <td><?= $appello->getInsegnamento()->getCodice() ?></td>
-                    <td><?= $appello->getInsegnamento()->getCfu() ?></td>
-                    <td><?= $appello->getData()->format('d/m/Y') ?></td>
-                    <td><?= $appello->getCapienza() ?></td>
+                    <td><?= $model->getId() ?></td>
+                    <td><?= $model->getData()->format('d/m/Y') ?></td>
+                    <td><?= $model->getDimensione() ?></td>
+                    <td><?= $model->getNome() ?></td>
                     <td>
-                        <a href="administrator/appelli_iscritti?appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Visualizza la lista degli iscritti">
-                            <?= $appello->numeroIscritti() ?>
-                        </a>
-                    </td>
-                    <td>
-                        <a href="administrator/appelli_modifica?appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Modifica l'appello">
+                        <a href="administrator/appelli_modifica?appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Edit Model">
                             <img  src="../images/edit-action.png" alt="Modifica">
                         </a>
                     </td>
                     <td>
-                        <a href="administrator/appelli?cmd=a_cancella&appello=<?= $appello->getId() ?><?= $vd->scriviToken('&') ?>" title="Elimina l'appello">
+                        <a href="administrator/appelli?cmd=a_cancella&appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Delete Model">
                             <img  src="../images/delete-action.png" alt="Elimina">
                         </a>
                     </td>
