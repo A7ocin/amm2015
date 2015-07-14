@@ -533,7 +533,7 @@ class ModelFactory {
             $mysqli->close();
             return 0;
         }
-		if(strlen(strstr($query, 'update')) <=0){ echo "FUNZIONAAAAAAAAAAAAAAAAAAAAAAAAA";
+		if(strlen(strstr($query, 'update')) <=0){ 
 			if (!$stmt->bind_param('isis', 
 					$model->getId(),
 					$model->getData()->format('Y-m-d'),
@@ -545,7 +545,7 @@ class ModelFactory {
 				return 0;
 			}
 		}
-		else{echo "QUAAAAAAAAAA";
+		else{
 			if (!$stmt->bind_param('isisi', 
 					$model->getId(),
 					$model->getData()->format('Y-m-d'),

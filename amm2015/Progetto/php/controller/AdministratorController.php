@@ -382,10 +382,10 @@ class AdministratorController extends BaseController {
 
                     // cancella un model
                     case 'a_cancella':
-                        if (isset($request['model'])) {
-                            $intVal = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+                        if (isset($request['appello'])) {
+                            $intVal = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
-                                $mod_model = ModelFactory::instance()->cercaModelloPerId($intVal);
+                                $mod_model = ModelFactory::instance()->cercaModelPerId($intVal);
                                 if ($mod_model != null) {
                                     if (ModelFactory::instance()->cancella($mod_model) != 1) {
                                         $msg[] = '<li> Impossibile cancellare il modello </li>';

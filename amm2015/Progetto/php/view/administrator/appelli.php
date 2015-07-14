@@ -1,7 +1,8 @@
-<h2 class="icon-title" id="h-iscrizione">Appelli inseriti</h2>
+<h2 class="icon-title" id="h-iscrizione">3d models database</h2>
+<h4>Admin's infos</h1>
 <ul class="none">
-    <li><strong>Nome:</strong> <?= $user->getNome() ?></li>
-    <li><strong>Cognome:</strong> <?= $user->getCognome() ?></li>
+    <li><strong>Name:</strong> <?= $user->getNome() ?></li>
+    <li><strong>Surname:</strong> <?= $user->getCognome() ?></li>
 </ul>
 
 <?php if (count($models) > 0) { ?>
@@ -44,12 +45,12 @@
         </tbody>
     </table>
 <?php } else { ?>
-    <p>Nessun appello inserito</p>
+    <p>Empty database</p>
 <?php } ?>
 <div class="input-form">
 
     <form method="post" action="administrator/appelli_crea<?= $vd->scriviToken('?') ?>">
-        <button type="submit"name="cmd" value="a_crea">Crea Appello</button>
+        <button type="submit"name="cmd" value="a_crea">Upload new model</button>
     </form>
 
 </div>

@@ -50,7 +50,7 @@ switch ($vd->getSottoPagina()) {
         
 
     <?php default: ?>
-        <h2 class="icon-title" id="h-home">Pannello di Controllo</h2>
+        <h2 class="icon-title" id="h-home">My 3D world</h2>
         <p>
             Welcome, <?= $user->getNome() ?>
         </p>

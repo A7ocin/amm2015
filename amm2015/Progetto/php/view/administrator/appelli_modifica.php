@@ -12,8 +12,8 @@
         <input type="text" name="name" id="name" value="<?= $mod_model->getNome() ?>"/>
         <br/>
         <div class="btn-group">
-            <button type="submit" name="cmd" value="a_salva">Salva</button>
-            <button type="submit" name="cmd" value="a_annulla">Annulla</button>
+            <button type="submit" name="cmd" value="a_salva">Save</button>
+            <button type="submit" name="cmd" value="a_annulla">Back</button>
         </div>
     </form>
 </div>
