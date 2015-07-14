@@ -11,43 +11,34 @@
 
     <form method="post" action="administrator/anagrafica<?= '?'.$vd->scriviToken()?>">
         <input type="hidden" name="cmd" value="ufficio"/>
-        <label for="dipartimento">Dipartimento</label>
-        <select name="dipartimento" id="dipartimento">
-            <?php foreach ($dipartimenti as $dipartimento) { ?>
-                <option value="<?= $dipartimento->getId() ?>" <?= $user->getDipartimento()->equals($dipartimento) ? 'selected' : '' ?>><?= $dipartimento->getNome() ?></option>
-            <?php } ?>
-        </select>
-        <label for="via">Via o Piazza:</label>
+        <label for="via">Residence address :</label>
         <input type="text" name="via" id="via" value="<?= $user->getVia() ?>"/>
         <br>
-        <label for="civico">Numero Civico</label>
+        <label for="civico">Address number :</label>
         <input type="text" name="civico" id="civico" value="<?= $user->getNumeroCivico() ?>"/>
         <br/>
-        <label for="citta">Citt&agrave;</label>
+        <label for="citta">City :</label>
         <input type="text" name="citta" id="citta" value="<?= $user->getCitta() ?>"/>
         <br/>
-        <label for="provincia">Provincia</label>
+        <label for="provincia">Disctrict :</label>
         <input type="text" name="provincia" id="provincia" value="<?= $user->getProvincia() ?>"/>
         <br/>
-        <label for="cap">CAP</label>
+        <label for="cap">Zip code :</label>
         <input type="text" name="cap" id="cap" value="<?= $user->getCap() ?>"/>
         <br/>
-        <input type="submit" value="Salva"/>
+        <input type="submit" value="Save"/>
 
     </form>
 </div>
 <div class="input-form">
-    <h3>Contatti</h3>
+    <h3>Contacts :</h3>
 
     <form method="post" action="administrator/anagrafica<?=$vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="contatti"/>
-        <label for="email">Email:</label>
+        <label for="email">Email :</label>
         <input type="text" name="email" id="email"value="<?= $user->getEmail() ?>"/>
         <br/>
-        <label for="ricevimento">Ricevimento:</label>
-        <input type="text" name="ricevimento" id="ricevimento"value="<?= $user->getRicevimento() ?>"/>
-        <br/>
-        <input type="submit" value="Salva"/>
+        <input type="submit" value="Save"/>
     </form>
 </div>
 
@@ -55,12 +46,12 @@
     <h3>Password</h3>
     <form method="post" action="administrator/anagrafica<?= $vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="password"/>
-        <label for="pass1">Nuova Password:</label>
+        <label for="pass1">New Password :</label>
         <input type="password" name="pass1" id="pass1"/>
         <br/>
-        <label for="pass2">Conferma:</label>
+        <label for="pass2">Confirm password :</label>
         <input type="password" name="pass2" id="pass2"/>
         <br/>
-        <input type="submit" value="Cambia"/>
+        <input type="submit" value="Change password"/>
     </form>
 </div>

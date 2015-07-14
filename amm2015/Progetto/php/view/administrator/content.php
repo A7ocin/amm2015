@@ -52,14 +52,14 @@ switch ($vd->getSottoPagina()) {
     <?php default: ?>
         <h2 class="icon-title" id="h-home">Pannello di Controllo</h2>
         <p>
-            Benvenuto, <?= $user->getNome() ?>
+            Welcome, <?= $user->getNome() ?>
         </p>
         <p>
-            Scegli una fra le seguenti sezioni:
+            Select one of the following:
         </p>
         <ul class="panel">
             <li><a href="administrator/anagrafica<?= $vd->scriviToken('?')?>" id="pnl-anagrafica">
-                    Anagrafica
+                    Personal Infos
                 </a>
             </li>
             <li><a href="administrator/appelli<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">Appelli</a></li>

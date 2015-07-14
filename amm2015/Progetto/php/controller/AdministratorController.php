@@ -4,6 +4,8 @@ include_once 'BaseController.php';
 include_once basename(__DIR__) . '/../model/ElencoEsami.php';
 include_once basename(__DIR__) . '/../model/DipartimentoFactory.php';
 include_once basename(__DIR__) . '/../model/UserFactory.php';
+include_once basename(__DIR__) . '/../model/ModelFactory.php';
+include_once basename(__DIR__) . '/../model/Model.php';
 
 /**
  * Controller che gestisce la modifica dei dati dell'applicazione relativa ai 
@@ -53,35 +55,35 @@ class AdministratorController extends BaseController {
 
                     // modifica dei dati anagrafici
                     case 'anagrafica':
-                        $dipartimenti = DipartimentoFactory::instance()->getDipartimenti();
+                        //$dipartimenti = DipartimentoFactory::instance()->getDipartimenti();
                         $vd->setSottoPagina('anagrafica');
                         break;
 
                     // inserimento di una lista di appelli
                     case 'appelli':
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
-                        $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         $vd->setSottoPagina('appelli');
                         break;
 
-                    // modifica di un appello
+                    // modifica di un model
                     case 'appelli_modifica':
                         $msg = array();
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
-                        $mod_appello = $this->getAppello($request, $msg);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $mod_model = $this->getModello($request, $msg);
                         $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
-                        if (!isset($mod_appello)) {
+                        if (!isset($mod_model)) {
                             $vd->setSottoPagina('appelli');
                         } else {
                             $vd->setSottoPagina('appelli_modifica');
                         }
                         break;
 
-                    // creazione di un appello
+                    // creazione di un model
                     case 'appelli_crea':
                         $msg = array();
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
-                        $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         if (!isset($request['cmd'])) {
                             $vd->setSottoPagina('appelli');
                         } else {
@@ -90,12 +92,12 @@ class AdministratorController extends BaseController {
 
                         break;
 
-                    // visualizzazione della lista di iscritti ad un appello
+                    // visualizzazione della lista di iscritti ad un model
                     case 'appelli_iscritti':
                         $msg = array();
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
-                        $mod_appello = $this->getAppello($request, $msg);
-                        if (!isset($mod_appello)) {
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $mod_model = $this->getModello($request, $msg);
+                        if (!isset($mod_model)) {
                             $vd->setSottoPagina('appelli');
                         } else {
                             $vd->setSottoPagina('appelli_iscritti');
@@ -192,7 +194,7 @@ class AdministratorController extends BaseController {
 
                     // visualizzazione dell'elenco esami
                     case 'el_esami':
-                        $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
+                        //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         $vd->setSottoPagina('el_esami');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
                         $vd->addScript("../js/elencoEsami.js");
@@ -204,7 +206,7 @@ class AdministratorController extends BaseController {
                         $vd->setSottoPagina('el_esami_json');
                         $errori = array();
 
-                        if (isset($request['insegnamento']) && ($request['insegnamento'] != '')) {
+                        /*if (isset($request['insegnamento']) && ($request['insegnamento'] != '')) {
                             $insegnamento_id = filter_var($request['insegnamento'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if($insegnamento_id == null){
                                 $errori['insegnamento'] = "Specificare un identificatore valido";
@@ -212,7 +214,7 @@ class AdministratorController extends BaseController {
                         } else {
                             $insegnamento_id = null;
                             
-                        }
+                        }*/
 
                         if (isset($request['matricola']) && ($request['matricola'] != '')) {
                             $matricola = filter_var($request['matricola'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
@@ -298,14 +300,14 @@ class AdministratorController extends BaseController {
                         $this->showHomeUtente($vd);
                         break;
 
-                    // richiesta modifica di un appello esistente,
+                    // richiesta modifica di un model esistente,
                     // dobbiamo mostrare le informazioni
                     case 'a_modifica':
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
-                        if (isset($request['appello'])) {
-                            $intVal = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        if (isset($request['model'])) {
+                            $intVal = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
-                                $mod_appello = $this->cercaAppelloPerId($intVal, $appelli);
+                                $mod_model = $this->cercaModelloPerId($intVal, $models);
                                 $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                                 //$vd->setStato('a_modifica');
                             }
@@ -313,87 +315,87 @@ class AdministratorController extends BaseController {
                         $this->showHomeUtente($vd);
                         break;
 
-                    // salvataggio delle modifiche ad un appello esistente
+                    // salvataggio delle modifiche ad un model esistente
                     case 'a_salva':
                         $msg = array();
-                        if (isset($request['appello'])) {
-                            $intVal = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+                        if (isset($request['model'])) {
+                            $intVal = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
-                                $mod_appello = $this->cercaAppelloPerId($intVal, $appelli);
-                                $this->updateAppello($mod_appello, $request, $msg);
-                                if (count($msg) == 0 && AppelloFactory::instance()->salva($mod_appello) != 1) {
-                                    $msg[] = '<li> Impossibile salvare l\'appello </li>';
+                                $mod_model = $this->cercaModelloPerId($intVal, $models);
+                                $this->updateModello($mod_model, $request, $msg);
+                                if (count($msg) == 0 && ModelFactory::instance()->salva($mod_model) != 1) {
+                                    $msg[] = '<li> Impossibile salvare il modello </li>';
                                 }
-                                $this->creaFeedbackUtente($msg, $vd, "Appello aggiornato");
+                                $this->creaFeedbackUtente($msg, $vd, "Modello aggiornato");
                                 if (count($msg) == 0) {
                                     $vd->setSottoPagina('appelli');
                                 }
                             }
                         } else {
-                            $msg[] = '<li> Appello non specificato </li>';
+                            $msg[] = '<li> Modello non specificato </li>';
                         }
                         $this->showHomeUtente($vd);
                         break;
 
-                    // l'utente non vuole modificare l'appello selezionato
+                    // l'utente non vuole modificare il modello selezionato
                     case 'a_annulla':
                         $vd->setSottoPagina('appelli');
                         $this->showHomeUtente($vd);
                         break;
 
                     // richesta di visualizzazione del form per la creazione di un nuovo
-                    // appello
+                    // model
                     case 'a_crea':
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
                         $vd->setSottoPagina('appelli_crea');
                         $this->showHomeUtente($vd);
                         break;
 
-                    // creazione di un nuovo appello
+                    // creazione di un nuovo model
                     case 'a_nuovo':
                         $msg = array();
-                        $nuovo = new Appello();
+                        $nuovo = new Model();
                         $nuovo->setId(-1);
-                        $this->updateAppello($nuovo, $request, $msg);
-                        $this->creaFeedbackUtente($msg, $vd, "Appello creato");
+                        $this->updateModello($nuovo, $request, $msg);
+                        $this->creaFeedbackUtente($msg, $vd, "Modello creato");
                         if (count($msg) == 0) {
                             $vd->setSottoPagina('appelli');
-                            if (AppelloFactory::instance()->nuovo($nuovo) != 1) {
-                                $msg[] = '<li> Impossibile creare l\'appello </li>';
+                            if (ModelFactory::instance()->nuovo($nuovo) != 1) {
+                                $msg[] = '<li> Impossibile creare il modello </li>';
                             }
                         }
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
                         $this->showHomeUtente($vd);
                         break;
 
                     // mostra la lista degli iscritti
                     case 'a_iscritti':
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
-                        if (isset($request['appello'])) {
-                            $intVal = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        if (isset($request['model'])) {
+                            $intVal = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
-                                $mod_appello = $this->cercaAppelloPerId($intVal, $appelli);
+                                $mod_model = $this->cercaModelloPerId($intVal, $models);
                             }
                         }
                         $this->showHomeUtente($vd);
                         break;
 
-                    // cancella un appello
+                    // cancella un model
                     case 'a_cancella':
-                        if (isset($request['appello'])) {
-                            $intVal = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+                        if (isset($request['model'])) {
+                            $intVal = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
-                                $mod_appello = AppelloFactory::instance()->cercaAppelloPerId($intVal);
-                                if ($mod_appello != null) {
-                                    if (AppelloFactory::instance()->cancella($mod_appello) != 1) {
-                                        $msg[] = '<li> Impossibile cancellare l\'appello </li>';
+                                $mod_model = ModelFactory::instance()->cercaModelloPerId($intVal);
+                                if ($mod_model != null) {
+                                    if (ModelFactory::instance()->cancella($mod_model) != 1) {
+                                        $msg[] = '<li> Impossibile cancellare il modello </li>';
                                     }
                                 }
 
-                                $this->creaFeedbackUtente($msg, $vd, "Appello eliminato");
+                                $this->creaFeedbackUtente($msg, $vd, "Modello eliminato");
                             }
                         }
-                        $appelli = AppelloFactory::instance()->getAppelliPerDocente($user);
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
                         $this->showHomeUtente($vd);
                         break;
 
@@ -613,32 +615,37 @@ class AdministratorController extends BaseController {
     }
 
     /**
-     * Aggiorna i dati relativi ad un appello in base ai parametri specificati
+     * Aggiorna i dati relativi ad un model in base ai parametri specificati
      * dall'utente
-     * @param Appello $mod_appello l'appello da modificare
+     * @param Modello $mod_model il modello da modificare
      * @param array $request la richiesta da gestire 
      * @param array $msg array dove inserire eventuali messaggi d'errore
      */
-    private function updateAppello($mod_appello, &$request, &$msg) {
-        if (isset($request['insegnamento'])) {
+    private function updateModello($mod_model, &$request, &$msg) {
+        /*if (isset($request['insegnamento'])) {
             $insegnamento = InsegnamentoFactory::instance()->creaInsegnamentoDaCodice($request['insegnamento']);
             if (isset($insegnamento)) {
-                $mod_appello->setInsegnamento($insegnamento);
+                $mod_model->setInsegnamento($insegnamento);
             } else {
                 $msg[] = "<li>Insegnamento non trovato</li>";
             }
-        }
+        }*/
         if (isset($request['data'])) {
             $data = DateTime::createFromFormat("d/m/Y", $request['data']);
             if (isset($data) && $data != false) {
-                $mod_appello->setData($data);
+                $mod_model->setData($data);
             } else {
                 $msg[] = "<li>La data specificata non &egrave; corretta</li>";
             }
         }
         if (isset($request['posti'])) {
-            if (!$mod_appello->setCapienza($request['posti'])) {
+            if (!$mod_model->setDimensione($request['posti'])) {
                 $msg[] = "<li>La capienza specificata non &egrave; corretta</li>";
+            }
+        }
+        if (isset($request['name'])) {
+            if (!$mod_model->setNome($request['name'])) {
+                $msg[] = "<li>Il nome specificato non &egrave; valido</li>";
             }
         }
     }
@@ -646,14 +653,14 @@ class AdministratorController extends BaseController {
     /**
      * Ricerca un apperllo per id all'interno di una lista
      * @param int $id l'id da cercare
-     * @param array $appelli un array di appelli
-     * @return Appello l'appello con l'id specificato se presente nella lista,
+     * @param array $models un array di appelli
+     * @return Modello il modello con l'id specificato se presente nella lista,
      * null altrimenti
      */
-    private function cercaAppelloPerId($id, &$appelli) {
-        foreach ($appelli as $appello) {
-            if ($appello->getId() == $id) {
-                return $appello;
+    private function cercaModelloPerId($id, &$models) {
+        foreach ($models as $model) {
+            if ($model->getId() == $id) {
+                return $model;
             }
         }
 
@@ -661,13 +668,13 @@ class AdministratorController extends BaseController {
     }
 
     /**
-     * Calcola l'id per un nuovo appello
-     * @param array $appelli una lista di appelli
-     * @return int il prossimo id degli appelli
+     * Calcola l'id per un nuovo model
+     * @param array $models una lista di models
+     * @return int il prossimo id dei models
      */
-    private function prossimoIdAppelli(&$appelli) {
+    private function prossimoIdAppelli(&$models) {
         $max = -1;
-        foreach ($appelli as $a) {
+        foreach ($models as $a) {
             if ($a->getId() > $max) {
                 $max = $a->getId();
             }
@@ -715,19 +722,19 @@ class AdministratorController extends BaseController {
     }
 
     /**
-     * Restituisce l'appello specificato dall'utente tramite una richiesta HTTP
+     * Restituisce model specificato dall'utente tramite una richiesta HTTP
      * @param array $request la richiesta HTTP
      * @param array $msg un array dove inserire eventuali messaggi d'errore
-     * @return Appello l'appello selezionato, null se non e' stato trovato
+     * @return Modello model selezionato, null se non e' stato trovato
      */
-    private function getAppello(&$request, &$msg) {
-        if (isset($request['appello'])) {
-            $appello_id = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-            $appello = AppelloFactory::instance()->cercaAppelloPerId($appello_id);
-            if ($appello == null) {
-                $msg[] = "L'appello selezionato non &egrave; corretto</li>";
+    private function getModello(&$request, &$msg) {
+        if (isset($request['model'])) {
+            $model_id = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+            $model = ModelFactory::instance()->cercaModelloPerId($model_id);
+            if ($model == null) {
+                $msg[] = "Il modello selezionato non &egrave; corretto</li>";
             }
-            return $appello;
+            return $model;
         } else {
             return null;
         }

@@ -1,19 +1,12 @@
-<h2 class="icon-title" id="h-cerca">Elenco storico esami</h2>
+<h2 class="icon-title" id="h-cerca">Search models</h2>
 <div class="error">
     <div>
         <ul><li>Testo</li></ul>
     </div>
 </div>
 <div class="input-form">
-    <h3>Filtro</h3>
+    <h3>Filter</h3>
     <form method="post" action="administrator/el_esami<?= $vd->scriviToken('?') ?>">
-        <label for="insegnamento">Insegnamento</label>
-        <select name="insegnamento" id="insegnamento">
-            <option value="qualsiasi">Qualsiasi</option>
-            <?php foreach ($insegnamenti as $insegnamento) { ?>
-                <option value="<?= $insegnamento->getId() ?>" ><?= $insegnamento->getTitolo() ?></option>
-            <?php } ?>
-        </select>
         <label for="matricola">Matricola</label>
         <input name="matricola" id="matricola" type="text"/>
         <br/>
@@ -23,15 +16,15 @@
         <label for="nome">Nome</label>
         <input name="nome" id="nome" type="text"/>
         <br/>
-        <button id="filtra" type="submit" name="cmd" value="e_cerca">Cerca</button>
+        <button id="filtra" type="submit" name="cmd" value="e_cerca">Find models</button>
     </form>
 </div>
 
 
 
-<h3>Elenco Esami</h3>
+<h3>Found models</h3>
 
-<p id="nessuno">Nessun esame trovato</p>
+<p id="nessuno">No models found</p>
 
 <table id="tabella_esami">
     <thead>

@@ -719,9 +719,8 @@ class UserFactory {
                     provincia = ?,
                     cap = ?,
                     via = ?,
-                    ricevimento = ?,
-                    numero_civico = ?,
-                    dipartimento_id = ?
+                    numero_civico = ?
+                    
                     where administrator.id = ?
                     ";
         $stmt->prepare($query);
@@ -731,7 +730,7 @@ class UserFactory {
             return 0;
         }
 
-        if (!$stmt->bind_param('sssssssssiii', 
+        if (!$stmt->bind_param('ssssssssii', 
                 $a->getPassword(), 
                 $a->getNome(), 
                 $a->getCognome(), 
@@ -740,9 +739,7 @@ class UserFactory {
                 $a->getProvincia(),
                 $a->getCap(), 
                 $a->getVia(), 
-                $a->getRicevimento(),
                 $a->getNumeroCivico(), 
-                $a->getDipartimento()->getId(),
                 $a->getId())) {
             error_log("[salvaAdministrator] impossibile" .
                     " effettuare il binding in input");

@@ -128,7 +128,7 @@ class BaseController {
     
     protected function showHomeAdministrator($vd) {
         // mostro la home dei docenti
-        $vd->setTitolo("FUNZIONA");
+        $vd->setTitolo("TTDM - Administrator's page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/administrator/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/administrator/logo.php');
         $vd->setLeftBarFile(basename(__DIR__) . '/../view/administrator/leftBar.php');
