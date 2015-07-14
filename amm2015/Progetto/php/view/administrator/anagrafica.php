@@ -1,8 +1,8 @@
 <div class="input-form">
-    <h2 class="icon-title" id="h-personali">Dati personali</h2>
+    <h2 class="icon-title" id="h-personali">Personal Infos</h2>
     <ul class="none">
-        <li><strong>Nome:</strong> <?= $user->getNome() ?></li>
-        <li><strong>Cognome:</strong> <?= $user->getCognome() ?></li>
+        <li><strong>Name:</strong> <?= $user->getNome() ?></li>
+        <li><strong>Surname:</strong> <?= $user->getCognome() ?></li>
     </ul>
 </div>
 

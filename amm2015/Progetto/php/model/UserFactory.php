@@ -151,14 +151,11 @@ class UserFactory {
                administrator.via administrator_via,
                administrator.provincia administrator_provincia,
                administrator.numero_civico administrator_numero_civico,
-               administrator.ricevimento administrator_ricevimento,
                administrator.username administrator_username,
-               administrator.password administrator_password,
-               dipartimenti.id dipartimenti_id,
-               dipartimenti.nome dipartimenti_nome
+               administrator.password administrator_password
                
                from administrator 
-               join dipartimenti on administrator.dipartimento_id = dipartimenti.id
+               
                where administrator.username = ? and administrator.password = ?";
 
         $stmt = $mysqli->stmt_init();
@@ -246,14 +243,10 @@ class UserFactory {
                administrator.via administrator_via,
                administrator.provincia administrator_provincia,
                administrator.numero_civico administrator_numero_civico,
-               administrator.ricevimento administrator_ricevimento,
                administrator.username administrator_username,
-               administrator.password administrator_password,
-               dipartimenti.id dipartimenti_id,
-               dipartimenti.nome dipartimenti_nome
+               administrator.password administrator_password
                
-               from administrator 
-               join dipartimenti on administrator.dipartimento_id = dipartimenti.id";
+               from administrator";
         $mysqli = Db::getInstance()->connectDb();
         if (!isset($mysqli)) {
             error_log("[getListaAdministrator] impossibile inizializzare il database");
@@ -445,14 +438,11 @@ class UserFactory {
                administrator.via administrator_via,
                administrator.provincia administrator_provincia,
                administrator.numero_civico administrator_numero_civico,
-               administrator.ricevimento administrator_ricevimento,
                administrator.username administrator_username,
-               administrator.password administrator_password,
-               dipartimenti.id dipartimenti_id,
-               dipartimenti.nome dipartimenti_nome
+               administrator.password administrator_password
                
                from administrator 
-               join dipartimenti on administrator.dipartimento_id = dipartimenti.id
+               
                where administrator.id = ?";
 
                 $stmt = $mysqli->stmt_init();
@@ -584,12 +574,10 @@ class UserFactory {
         $administrator->setVia($row['administrator_via']);
         $administrator->setProvincia($row['administrator_provincia']);
         $administrator->setNumeroCivico($row['administrator_numero_civico']);
-        $administrator->setRicevimento($row['administrator_ricevimento']);
         $administrator->setRuolo(User::Administrator);
         $administrator->setUsername($row['administrator_username']);
         $administrator->setPassword($row['administrator_password']);
 
-        $administrator->setDipartimento(DipartimentoFactory::instance()->creaDaArray($row));
         return $administrator;
     }
 
@@ -833,11 +821,8 @@ class UserFactory {
                 $row['administrator_via'],
                 $row['administrator_provincia'], 
                 $row['administrator_numero_civico'],
-                $row['administrator_ricevimento'],
                 $row['administrator_username'], 
-                $row['administrator_password'], 
-                $row['administrator_id'], 
-                $row['administrator_nome']);
+                $row['administrator_password']);
         if (!$bind) {
             error_log("[caricaAdministratorDaStmt] impossibile" .
                     " effettuare il binding in output");
