@@ -304,8 +304,8 @@ class AdministratorController extends BaseController {
                     // dobbiamo mostrare le informazioni
                     case 'a_modifica':
                         $models = ModelFactory::instance()->getModelsPerAdministrator($user);
-                        if (isset($request['model'])) {
-                            $intVal = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+                        if (isset($request['appello'])) {
+                            $intVal = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
                                 $mod_model = $this->cercaModelloPerId($intVal, $models);
                                 $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
@@ -318,8 +318,8 @@ class AdministratorController extends BaseController {
                     // salvataggio delle modifiche ad un model esistente
                     case 'a_salva':
                         $msg = array();
-                        if (isset($request['model'])) {
-                            $intVal = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+                        if (isset($request['appello'])) {
+                            $intVal = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
                                 $mod_model = $this->cercaModelloPerId($intVal, $models);
                                 $this->updateModello($mod_model, $request, $msg);
@@ -728,9 +728,9 @@ class AdministratorController extends BaseController {
      * @return Modello model selezionato, null se non e' stato trovato
      */
     private function getModello(&$request, &$msg) {
-        if (isset($request['model'])) {
-            $model_id = filter_var($request['model'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-            $model = ModelFactory::instance()->cercaModelloPerId($model_id);
+        if (isset($request['appello'])) {
+            $model_id = filter_var($request['appello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+            $model = ModelFactory::instance()->cercaModelPerId($model_id);
             if ($model == null) {
                 $msg[] = "Il modello selezionato non &egrave; corretto</li>";
             }

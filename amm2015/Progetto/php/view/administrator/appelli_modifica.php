@@ -1,19 +1,15 @@
 <div class="input-form">
-    <h3>Modifica appello</h3>
+    <h3>Edit model</h3>
     <form method="post" action="administrator/appelli_modifica<?= $vd->scriviToken('?')?>">
-        <input type="hidden" name="appello" value="<?= $mod_appello->getId() ?>"/>
-        <label for="insegnamento">Insegnamento</label>
-        <select name="insegnamento" id="insegnamento">
-            <?php foreach ($insegnamenti as $insegnamento) { ?>
-                <option value="<?= $insegnamento->getCodice() ?>" <?= $mod_appello->getInsegnamento()->equals($insegnamento) ? 'selected' : '' ?>><?= $insegnamento->getTitolo() ?></option>
-            <?php } ?>
-        </select>
+        <input type="hidden" name="appello" value="<?= $mod_model->getId() ?>"/>
+        <label for="data">Date</label>
+        <input type="text" name="data" id="data" value="<?= $mod_model->getData()->format('d/m/Y') ?>"/>
         <br/>
-        <label for="data">Data</label>
-        <input type="text" name="data" id="data" value="<?= $mod_appello->getData()->format('d/m/Y') ?>"/>
+        <label for="posti">Dimension</label>
+        <input type="text" name="posti" id="posti" value="<?= $mod_model->getDimensione() ?>"/>
         <br/>
-        <label for="data">Capienza</label>
-        <input type="text" name="posti" id="posti" value="<?= $mod_appello->getCapienza() ?>"/>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<?= $mod_model->getNome() ?>"/>
         <br/>
         <div class="btn-group">
             <button type="submit" name="cmd" value="a_salva">Salva</button>

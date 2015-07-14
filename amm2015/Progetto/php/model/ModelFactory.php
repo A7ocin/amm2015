@@ -42,6 +42,8 @@ class ModelFactory {
                models.dimensione models_dimensione,
                models.nome models_nome
                
+               from models
+               
                where models.id = ?";
         $mysqli = Db::getInstance()->connectDb();
         if (!isset($mysqli)) {
@@ -67,7 +69,7 @@ class ModelFactory {
             return $models;
         }
 
-        $models =  self::caricaAppelliDaStmt($stmt);
+        $models =  self::caricaModelliDaStmt($stmt);
         /*foreach($models as $model){
             self::caricaIscritti($model);
         }*/
@@ -448,7 +450,7 @@ class ModelFactory {
         
     }*/
     
-    public function aggiungiIscrizione(Studente $s, Model $a){
+    /*public function aggiungiIscrizione(Studente $s, Model $a){
         $query = "insert into appelli_studenti (studente_id, appello_id) values (?, ?)";
         return $this->queryIscrizione($s, $a, $query);
     }
@@ -490,7 +492,7 @@ class ModelFactory {
         }
         $mysqli->close();
         return $stmt->affected_rows;
-    }
+    }*/
     
     public function salva(Model $model){
          $query = "update models set 
@@ -498,20 +500,20 @@ class ModelFactory {
                     data = ?,
                     dimensione = ?,
                     nome = ?
+                    
                     where models.id = ?";
         return $this->modificaDB($model, $query);
         
     }
     
     public function nuovo(Model $model){
-        $query = "insert into models (data, nome, dimensione, id)
+        $query = "insert into models (id, data, dimensione, nome)
                   values (?, ?, ?, ?)";
         return $this->modificaDB($model, $query);
     }
     
     public function cancella(Model $model){
-        $query = "delete from models where data = ? and 
-                  nome = ? and dimensione = ? and id = ?";
+        $query = "delete from models where id= ? and data = ? and dimensione = ? and nome = ?";
         return $this->modificaDB($model, $query);
     }
     
@@ -531,17 +533,31 @@ class ModelFactory {
             $mysqli->close();
             return 0;
         }
-
-        if (!$stmt->bind_param('ssii', 
-                $model->getData()->format('Y-m-d'),
-                $model->getNome(),
-                $model->getDimensione(),
-                $model->getId())) {
-            error_log("[modificaDB] impossibile" .
-                    " effettuare il binding in input");
-            $mysqli->close();
-            return 0;
-        }
+		if(strlen(strstr($query, 'update')) <=0){ echo "FUNZIONAAAAAAAAAAAAAAAAAAAAAAAAA";
+			if (!$stmt->bind_param('isis', 
+					$model->getId(),
+					$model->getData()->format('Y-m-d'),
+					$model->getDimensione(),
+					$model->getNome())) {
+				error_log("[modificaDB] impossibile" .
+						" effettuare il binding in input");
+				$mysqli->close();
+				return 0;
+			}
+		}
+		else{echo "QUAAAAAAAAAA";
+			if (!$stmt->bind_param('isisi', 
+					$model->getId(),
+					$model->getData()->format('Y-m-d'),
+					$model->getDimensione(),
+					$model->getNome(),
+					$model->getId())) {
+				error_log("[modificaDB] impossibile" .
+						" effettuare il binding in input");
+				$mysqli->close();
+				return 0;
+			}
+		}
 
         if (!$stmt->execute()) {
             error_log("[modificaDB] impossibile" .
