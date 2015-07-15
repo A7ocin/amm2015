@@ -6,6 +6,7 @@ include_once basename(__DIR__) . '/../model/DipartimentoFactory.php';
 include_once basename(__DIR__) . '/../model/UserFactory.php';
 include_once basename(__DIR__) . '/../model/ModelFactory.php';
 include_once basename(__DIR__) . '/../model/Model.php';
+include_once basename(__DIR__) . '/../model/User.php';
 
 /**
  * Controller che gestisce la modifica dei dati dell'applicazione relativa ai 
@@ -356,6 +357,7 @@ class AdministratorController extends BaseController {
                         $msg = array();
                         $nuovo = new Model();
                         $nuovo->setId(-1);
+                        $nuovo->setUploader($user->getUsername());
                         $this->updateModello($nuovo, $request, $msg);
                         $this->creaFeedbackUtente($msg, $vd, "Modello creato");
                         if (count($msg) == 0) {
@@ -646,6 +648,16 @@ class AdministratorController extends BaseController {
         if (isset($request['name'])) {
             if (!$mod_model->setNome($request['name'])) {
                 $msg[] = "<li>Il nome specificato non &egrave; valido</li>";
+            }
+        }
+        if (isset($request['uploader'])) {
+            if (!$mod_model->setUploader($request['uploader'])) {
+                $msg[] = "<li>L'uploader specificato non &egrave; valido</li>";
+            }
+        }
+        if (isset($request['description'])) {
+            if (!$mod_model->setDescrizione($request['description'])) {
+                $msg[] = "<li>La descrizione specificata non &egrave; valido</li>";
             }
         }
     }

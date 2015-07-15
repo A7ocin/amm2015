@@ -11,6 +11,12 @@
         <label for="name">Name</label>
         <input type="text" name="name" id="name" value="<?= $mod_model->getNome() ?>"/>
         <br/>
+        <label for="uploader">Uploader</label>
+        <input type="text" name="uploader" id="uploader" value="<?= $mod_model->getUploader() ?>"/>
+        <br/>
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description" value="<?= $mod_model->getDescrizione() ?>"/>
+        <br/>
         <div class="btn-group">
             <button type="submit" name="cmd" value="a_salva">Save</button>
             <button type="submit" name="cmd" value="a_annulla">Back</button>

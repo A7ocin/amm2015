@@ -1,46 +1,41 @@
-<h2 id="help" class="icon-title">Istruzioni</h2>
+<h2 id="help" class="icon-title">Help</h2>
 <?php
 switch ($vd->getSottoPagina()) {
     case 'anagrafica':
         ?>
         <p>
-            In questa sezione puoi modificare i tuoi dati personali.
+            In this page you can edit your personal infos, as:
         </p>
         <ul>
             <li>
-                Il tuo <strong>indirizzo</strong> del tuo ufficio.
+                Your <strong>address</strong>.
             </li>
             <li>
-                I tuoi contatti  (<strong>email</strong> e 
-                <strong>orario di ricevimento</strong>).
+                Your <strong>contacts</strong>.
             </li>
             <li>
-                La tua <strong>password</strong>
+                Your <strong>password</strong>.
             </li>
         </ul>
         <?php break; ?>
 
     <?php case 'appelli': ?>
         <p>
-            In questa sezione visualizzare i tuoi appelli d'esame.
-            In particolare:
+            In this page you can view and edit the 3d models' database. You can:
         </p>
         <ul>
             <li>
-                Puoi crearne uno nuovo premendo il pulsante <em>Nuovo</em>.
+                Upload a new 3D model by pressing the button <em>Upload new model</em>.
             </li>
             <li>
-                Puoi modificarne uno esistente premendo il pulsante <em>Modifica</em>, 
-                identificabile dall'icona matita <img  src="../images/edit-action.png" alt="icona modifica">
+                Edit an existing model by pressing the button <em>Edit Model</em>, 
+                (the <img  src="../images/edit-action.png" alt="icona modifica"> icon).
             </li>
             <li>
-                Puoi eliminarne uno esistente premendo il pulsante <em>Elimina</em>, 
-                identificabile dall'icona cestino <img  src="../images/delete-action.png" alt="icona elimina">
+                Delete an existing model by pressing the button <em>Delete Model</em>, 
+                (the <img  src="../images/delete-action.png" alt="icona elimina"> icon).
             </li>
         </ul>
-        <p>Per l'inserimento e la modifica &egrave; necessario specificare
-            solo l'insegnamento, la data ed i posti disponibili. 
-        </p>
         <?php break; ?>
 
     <?php case 'reg_esami': ?>

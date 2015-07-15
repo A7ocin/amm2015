@@ -126,7 +126,7 @@ label{
 /* stile delle tabelle */
 
 table {
-    border: 1px solid #1c345a;
+    border: 1px solid gray;
     border-collapse: collapse;
     margin-top:10px;
     line-height: 1.2em;
@@ -137,13 +137,13 @@ table {
 
 
 th, td {
-    border: 1px solid #1c345a;
+    border: 1px solid darkgray;
     border-collapse: collapse;
     text-align: center;
 }
 
 th{
-    background-color: #1c345a;
+    background-color: gray;
     color: white;
     font-weight: bold;
 }
@@ -181,7 +181,7 @@ tr, td{
 }
 
 tr.alt-row, tr.alt-row td{
-    background-color: #bbc2ce;
+    background-color: #fceac1;
 }
 
 /* decorazioni degli elementi */

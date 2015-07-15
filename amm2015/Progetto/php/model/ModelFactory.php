@@ -40,7 +40,9 @@ class ModelFactory {
                models.id models_id,
                models.data models_data,
                models.dimensione models_dimensione,
-               models.nome models_nome
+               models.nome models_nome,
+               models.uploader models_uploader,
+               models.descrizione models_descrizione
                
                from models
                
@@ -164,7 +166,9 @@ class ModelFactory {
                models.id models_id,
                models.data models_data,
                models.dimensione models_dimensione,
-               models.nome models_nome
+               models.nome models_nome,
+               models.uploader models_uploader,
+               models.descrizione models_descrizione
                
                from models";
         $mysqli = Db::getInstance()->connectDb();
@@ -333,7 +337,9 @@ class ModelFactory {
                 $row['models_id'],
                 $row['models_data'],
                 $row['models_dimensione'],
-                $row['models_nome']);
+                $row['models_nome'],
+                $row['models_uploader'],
+                $row['models_descrizione']);
         if (!$bind) {
             error_log("[caricaInsegnamentoDaStmt] impossibile" .
                     " effettuare il binding in output");
@@ -355,6 +361,8 @@ class ModelFactory {
         $model->setDimensione($row['models_dimensione']);
         $model->setNome($row['models_nome']);
         $model->setData(new DateTime($row['models_data']));
+        $model->setUploader($row['models_uploader']);
+        $model->setDescrizione($row['models_descrizione']);
         return $model;
     }
     
@@ -499,7 +507,9 @@ class ModelFactory {
 					id = ?,
                     data = ?,
                     dimensione = ?,
-                    nome = ?
+                    nome = ?,
+                    uploader = ?,
+                    descrizione = ?
                     
                     where models.id = ?";
         return $this->modificaDB($model, $query);
@@ -507,13 +517,13 @@ class ModelFactory {
     }
     
     public function nuovo(Model $model){
-        $query = "insert into models (id, data, dimensione, nome)
-                  values (?, ?, ?, ?)";
+        $query = "insert into models (id, data, dimensione, nome, uploader, descrizione)
+                  values (?, ?, ?, ?, ?, ?)";
         return $this->modificaDB($model, $query);
     }
     
     public function cancella(Model $model){
-        $query = "delete from models where id= ? and data = ? and dimensione = ? and nome = ?";
+        $query = "delete from models where id= ? and data = ? and dimensione = ? and nome = ? and uploader = ? and descrizione = ?";
         return $this->modificaDB($model, $query);
     }
     
@@ -533,24 +543,28 @@ class ModelFactory {
             $mysqli->close();
             return 0;
         }
-		if(strlen(strstr($query, 'update')) <=0){ 
-			if (!$stmt->bind_param('isis', 
+		if(strlen(strstr($query, 'update')) <=0){ echo "NON UPDATE";
+			if (!$stmt->bind_param('isisss', 
 					$model->getId(),
 					$model->getData()->format('Y-m-d'),
 					$model->getDimensione(),
-					$model->getNome())) {
+					$model->getNome(),
+					$model->getUploader(),
+					$model->getDescrizione())) {
 				error_log("[modificaDB] impossibile" .
 						" effettuare il binding in input");
 				$mysqli->close();
 				return 0;
 			}
 		}
-		else{
-			if (!$stmt->bind_param('isisi', 
+		else{echo "UPDATE";
+			if (!$stmt->bind_param('isisiss', 
 					$model->getId(),
 					$model->getData()->format('Y-m-d'),
 					$model->getDimensione(),
 					$model->getNome(),
+					$model->getUploader(),
+					$model->getDescrizione(),
 					$model->getId())) {
 				error_log("[modificaDB] impossibile" .
 						" effettuare il binding in input");

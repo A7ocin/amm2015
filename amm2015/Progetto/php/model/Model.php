@@ -42,7 +42,9 @@ class Model {
      * @var int
      */
     private $id;
-
+	
+	private $uploader;
+	private $descrizione;
     
     /**
      * Costrutture dell'appello
@@ -158,6 +160,24 @@ class Model {
     
     public function setNome($nome) {
 		$this->nome=$nome;
+		return true;
+	}
+	
+	public function getUploader() {
+        return $this->uploader;
+    }
+    
+    public function setUploader($uploader) {
+		$this->uploader=$uploader;
+		return true;
+	}
+	
+	public function getDescrizione() {
+        return $this->descrizione;
+    }
+    
+    public function setDescrizione($descrizione) {
+		$this->descrizione=$descrizione;
 		return true;
 	}
 

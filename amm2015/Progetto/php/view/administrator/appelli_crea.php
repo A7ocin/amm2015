@@ -11,6 +11,12 @@
         <label for="name">Name</label>
         <input type="text" name="name" id="name"/>
         <br/>
+        <!--<label for="uploader">Uploader</label>
+        <input type="text" name="uploader" id="uploader"/>
+        <br/>-->
+        <label for="description">Description</label>
+        <input type="text" name="description" id="description"/>
+        <br/>
         <div class="btn-group">
             <button type="submit" name="cmd" value="a_nuovo">Save</button>
             <button type="submit" name="cmd" value="a_annulla">Back</button>

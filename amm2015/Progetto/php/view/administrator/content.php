@@ -62,7 +62,7 @@ switch ($vd->getSottoPagina()) {
                     Personal Infos
                 </a>
             </li>
-            <li><a href="administrator/appelli<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">Appelli</a></li>
+            <li><a href="administrator/appelli<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">3d models database</a></li>
             <li><a href="administrator/reg_esami<?= $vd->scriviToken('?')?>" id="pnl-libretto">Registrazione Esami</a></li>
             <li><a href="administrator/el_esami<?= $vd->scriviToken('?')?>" id="pnl-cerca">Elenco Esami</a></li>
         </ul>

@@ -11,8 +11,10 @@
             <tr>
                 <th class="iscrizione-col-small">ID</th>
                 <th class="iscrizione-col-small">Date</th>
-                <th class="iscrizione-col-small">Dimension</th>
+                <th class="iscrizione-col-small">Dimension (Mb)</th>
                 <th class="iscrizione-col-small">Name</th>
+                <th class="iscrizione-col-small">Uploader</th>
+                <th class="iscrizione-col-small">Description</th>
                 <th class="iscrizione-col-small">Edit Model</th>
                 <th class="iscrizione-col-small">Delete Model</th>
             </tr>
@@ -27,6 +29,8 @@
                     <td><?= $model->getData()->format('d/m/Y') ?></td>
                     <td><?= $model->getDimensione() ?></td>
                     <td><?= $model->getNome() ?></td>
+                    <td><?= $model->getUploader() ?></td>
+                    <td><?= $model->getDescrizione() ?></td>
                     <td>
                         <a href="administrator/appelli_modifica?appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Edit Model">
                             <img  src="../images/edit-action.png" alt="Modifica">
