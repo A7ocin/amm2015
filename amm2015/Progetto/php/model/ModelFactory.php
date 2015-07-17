@@ -23,7 +23,7 @@ class ModelFactory {
     
     
     /**
-     * Restiuisce un singleton per creare appelli
+     * Restiuisce un singleton per creare modelli
      * @return \ModelFactory
      */
     public static function instance(){
@@ -543,7 +543,7 @@ class ModelFactory {
             $mysqli->close();
             return 0;
         }
-		if(strlen(strstr($query, 'update')) <=0){ echo "NON UPDATE";
+		if(strlen(strstr($query, 'update')) <=0){ 
 			if (!$stmt->bind_param('isisss', 
 					$model->getId(),
 					$model->getData()->format('Y-m-d'),
@@ -557,7 +557,7 @@ class ModelFactory {
 				return 0;
 			}
 		}
-		else{echo "UPDATE";
+		else{ 
 			if (!$stmt->bind_param('isisiss', 
 					$model->getId(),
 					$model->getData()->format('Y-m-d'),

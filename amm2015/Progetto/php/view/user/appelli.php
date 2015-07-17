@@ -32,12 +32,12 @@
                     <td><?= $model->getUploader() ?></td>
                     <td><?= $model->getDescrizione() ?></td>
                     <td>
-                        <a href="administrator/appelli_modifica?appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Edit Model">
+                        <a href="user/appelli_modifica?appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Edit Model">
                             <img  src="../images/edit-action.png" alt="Modifica">
                         </a>
                     </td>
                     <td>
-                        <a href="administrator/appelli?cmd=a_cancella&appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Delete Model">
+                        <a href="user/appelli?cmd=a_cancella&appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Delete Model">
                             <img  src="../images/delete-action.png" alt="Elimina">
                         </a>
                     </td>
@@ -53,7 +53,7 @@
 <?php } ?>
 <div class="input-form">
 
-    <form method="post" action="administrator/appelli_crea<?= $vd->scriviToken('?') ?>">
+    <form method="post" action="user/appelli_crea<?= $vd->scriviToken('?') ?>">
         <button type="submit"name="cmd" value="a_crea">Upload new model</button>
     </form>
 

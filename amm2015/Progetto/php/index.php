@@ -5,6 +5,8 @@ include_once 'controller/BaseController.php';
 include_once 'controller/StudenteController.php';
 include_once 'controller/DocenteController.php';
 include_once 'controller/AdministratorController.php';
+include_once 'controller/ArtistController.php';
+include_once 'controller/UserController.php';
 
 date_default_timezone_set("Europe/Rome");
 // punto unico di accesso all'applicazione
@@ -64,6 +66,26 @@ class FrontController {
                     $controller = new AdministratorController();
                     if (isset($_SESSION[BaseController::role]) &&
                         $_SESSION[BaseController::role] != User::Administrator)  {
+                        self::write403();
+                    }
+                    $controller->handleInput($request);
+                    break;
+                    
+                // artist
+                case 'artist':
+                    $controller = new ArtistController();
+                    if (isset($_SESSION[BaseController::role]) &&
+                        $_SESSION[BaseController::role] != User::Artist)  {
+                        self::write403();
+                    }
+                    $controller->handleInput($request);
+                    break;
+                    
+                // user
+                case 'user':
+                    $controller = new UserController();
+                    if (isset($_SESSION[BaseController::role]) &&
+                        $_SESSION[BaseController::role] != User::Utente)  {
                         self::write403();
                     }
                     $controller->handleInput($request);

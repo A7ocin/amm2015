@@ -14,7 +14,7 @@ include_once basename(__DIR__) . '/../model/User.php';
  *
  * @author Davide Spano
  */
-class AdministratorController extends BaseController {
+class ArtistController extends BaseController {
 
     const elenco = 'elenco';
 

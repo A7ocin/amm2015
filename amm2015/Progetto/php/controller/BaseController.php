@@ -127,7 +127,7 @@ class BaseController {
     }
     
     protected function showHomeAdministrator($vd) {
-        // mostro la home dei docenti
+        // mostro la home degli admin
         $vd->setTitolo("TTDM - Administrator's page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/administrator/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/administrator/logo.php');
@@ -141,7 +141,7 @@ class BaseController {
      * dell'amministratore
      * @param ViewDescriptor $vd il descrittore della vista
      */
-    protected function showHomeAmministratore($vd) {
+    /*protected function showHomeAmministratore($vd) {
         // mostro la home degli amministratori
 
         $vd->setTitolo("esAMMi - Super User ");
@@ -150,6 +150,26 @@ class BaseController {
         $vd->setLeftBarFile(basename(__DIR__) . '/../view/amministratore/leftBar.php');
         $vd->setRightBarFile(basename(__DIR__) . '/../view/amministratore/rightBar.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/amministratore/content.php');
+    }*/
+    
+    protected function showHomeArtist($vd) {
+        // mostro la home degli artisti
+        $vd->setTitolo("TTDM - Artist's page");
+        $vd->setMenuFile(basename(__DIR__) . '/../view/artist/menu.php');
+        $vd->setLogoFile(basename(__DIR__) . '/../view/artist/logo.php');
+        $vd->setLeftBarFile(basename(__DIR__) . '/../view/artist/leftBar.php');
+        $vd->setRightBarFile(basename(__DIR__) . '/../view/artist/rightBar.php');
+        $vd->setContentFile(basename(__DIR__) . '/../view/artist/content.php');
+    }
+    
+    protected function showHomeUser($vd) {
+        // mostro la home degli user
+        $vd->setTitolo("TTDM - User's page");
+        $vd->setMenuFile(basename(__DIR__) . '/../view/user/menu.php');
+        $vd->setLogoFile(basename(__DIR__) . '/../view/user/logo.php');
+        $vd->setLeftBarFile(basename(__DIR__) . '/../view/user/leftBar.php');
+        $vd->setRightBarFile(basename(__DIR__) . '/../view/user/rightBar.php');
+        $vd->setContentFile(basename(__DIR__) . '/../view/user/content.php');
     }
 
     /**
@@ -173,6 +193,14 @@ class BaseController {
                 
             case User::Administrator:
                 $this->showHomeAdministrator($vd);
+                break;
+                
+            case User::Artist:
+                $this->showHomeArtist($vd);
+                break;
+                
+            case User::Utente:
+                $this->showHomeUser($vd);
                 break;
         }
     }

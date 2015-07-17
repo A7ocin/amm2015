@@ -20,6 +20,15 @@ class User {
      */
     const Administrator = 3;
 
+	/**
+     * Costante che definisce il ruolo artist
+     */
+    const Artist = 4;
+    
+    /**
+     * Costante che definisce il ruolo utente
+     */
+    const Utente = 5;
     
     /**
      * Username per l'autenticazione
@@ -128,7 +137,7 @@ class User {
     public function setUsername($username) {
         // utilizzo la funzione filter var specificando un'espressione regolare
         // che implementa la validazione personalizzata
-        if (!filter_var($username, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/[a-zA-Z]{5,}/')))) {
+        if (!filter_var($username, FILTER_VALIDATE_REGEXP, array('options' => array('regexp' => '/[a-zA-Z]{4,}/')))) {
             return false;
         }
         $this->username = $username;
@@ -211,6 +220,8 @@ class User {
             case self::Docente:
             case self::Studente:
             case self::Administrator:
+            case self::Artist:
+            case self::Utente:
                 $this->ruolo = $ruolo;
                 return true;
             default:

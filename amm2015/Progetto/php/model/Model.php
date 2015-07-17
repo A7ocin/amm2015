@@ -4,15 +4,15 @@ include_once 'Studente.php';
 include_once 'Insegnamento.php';
 
 /**
- * Rappresenta un appello di esame, che viene pubblicato da un Docente per
- * un Insegnamento. Uno Studente puo' iscriversi ad ad un appello.
+ * Rappresenta un modello di esame, che viene pubblicato da un Docente per
+ * un Insegnamento. Uno Studente puo' iscriversi ad ad un modello.
  *
  * @author Nicola Garau
  */
 class Model {
 
     /**
-     * La data dell'appello
+     * La data dell'modello
      * @var DateTime 
      */
     private $data;
@@ -26,19 +26,19 @@ class Model {
     private $iscritti;
     
     /**
-     * L'insegnamento oggetto dell'appello
+     * L'insegnamento oggetto dell'modello
      * @var Insegnamento 
      */
     private $insegnamento;
     
     /**
-     * Quanti studenti si possono iscrivere al massimo per questo appello
+     * Quanti studenti si possono iscrivere al massimo per questo modello
      * @var int
      */
     private $dimensione;
     
     /**
-     * Identificatore dell'appello
+     * Identificatore dell'modello
      * @var int
      */
     private $id;
@@ -47,14 +47,14 @@ class Model {
 	private $descrizione;
     
     /**
-     * Costrutture dell'appello
+     * Costrutture dell'modello
      */
     public function __construct() {
         $this->iscritti = array();
     }
 
     /**
-     * Restituisce l'indentificatore dell'appello
+     * Restituisce l'indentificatore dell'modello
      * @return int
      */
     public function getId() {
@@ -63,7 +63,7 @@ class Model {
 
     /**
      * Modifica il valore dell'identificatore 
-     * @param int $id il nuovo id per l'appello
+     * @param int $id il nuovo id per l'modello
      * @return boolean true se il valore e' stato modificato, 
      *                 false altrimenti
      */
@@ -77,7 +77,7 @@ class Model {
     }
 
     /**
-     * Restituisce la data dell'appello
+     * Restituisce la data dell'modello
      * @return DateTime
      */
     public function getData() {
@@ -85,7 +85,7 @@ class Model {
     }
 
     /**
-     * Modifica il valore della data dell'appello
+     * Modifica il valore della data dell'modello
      * @param DateTime $data il nuovo valore della data
      * @return boolean true se il nuovo valore della data e' stato impostato,
      * false nel caso il valore non sia ammissibile
@@ -97,7 +97,7 @@ class Model {
 
     
     /**
-     * Iscrive uno studente ad un appello
+     * Iscrive uno studente ad un modello
      * @param Studente $studente lo studente da iscrivere
      * @return boolean true se l'iscrizione e' andata a buon fine, false altrimenti
      */
@@ -110,7 +110,7 @@ class Model {
     }
 
     /**
-     * Rimuove l'iscrizione di uno studente dall'appello
+     * Rimuove l'iscrizione di uno studente dall'modello
      * @param Studente $studente lo studente da cancellare
      * @return boolean true se l'iscrizione e' stata cancellata, false altrimenti
      * es. quando lo studente non era stato iscritto precedentemente
@@ -143,7 +143,7 @@ class Model {
     }
 
     /**
-     * Restituisce il numero massimo di iscritti per l'appello
+     * Restituisce il numero massimo di iscritti per l'modello
      * @return int
      */
     public function getDimensione() {
@@ -182,7 +182,7 @@ class Model {
 	}
 
     /**
-     * Modifica il valore massimo per il numero di iscritti all'appello
+     * Modifica il valore massimo per il numero di iscritti all'modello
      * @param int $dimensione la nuova dimensione del corso
      * @return boolean true se il valore e' stato impostato correttamente, false
      * altrimenti (per esempio se ci sono gia' piu' iscritti del valore passato)
@@ -200,7 +200,7 @@ class Model {
     }
 
     /**
-     * Restiuisce il numero di posti ancora disponibili per l'appello
+     * Restiuisce il numero di posti ancora disponibili per l'modello
      * @return int 
      */
     public function getPostiLiberi() {
@@ -222,7 +222,7 @@ class Model {
     }
 
     /**
-     * Restituisce l'insegnamento per l'appello
+     * Restituisce l'insegnamento per l'modello
      * @return Insegnamento
      */
     public function getInsegnamento() {
@@ -230,7 +230,7 @@ class Model {
     }
 
     /**
-     * Imposta l'insegnamento per l'appello
+     * Imposta l'insegnamento per l'modello
      * @param Insegnamento $insegnamento il nuovo insegnamento
      */
     public function setInsegnamento(Insegnamento $insegnamento) {

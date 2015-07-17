@@ -1,7 +1,7 @@
 <div class="input-form">
     <h2 class="icon-title" id="h-personali">Personal Infos</h2>
     <ul class="none">
-        <li><strong>Name:</strong> <?= $user->getUsername() ?></li>
+        <li><strong>Name:</strong> <?= $user->getNome() ?></li>
         <li><strong>Surname:</strong> <?= $user->getCognome() ?></li>
     </ul>
 </div>
@@ -9,7 +9,7 @@
 <div class="input-form">
     <h3>Ufficio</h3>
 
-    <form method="post" action="administrator/anagrafica<?= '?'.$vd->scriviToken()?>">
+    <form method="post" action="artist/anagrafica<?= '?'.$vd->scriviToken()?>">
         <input type="hidden" name="cmd" value="ufficio"/>
         <label for="via">Residence address :</label>
         <input type="text" name="via" id="via" value="<?= $user->getVia() ?>"/>
@@ -33,7 +33,7 @@
 <div class="input-form">
     <h3>Contacts :</h3>
 
-    <form method="post" action="administrator/anagrafica<?=$vd->scriviToken('?')?>">
+    <form method="post" action="artist/anagrafica<?=$vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="contatti"/>
         <label for="email">Email :</label>
         <input type="text" name="email" id="email"value="<?= $user->getEmail() ?>"/>
@@ -44,7 +44,7 @@
 
 <div class="input-form">
     <h3>Password</h3>
-    <form method="post" action="administrator/anagrafica<?= $vd->scriviToken('?')?>">
+    <form method="post" action="artist/anagrafica<?= $vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="password"/>
         <label for="pass1">New Password :</label>
         <input type="password" name="pass1" id="pass1"/>

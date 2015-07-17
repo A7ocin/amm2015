@@ -11,7 +11,7 @@
         }
         ?>
     </ol>
-    <form method="get" action="administrator/modelli<?= $vd->scriviToken('?')?>">
+    <form method="get" action="artist/appelli<?= $vd->scriviToken('?')?>">
         <button type="submit" name="cmd" value="a_annulla">Chiudi</button>
     </form>
 

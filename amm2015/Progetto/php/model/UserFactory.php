@@ -4,6 +4,8 @@ include_once 'User.php';
 include_once 'Docente.php';
 include_once 'Studente.php';
 include_once 'Administrator.php';
+include_once 'Artist.php';
+include_once 'Utente.php';
 include_once 'CorsoDiLaureaFactory.php';
 include_once 'DipartimentoFactory.php';
 
@@ -48,7 +50,7 @@ class UserFactory {
             return null;
         }
 
-        // cerco prima nella tabella studenti
+        /*// cerco prima nella tabella studenti
         $query = "select studenti.id studenti_id,
             studenti.nome studenti_nome,
             studenti.cognome studenti_cognome,
@@ -138,7 +140,7 @@ class UserFactory {
             // ho trovato un docente
             $mysqli->close();
             return $docente;
-        }
+        }*/
         
         // ora cerco un admin
         $query = "select 
@@ -176,9 +178,85 @@ class UserFactory {
 		
         $administrator = self::caricaAdministratorDaStmt($stmt);
         if (isset($administrator)) {
-            // ho trovato un docente
+            // ho trovato un admin
             $mysqli->close();
             return $administrator;
+        }
+        
+        //ora cerco un artista
+        $query = "select 
+               artist.username artist_username,
+               artist.password artist_password,
+               artist.nome artist_nome,
+               artist.cognome artist_cognome,
+               artist.email artist_email,
+               artist.citta artist_citta,
+               artist.id artist_id,
+               artist.eta artist_eta,
+               artist.caricamenti artist_caricamenti,
+               artist.descrizione_personale artist_descrizione_personale
+               
+               from artist 
+               
+               where artist.username = ? and artist.password = ?";
+
+        $stmt = $mysqli->stmt_init();
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[loadUser] impossibile" .
+                    " inizializzare il prepared statement");
+            $mysqli->close();
+            return null;
+        }
+
+        if (!$stmt->bind_param('ss', $username, $password)) {
+            error_log("[loadUser] impossibile" .
+                    " effettuare il binding in input");
+            $mysqli->close();
+            return null;
+        }
+		
+        $artist = self::caricaArtistDaStmt($stmt);
+        if (isset($artist)) {
+            // ho trovato un artista
+            $mysqli->close();
+            return $artist;
+        }
+        
+        //pra cerco un utente
+        $query = "select 
+               user.username user_username,
+               user.password user_password,
+               user.email user_email,
+               user.citta user_citta,
+               user.id user_id,
+               user.eta user_eta
+               
+               from user 
+               
+               where user.username = ? and user.password = ?";
+
+        $stmt = $mysqli->stmt_init();
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[loadUser] impossibile" .
+                    " inizializzare il prepared statement");
+            $mysqli->close();
+            return null;
+        }
+
+        if (!$stmt->bind_param('ss', $username, $password)) {
+            error_log("[loadUser] impossibile" .
+                    " effettuare il binding in input");
+            $mysqli->close();
+            return null;
+        }
+		
+        $user = self::caricaUserDaStmt($stmt);echo $user->getUsername();
+        if (isset($user)) {
+            // ho trovato un utente
+            $mysqli->close();
+            return $user;
         }
     }
 
@@ -465,6 +543,78 @@ class UserFactory {
                 $mysqli->close();
                 return $toRet;
                 break;
+                
+            case User::Artist: 
+                $query = "select 
+               artist.username artist_username,
+               artist.password artist_password,
+               artist.nome artist_nome,
+               artist.cognome artist_cognome,
+               artist.email artist_email,
+               artist.citta artist_citta,
+               artist.id artist_id,
+               artist.eta artist_eta,
+               artist.caricamenti artist_caricamenti,
+               artist.descrizione_personale artist_descrizione_personale
+               
+               from artist 
+               
+               where artist.id = ?";
+
+                $stmt = $mysqli->stmt_init();
+                $stmt->prepare($query);
+                if (!$stmt) {
+                    error_log("[cercaUtentePerId] impossibile" .
+                            " inizializzare il prepared statement");
+                    $mysqli->close();
+                    return null;
+                }
+
+                if (!$stmt->bind_param('i', $intval)) {
+                    error_log("[loadUser] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return null;
+                }
+
+                $toRet =  self::caricaArtistDaStmt($stmt);
+                $mysqli->close();
+                return $toRet;
+                break;
+                
+            case User::Utente: 
+                $query = "select 
+               user.username user_username,
+               user.password user_password,
+               user.email user_email,
+               user.citta user_citta,
+               user.id user_id,
+               user.eta user_eta
+               
+               from user 
+               
+               where user.id = ?";
+
+                $stmt = $mysqli->stmt_init();
+                $stmt->prepare($query);
+                if (!$stmt) {
+                    error_log("[cercaUtentePerId] impossibile" .
+                            " inizializzare il prepared statement");
+                    $mysqli->close();
+                    return null;
+                }
+
+                if (!$stmt->bind_param('i', $intval)) {
+                    error_log("[loadUser] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return null;
+                }
+
+                $toRet =  self::caricaUserDaStmt($stmt);
+                $mysqli->close();
+                return $toRet;
+                break;
 
             case User::Docente:
                 $query = "select 
@@ -580,6 +730,37 @@ class UserFactory {
 
         return $administrator;
     }
+    
+    public function creaUserDaArray($row) {
+        $utente = new Utente();
+        $utente->setUsername($row['user_username']);
+        $utente->setPassword($row['user_password']);
+        $utente->setEmail($row['user_email']);
+        $utente->setCitta($row['user_citta']);
+        $utente->setId($row['user_id']);
+        $utente->setEta($row['user_eta']);
+        $utente->setRuolo(User::Utente);
+
+        return $utente;
+    }
+    
+    public function creaArtistaDaArray($row) {
+        $artist = new Artist();
+        $artist->setUsername($row['artist_username']);
+        $artist->setPassword($row['artist_password']);
+        $artist->setNome($row['artist_nome']);
+        $artist->setCognome($row['artist_cognome']);
+        $artist->setEmail($row['artist_email']);
+        $artist->setCap($row['artist_citta']);
+        $artist->setId($row['artist_id']);
+        
+        $artist->setEta($row['artist_citta']);
+        $artist->setCaricamenti($row['artist_caricamenti']);
+        $artist->setDescrizionePersonale($row['artist_descrizione_personale']);
+        $artist->setRuolo(User::Artist);
+
+        return $artist;
+    }
 
     /**
      * Salva i dati relativi ad un utente sul db
@@ -604,7 +785,13 @@ class UserFactory {
                 $count = $this->salvaDocente($user, $stmt);
                 break;
             case User::Administrator:
-                $count = $this->salvaAdministrator($user, $stmt);
+                $count = $this->salvaAdministrator($user, $stmt); 
+                break;
+            case User::Artist:
+                $count = $this->salvaArtist($user, $stmt);
+                break;
+            case User::Utente:
+                $count = $this->salvaUtente($user, $stmt);
         }
 
         $stmt->close();
@@ -754,6 +941,86 @@ class UserFactory {
 
         return $stmt->affected_rows;
     }
+    
+    private function salvaArtist(Artist $a, mysqli_stmt $stmt) {
+        $query = " update artist set 
+                    password = ?,
+                    nome = ?,
+                    cognome = ?,
+                    email = ?,
+                    citta = ?,
+                    eta = ?,
+                    caricamenti = ?,
+                    descrizione_personale = ?
+                    
+                    where artist.id = ?
+                    ";
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[salvaArtist] impossibile" .
+                    " inizializzare il prepared statement");
+            return 0;
+        }
+
+        if (!$stmt->bind_param('sssssissi', 
+                $a->getPassword(), 
+                $a->getNome(), 
+                $a->getCognome(), 
+                $a->getEmail(), 
+                $a->getCitta(),
+                $a->getEta(),
+                $a->getCaricamenti(), 
+                $a->getDescrizionePersonale(),  
+                $a->getId())) {
+            error_log("[salvaArtist] impossibile" .
+                    " effettuare il binding in input");
+            return 0;
+        }
+
+        if (!$stmt->execute()) {
+            error_log("[caricaIscritti] impossibile" .
+                    " eseguire lo statement");
+            return 0;
+        }
+
+        return $stmt->affected_rows;
+    }
+    
+    private function salvaUtente(Utente $u, mysqli_stmt $stmt) {
+        $query = " update user set 
+                    password = ?,
+                    email = ?,
+                    citta = ?,
+                    eta = ?
+                    
+                    where user.id = ?
+                    ";
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[salvaUtente] impossibile" .
+                    " inizializzare il prepared statement");
+            return 0;
+        }
+
+        if (!$stmt->bind_param('sssii', 
+                $u->getPassword(),
+                $u->getEmail(), 
+                $u->getCitta(),
+                $u->getEta(), 
+                $u->getId())) {
+            error_log("[salvaArtist] impossibile" .
+                    " effettuare il binding in input");
+            return 0;
+        }
+
+        if (!$stmt->execute()) {
+            error_log("[caricaIscritti] impossibile" .
+                    " eseguire lo statement");
+            return 0;
+        }
+
+        return $stmt->affected_rows;
+    }
 
     /**
      * Carica un docente eseguendo un prepared statement
@@ -833,6 +1100,72 @@ class UserFactory {
         $stmt->close();
 
         return self::creaAdministratorDaArray($row);
+    }
+    
+    private function caricaUserDaStmt(mysqli_stmt $stmt) {
+
+        if (!$stmt->execute()) {
+            error_log("[caricaAdministratorDaStmt] impossibile" .
+                    " eseguire lo statement");
+            return null;
+        }
+
+        $row = array();
+        $bind = $stmt->bind_result(
+                $row['user_username'], 
+                $row['user_password'],
+                $row['user_email'], 
+                $row['user_citta'],
+                $row['user_id'],
+                $row['user_eta']);
+        if (!$bind) {
+            error_log("[caricaUserDaStmt] impossibile" .
+                    " effettuare il binding in output");
+            return null;
+        }
+
+        if (!$stmt->fetch()) {
+            return null;
+        }
+
+        $stmt->close();
+
+        return self::creaUserDaArray($row);
+    }
+    
+    private function caricaArtistDaStmt(mysqli_stmt $stmt) {
+
+        if (!$stmt->execute()) {
+            error_log("[caricaArtistDaStmt] impossibile" .
+                    " eseguire lo statement");
+            return null;
+        }
+
+        $row = array();
+        $bind = $stmt->bind_result( 
+                $row['artist_username'],
+                $row['artist_password'],
+                $row['artist_nome'], 
+                $row['artist_cognome'], 
+                $row['artist_email'], 
+                $row['artist_citta'],
+                $row['artist_id'],
+                $row['artist_eta'],
+                $row['artist_caricamenti'],
+                $row['artist_descrizione_personale']);
+        if (!$bind) {
+            error_log("[caricaArtistDaStmt] impossibile" .
+                    " effettuare il binding in output");
+            return null;
+        }
+
+        if (!$stmt->fetch()) {
+            return null;
+        }
+
+        $stmt->close();
+
+        return self::creaArtistaDaArray($row);
     }
 
     /**
