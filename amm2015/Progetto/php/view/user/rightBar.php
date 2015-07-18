@@ -8,7 +8,7 @@ switch ($vd->getSottoPagina()) {
         </p>
         <ul>
             <li>
-                Your <strong>address</strong>.
+                Your <strong>generic infos</strong>.
             </li>
             <li>
                 Your <strong>contacts</strong>.

@@ -1,5 +1,5 @@
 <h2 class="icon-title" id="h-iscrizione">3d models database</h2>
-<h4>Admin's infos</h1>
+<h4>Artist's infos</h1>
 <ul class="none">
     <li><strong>Name:</strong> <?= $user->getNome() ?></li>
     <li><strong>Surname:</strong> <?= $user->getCognome() ?></li>
@@ -15,8 +15,6 @@
                 <th class="iscrizione-col-small">Name</th>
                 <th class="iscrizione-col-small">Uploader</th>
                 <th class="iscrizione-col-small">Description</th>
-                <th class="iscrizione-col-small">Edit Model</th>
-                <th class="iscrizione-col-small">Delete Model</th>
             </tr>
         </thead>
         <tbody>
@@ -31,16 +29,6 @@
                     <td><?= $model->getNome() ?></td>
                     <td><?= $model->getUploader() ?></td>
                     <td><?= $model->getDescrizione() ?></td>
-                    <td>
-                        <a href="user/appelli_modifica?appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Edit Model">
-                            <img  src="../images/edit-action.png" alt="Modifica">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="user/appelli?cmd=a_cancella&appello=<?= $model->getId() ?><?= $vd->scriviToken('&') ?>" title="Delete Model">
-                            <img  src="../images/delete-action.png" alt="Elimina">
-                        </a>
-                    </td>
                 </tr>
                 <?php
                 $i++;
@@ -51,11 +39,4 @@
 <?php } else { ?>
     <p>Empty database</p>
 <?php } ?>
-<div class="input-form">
-
-    <form method="post" action="user/appelli_crea<?= $vd->scriviToken('?') ?>">
-        <button type="submit"name="cmd" value="a_crea">Upload new model</button>
-    </form>
-
-</div>
 

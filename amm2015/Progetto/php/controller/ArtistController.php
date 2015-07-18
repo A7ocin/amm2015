@@ -62,7 +62,7 @@ class ArtistController extends BaseController {
 
                     // inserimento di una lista di modelli
                     case 'modelli':
-                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $models = ModelFactory::instance()->getModelsPerArtist($user);
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         $vd->setSottoPagina('modelli');
                         break;

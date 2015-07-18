@@ -1,6 +1,6 @@
 <div class="input-form">
     <h3>Insert 3D model</h3>
-    <form method="post" action="artist/appelli_crea<?= $vd->scriviToken('?')?>">
+    <form method="post" action="user/modelli_crea<?= $vd->scriviToken('?')?>">
         <input type="hidden" name="cmd" value="a_nuovo"/>
         <label for="data">Date</label>
         <input type="text" name="data" id="data"/>

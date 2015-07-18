@@ -7,7 +7,7 @@
 </div>
 
 <div class="input-form">
-    <h3>Ufficio</h3>
+    <h3>Generic Infos</h3>
 
     <form method="post" action="artist/anagrafica<?= '?'.$vd->scriviToken()?>">
         <input type="hidden" name="cmd" value="ufficio"/>

@@ -8,6 +8,8 @@ include_once 'Studente.php';
 include_once 'Docente.php';
 include_once 'User.php';
 include_once 'Administrator.php';
+include_once 'Artist.php';
+include_once 'Utente.php';
 
 /**
  * Classe per creare oggetti di tipo Modello
@@ -182,6 +184,92 @@ class ModelFactory {
         $stmt->prepare($query);
         if (!$stmt) {
             error_log("[getModelsPerAdministrator] impossibile" .
+                    " inizializzare il prepared statement");
+            $mysqli->close();
+            return null;
+        }
+
+        /*if (!$stmt->bind_param('i', $admin->getId())) {
+            error_log("[getAppelliPerDocente] impossibile" .
+                    " effettuare il binding in input");
+            $mysqli->close();
+            return null;
+        }*/
+
+        $models =  self::caricaModelliDaStmt($stmt);
+        /*foreach($models as $model){
+            self::caricaIscritti($model);
+        }*/
+        $mysqli->close();
+        return $models;
+    }
+    
+    public function &getModelsPerArtist(Artist $artist) {
+       $models = array();
+        
+        $query = "select 
+               models.id models_id,
+               models.data models_data,
+               models.dimensione models_dimensione,
+               models.nome models_nome,
+               models.uploader models_uploader,
+               models.descrizione models_descrizione
+               
+               from models";
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[getModelsPerArtist] impossibile inizializzare il database");
+            $mysqli->close();
+            return $models;
+        }
+        
+        $stmt = $mysqli->stmt_init();
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[getModelsPerArtist] impossibile" .
+                    " inizializzare il prepared statement");
+            $mysqli->close();
+            return null;
+        }
+
+        /*if (!$stmt->bind_param('i', $admin->getId())) {
+            error_log("[getAppelliPerDocente] impossibile" .
+                    " effettuare il binding in input");
+            $mysqli->close();
+            return null;
+        }*/
+
+        $models =  self::caricaModelliDaStmt($stmt);
+        /*foreach($models as $model){
+            self::caricaIscritti($model);
+        }*/
+        $mysqli->close();
+        return $models;
+    }
+    
+    public function &getModelsPerUser(Utente $utente) {
+       $models = array();
+        
+        $query = "select 
+               models.id models_id,
+               models.data models_data,
+               models.dimensione models_dimensione,
+               models.nome models_nome,
+               models.uploader models_uploader,
+               models.descrizione models_descrizione
+               
+               from models";
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[getModelsPerUsers] impossibile inizializzare il database");
+            $mysqli->close();
+            return $models;
+        }
+        
+        $stmt = $mysqli->stmt_init();
+        $stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[getModelsPerUser] impossibile" .
                     " inizializzare il prepared statement");
             $mysqli->close();
             return null;

@@ -2,3 +2,17 @@
 <p>
     From this page you can login into your account. Please inert your username and password.
 </p>
+<p>
+    These are the three categories of users currently available (with examples of credentials):
+    <ul>
+            <li>
+                <strong>Administrator</strong>: username: nicola, password: garau
+            </li>
+            <li>
+                <strong>Artist</strong>
+            </li>
+            <li>
+                <strong>User</strong>
+            </li>
+        </ul>
+</p>

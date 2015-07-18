@@ -4,18 +4,18 @@ switch ($vd->getSottoPagina()) {
         include 'anagrafica.php';
         break;
 
-    case 'appelli':
-        include 'appelli.php';
+    case 'modelli':
+        include 'modelli.php';
         break;
     
-    case 'appelli_modifica':
-        include 'appelli.php';
-        include 'appelli_modifica.php';
+    case 'modelli_modifica':
+        include 'modelli.php';
+        include 'modelli_modifica.php';
         break;
     
-    case 'appelli_crea':
-        include 'appelli.php';
-        include 'appelli_crea.php';
+    case 'modelli_crea':
+        include 'modelli.php';
+        include 'modelli_crea.php';
         break;
     
     case 'appelli_iscritti':
@@ -62,7 +62,7 @@ switch ($vd->getSottoPagina()) {
                     Personal Infos
                 </a>
             </li>
-            <li><a href="user/appelli<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">3d models database</a></li>
+            <li><a href="user/modelli<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">3d models database</a></li>
             <li><a href="user/reg_esami<?= $vd->scriviToken('?')?>" id="pnl-libretto">Registrazione Esami</a></li>
             <li><a href="user/el_esami<?= $vd->scriviToken('?')?>" id="pnl-cerca">Elenco Esami</a></li>
         </ul>
