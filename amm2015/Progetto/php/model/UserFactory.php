@@ -252,7 +252,7 @@ class UserFactory {
             return null;
         }
 		
-        $user = self::caricaUserDaStmt($stmt);echo $user->getUsername();
+        $user = self::caricaUserDaStmt($stmt);
         if (isset($user)) {
             // ho trovato un utente
             $mysqli->close();
@@ -751,7 +751,7 @@ class UserFactory {
         $artist->setNome($row['artist_nome']);
         $artist->setCognome($row['artist_cognome']);
         $artist->setEmail($row['artist_email']);
-        $artist->setCap($row['artist_citta']);
+        $artist->setCitta($row['artist_citta']);
         $artist->setId($row['artist_id']);
         
         $artist->setEta($row['artist_citta']);
@@ -792,6 +792,7 @@ class UserFactory {
                 break;
             case User::Utente:
                 $count = $this->salvaUtente($user, $stmt);
+                break;
         }
 
         $stmt->close();
@@ -1008,7 +1009,7 @@ class UserFactory {
                 $u->getCitta(),
                 $u->getEta(), 
                 $u->getId())) {
-            error_log("[salvaArtist] impossibile" .
+            error_log("[salvaUtente] impossibile" .
                     " effettuare il binding in input");
             return 0;
         }

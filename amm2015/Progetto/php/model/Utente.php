@@ -53,6 +53,7 @@ class Utente extends User {
 
     public function setEta($eta) {
         $this->eta = $eta;
+        return true;
     }
 
     /**

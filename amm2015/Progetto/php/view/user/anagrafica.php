@@ -1,4 +1,11 @@
 <div class="input-form">
+    <h2 class="icon-title" id="h-personali">Personal Infos</h2>
+    <ul class="none">
+        <li><strong>Userame:</strong> <?= $user->getUsername() ?></li>
+    </ul>
+</div>
+
+<div class="input-form">
     <h3>Generic infos</h3>
 
     <form method="post" action="user/anagrafica<?= '?'.$vd->scriviToken()?>">

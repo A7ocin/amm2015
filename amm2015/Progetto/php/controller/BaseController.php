@@ -290,6 +290,21 @@ class BaseController {
                 $msg[] = '<li>Il CAP specificato non &egrave; corretto</li>';
             }
         }
+        if (isset($request['eta'])) {
+            if (!$user->setEta($request['eta'])) {
+                $msg[] = '<li>L eta specificata non &egrave; corretta</li>';
+            }
+        }
+        if (isset($request['caricamenti'])) {
+            if (!$user->setCaricamenti($request['caricamenti'])) {
+                $msg[] = '<li>I caricamenti specificati non sono corretti</li>';
+            }
+        }
+        if (isset($request['descrizione_personale'])) {
+            if (!$user->setDescrizionePersonale($request['descrizione_personale'])) {
+                $msg[] = '<li>La descrizione personale specificata non &egrave; corretta</li>';
+            }
+        }
 
         // salviamo i dati se non ci sono stati errori
         if (count($msg) == 0) {

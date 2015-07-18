@@ -11,20 +11,14 @@
 
     <form method="post" action="artist/anagrafica<?= '?'.$vd->scriviToken()?>">
         <input type="hidden" name="cmd" value="ufficio"/>
-        <label for="via">Residence address :</label>
-        <input type="text" name="via" id="via" value="<?= $user->getVia() ?>"/>
-        <br>
-        <label for="civico">Address number :</label>
-        <input type="text" name="civico" id="civico" value="<?= $user->getNumeroCivico() ?>"/>
-        <br/>
         <label for="citta">City :</label>
         <input type="text" name="citta" id="citta" value="<?= $user->getCitta() ?>"/>
         <br/>
-        <label for="provincia">Disctrict :</label>
-        <input type="text" name="provincia" id="provincia" value="<?= $user->getProvincia() ?>"/>
+        <label for="caricamenti">Number of uploads :</label>
+        <input type="text" name="caricamenti" id="caricamenti" value="<?= $user->getCaricamenti() ?>"/>
         <br/>
-        <label for="cap">Zip code :</label>
-        <input type="text" name="cap" id="cap" value="<?= $user->getCap() ?>"/>
+        <label for="descrizione_personale">Description :</label>
+        <input type="text" name="descrizione_personale" id="descrizione_personale" value="<?= $user->getDescrizionePersonale() ?>"/>
         <br/>
         <input type="submit" value="Save"/>
 

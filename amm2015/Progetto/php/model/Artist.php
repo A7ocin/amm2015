@@ -56,6 +56,7 @@ class Artist extends User {
 
     public function setEta($eta) {
         $this->eta = $eta;
+        return true;
     }
     
     public function getCaricamenti() {
@@ -64,6 +65,7 @@ class Artist extends User {
 
     public function setCaricamenti($caricamenti) {
         $this->caricamenti = $caricamenti;
+        return true;
     }
     
     public function getDescrizionePersonale() {
@@ -72,6 +74,7 @@ class Artist extends User {
 
     public function setDescrizionePersonale($descrizione_personale) {
         $this->descrizione_personale = $descrizione_personale;
+        return true;
     }
 
     /**
