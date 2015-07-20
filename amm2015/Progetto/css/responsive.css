@@ -1,8 +1,9 @@
 /* impostazioni principali del layout */
-
+@import url('http://fonts.googleapis.com/css?family=Roboto');
+@import url('http://fonts.googleapis.com/css?family=Jura');
 body{
     background-color: #596666;
-    font: 13px/20px "Open Sans", Arial, sans-serif;
+    font: 15px/25px "Jura", Arial, sans-serif;
 }
 
 #page{
@@ -32,7 +33,7 @@ body{
 
 
 h2, h3, h4, h5, h6 {
-    color: #1c345a;
+    color: #2a2924;
     margin: 0px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -41,12 +42,12 @@ h2, h3, h4, h5, h6 {
 
 a:link{
     text-decoration: underline;
-    color: #9e1616;
+    color: #CC3300;
 }
 
 a:visited{
     text-decoration: underline;
-    color: #9e1616;
+    color: #CC3300;
 }
 
 a:hover{
@@ -231,7 +232,7 @@ tr.alt-row, tr.alt-row td{
 
 .panel li a:link, .panel-mini li a:link{
     text-decoration:  none;
-    color: #9e1616;
+    color: #CC3300;
 }
 
 
@@ -258,7 +259,7 @@ tr.alt-row, tr.alt-row td{
 .error{
     width: 90%;
     background-color: #f5a5a5;
-    border: 5px solid #9e1616;
+    border: 5px solid #CC3300;
     margin: auto;
     padding: 10px;
     text-align: center;
@@ -567,7 +568,7 @@ tr.alt-row, tr.alt-row td{
         height: 130px;
         margin:auto;
         margin-top: 15px;
-        border: 1px solid #1c345a;
+        border: 1px solid grey;
         position: relative;
     }
 
@@ -585,7 +586,7 @@ tr.alt-row, tr.alt-row td{
 
 @media only screen and (min-width: 600px) and (max-width: 1024px){
     body{
-        font: 18px/20px "Open Sans", Arial, sans-serif;
+        font: 18px/20px "Jura", Arial, sans-serif;
     }
     #header, footer{
         padding: 10px;
@@ -746,7 +747,7 @@ tr.alt-row, tr.alt-row td{
 
 @media only screen and (max-width: 600px){
     body{
-        font: 18px/20px "Open Sans", Arial, sans-serif;
+        font: 18px/20px "Jura", Arial, sans-serif;
     }
     #header, footer{
         padding: 10px;
