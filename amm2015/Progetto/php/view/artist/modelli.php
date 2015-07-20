@@ -41,7 +41,7 @@
 <?php } ?>
 <div class="input-form">
 
-    <form method="post" action="administrator/modelli_crea<?= $vd->scriviToken('?') ?>">
+    <form method="post" action="artist/modelli_crea<?= $vd->scriviToken('?') ?>">
         <button type="submit"name="cmd" value="a_crea">Upload new model</button>
     </form>
 

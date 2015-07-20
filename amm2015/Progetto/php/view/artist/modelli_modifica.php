@@ -1,6 +1,6 @@
 <div class="input-form">
     <h3>Edit model</h3>
-    <form method="post" action="administrator/modelli_modifica<?= $vd->scriviToken('?')?>">
+    <form method="post" action="artist/modelli_modifica<?= $vd->scriviToken('?')?>">
         <input type="hidden" name="modello" value="<?= $mod_model->getId() ?>"/>
         <label for="data">Date</label>
         <input type="text" name="data" id="data" value="<?= $mod_model->getData()->format('d/m/Y') ?>"/>

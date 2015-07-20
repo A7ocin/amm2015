@@ -83,7 +83,7 @@ class ArtistController extends BaseController {
                     // creazione di un model
                     case 'modelli_crea':
                         $msg = array();
-                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $models = ModelFactory::instance()->getModelsPerArtist($user);
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         if (!isset($request['cmd'])) {
                             $vd->setSottoPagina('modelli');
@@ -343,7 +343,7 @@ class ArtistController extends BaseController {
                     // richesta di visualizzazione del form per la creazione di un nuovo
                     // model
                     case 'a_crea':
-                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $models = ModelFactory::instance()->getModelsPerArtist($user);
                         $vd->setSottoPagina('modelli_crea');
                         $this->showHomeUtente($vd);
                         break;
@@ -362,7 +362,7 @@ class ArtistController extends BaseController {
                                 $msg[] = '<li> Impossibile creare il modello </li>';
                             }
                         }
-                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $models = ModelFactory::instance()->getModelsPerArtist($user);
                         $this->showHomeUtente($vd);
                         break;
 
