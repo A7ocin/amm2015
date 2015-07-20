@@ -25,9 +25,9 @@ if (!$vd->isJson()) {
             <meta http-equiv="content-type" content="text/html; charset=utf-8" />
             <title><?= $vd->getTitolo() ?></title>
             <base href="<?= Settings::getApplicationPath() ?>php/"/>
-            <meta name="keywords" content="AMM esami docente" />
-            <meta name="description" content="Una pagina per gestire le funzioni dei docenti" />
-            <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+            <meta name="keywords" content="TTDM" />
+            <meta name="description" content="The third dimension's market" />
+            <link rel="shortcut icon" type="image/x-icon" href="../images/tab.png" />
             <link href="../css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
             <?php
             foreach ($vd->getScripts() as $script) {

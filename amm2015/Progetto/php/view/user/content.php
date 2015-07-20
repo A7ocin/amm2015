@@ -52,7 +52,7 @@ switch ($vd->getSottoPagina()) {
     <?php default: ?>
         <h2 class="icon-title" id="h-home">My 3D world</h2>
         <p>
-            Welcome, <?= $user->getNome() ?>
+            Welcome, <?= $user->getUsername() ?>
         </p>
         <p>
             Select one of the following:
