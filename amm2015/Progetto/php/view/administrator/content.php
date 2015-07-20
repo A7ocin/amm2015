@@ -23,8 +23,8 @@ switch ($vd->getSottoPagina()) {
         include 'appelli_iscritti.php';
         break;
     
-    case 'reg_esami':
-        include 'reg_esami.php';
+    case 'utenti':
+        include 'utenti.php';
         break;
     
     case 'reg_esami_step1':
@@ -63,7 +63,7 @@ switch ($vd->getSottoPagina()) {
                 </a>
             </li>
             <li><a href="administrator/modelli<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">3d models database</a></li>
-            <li><a href="administrator/reg_esami<?= $vd->scriviToken('?')?>" id="pnl-libretto">Registrazione Esami</a></li>
+            <li><a href="administrator/utenti<?= $vd->scriviToken('?')?>" id="pnl-libretto">Users List</a></li>
             <li><a href="administrator/el_esami<?= $vd->scriviToken('?')?>" id="pnl-cerca">Elenco Esami</a></li>
         </ul>
         <?php

@@ -107,13 +107,16 @@ class AdministratorController extends BaseController {
 
                     // registrazione degli esami
                     // con visualizzazione delle liste attive
-                    case 'reg_esami':
-                        if (!isset($_SESSION[self::elenco])) {
+                    case 'utenti':
+						$utenti = UserFactory::instance()->getListaUsers();
+                        //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
+                        $vd->setSottoPagina('utenti');
+                        /*if (!isset($_SESSION[self::elenco])) {
                             $_SESSION[self::elenco] = array();
                         }
                         $elenco_id = $this->getIdElenco($request, $msg, $_SESSION);
                         $elenchi_attivi = $_SESSION[self::elenco];
-                        $vd->setSottoPagina('reg_esami');
+                        $vd->setSottoPagina('utenti');*/
                         break;
 
                     // registrazione degli esami, passo 1:

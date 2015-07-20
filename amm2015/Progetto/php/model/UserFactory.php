@@ -345,6 +345,46 @@ class UserFactory {
         $mysqli->close();
         return $administrator;
     }
+    
+    public function &getListaUsers() {
+        $users = array();
+        $query = "select 	administrator.username administrator_username,
+							administrator.email administrator_email,
+							administrator.citta administrator_citta
+		
+							from administrator 
+					union 
+					select  user.username user_username,
+							user.email user_email,
+							user.citta user_citta 
+
+							from user 
+					union 
+					select  artist.username artist_username,
+							artist.email artist_email,
+							artist.citta artist_citta  
+
+							from artist";
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[getListaAdministrator] impossibile inizializzare il database");
+            $mysqli->close();
+            return $users;
+        }
+        $result = $mysqli->query($query);
+        if ($mysqli->errno > 0) {
+            error_log("[getListaAdministrator] impossibile eseguire la query");
+            $mysqli->close();
+            return $users;
+        }
+
+        while ($row = $result->fetch_array()) {
+            $users[] = self::creaGenericUserDaArray($row);
+        }
+
+        $mysqli->close();
+        return $users;
+    }
 
     /**
      * Restituisce la lista degli studenti presenti nel sistema
@@ -729,6 +769,15 @@ class UserFactory {
         $administrator->setPassword($row['administrator_password']);
 
         return $administrator;
+    }
+    
+    public function creaGenericUserDaArray($row) {
+        $guser = new User();
+        $guser->setEmail($row['administrator_email']);
+        $guser->setCitta($row['administrator_citta']);
+        $guser->setUsername($row['administrator_username']);
+
+        return $guser;
     }
     
     public function creaUserDaArray($row) {

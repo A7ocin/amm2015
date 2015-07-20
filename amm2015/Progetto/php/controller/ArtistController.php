@@ -107,13 +107,9 @@ class ArtistController extends BaseController {
 
                     // registrazione degli esami
                     // con visualizzazione delle liste attive
-                    case 'reg_esami':
-                        if (!isset($_SESSION[self::elenco])) {
-                            $_SESSION[self::elenco] = array();
-                        }
-                        $elenco_id = $this->getIdElenco($request, $msg, $_SESSION);
-                        $elenchi_attivi = $_SESSION[self::elenco];
-                        $vd->setSottoPagina('reg_esami');
+                    case 'utenti':
+						$utenti = UserFactory::instance()->getListaUsers();
+                        $vd->setSottoPagina('utenti');
                         break;
 
                     // registrazione degli esami, passo 1:
