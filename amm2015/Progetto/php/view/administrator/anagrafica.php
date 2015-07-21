@@ -1,7 +1,7 @@
 <div class="input-form">
     <h2 class="icon-title" id="h-personali">Personal Infos</h2>
     <ul class="none">
-        <li><strong>Name:</strong> <?= $user->getUsername() ?></li>
+        <li><strong>Name:</strong> <?= $user->getNome() ?></li>
         <li><strong>Surname:</strong> <?= $user->getCognome() ?></li>
     </ul>
 </div>
