@@ -46,9 +46,9 @@ if (!$vd->isJson()) {
                         require "$logo";
                         ?>
                         <ul>
-                            <li id="facebook"><a href="www.facebook.com">facebook</a></li>
-                            <li id="twitter"><a href="https://twitter.com/">twitter</a></li>
-                            <li id="linkedin"><a href="http://www.linkedin.com/">linkedin</a></li>
+                            <li id="facebook"><a href="https://www.facebook.com/nicola.garau7">facebook</a></li>
+                            <li id="twitter"><a href="https://twitter.com/GarauNicola">twitter</a></li>
+                            <li id="linkedin"><a href="https://it.linkedin.com/pub/nicola-garau/a5/533/5b6">linkedin</a></li>
                         </ul>
                     </div>
                     <!--  header -->
