@@ -197,11 +197,11 @@ class AdministratorController extends BaseController {
                         break;
 
                     // visualizzazione dell'elenco esami
-                    case 'el_esami':
+                    case 'el_modelli':
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
-                        $vd->setSottoPagina('el_esami');
+                        $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
-                        $vd->addScript("../js/elencoEsami.js");
+                        $vd->addScript("../js/elencoModelli.js");
                         break;
 
                     // gestione della richiesta ajax di filtro esami
