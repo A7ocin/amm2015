@@ -93,7 +93,7 @@ class AdministratorController extends BaseController {
 
                         break;
 
-                    // visualizzazione della lista di iscritti ad un model
+                    // visualizzazione della lista di model
                     case 'appelli_iscritti':
                         $msg = array();
                         $models = ModelFactory::instance()->getModelsPerAdministrator($user);
@@ -230,13 +230,13 @@ class AdministratorController extends BaseController {
                             
                         }*/
 
-                        if (isset($request['uploader'])) {
+                        if (isset($request['uploader'])) {echo " (RICHIESTA UPLOADER) ";
                             $uploader = $request['uploader'];
                         }else{
                             $uploader = null;
                         }
 
-                        if (isset($request['nome'])) {
+                        if (isset($request['nome'])) {echo " (RICHIESTA NOME) ";
                             $nome = $request['nome'];
                         }else{
                             $nome = null;
@@ -248,7 +248,7 @@ class AdministratorController extends BaseController {
                                 $insegnamento_id, 
                                 $matricola, $nome, $cognome);*/
                                 
-                        $esami = ModelFactory::instance()->ricercaModelli(
+                        $modelli = ModelFactory::instance()->ricercaModelli(
                                 $uploader, 
                                 $nome);
 
