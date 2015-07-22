@@ -26,7 +26,7 @@ $(document).ready(function () {
             matricola: _matricola
         };*/
         $.ajax({
-            url: 'amministratore/filtra_modelli',
+            url: 'administrator/filtra_modelli',
             data : par,
             dataType: 'json',
             success: function (data, state) {
