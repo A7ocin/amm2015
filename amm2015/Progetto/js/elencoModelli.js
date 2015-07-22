@@ -33,49 +33,43 @@ $(document).ready(function () {
                 if(data['errori'].length === 0){
                     // nessun errore
                     $(".error").hide();
-                    if(data['esami'].length === 0){
+                    if(data['models'].length === 0){
                         // mostro il messaggio per nessun elemento
                         $("#nessuno").show();
                        
                         // nascondo la tabella
-                        $("#tabella_esami").hide();
+                        $("#tabella_modelli").hide();
                     }else{
                         // nascondo il messaggio per nessun elemento
                         $("#nessuno").hide();
-                        $("#tabella_esami").show();
+                        $("#tabella_modelli").show();
                         //cancello tutti gli elementi dalla tabella
-                        $("#tabella_esami tbody").empty();
+                        $("#tabella_modelli tbody").empty();
                        
                         // aggingo le righe
                         var i = 0;
-                        for(var key in data['esami']){
-                            var esame = data['esami'][key];
-                            $("#tabella_esami tbody").append(
+                        for(var key in data['models']){
+                            var model = data['models'][key];
+                            $("#tabella_modelli tbody").append(
                                 "<tr id=\"row_" + i + "\" >\n\
                                        <td>a</td>\n\
                                        <td>a</td>\n\
                                        <td>a</td>\n\
                                        <td>a</td>\n\
                                        <td>a</td>\n\
-                                       <td>\n\
-                                          <ul class=\"none no-space\" id=\"com_"+ i + "\" >\n\
-                                          </ul>\n\
-                                       </td>\n\
+                                       <td>a</td>\n\
                                  </tr>");
                             if(i%2 == 0){
                                 $("#row_" + i).addClass("alt-row");
                             }
                             
                             var colonne = $("#row_"+ i +" td");
-                            $(colonne[0]).text(esame['insegnamento']);
-                            $(colonne[1]).text(esame['cfu']);
-                            $(colonne[2]).text(esame['matricola']);
-                            $(colonne[3]).text(esame['cognome'] + " " + esame['nome']);
-                            $(colonne[4]).text(esame['voto']);
-                            for(var mbr in esame["commissione"]){
-                                
-                                $("#com_" + i).append("<li>" + esame['commissione'][mbr]+ "</li>");
-                            }
+                            $(colonne[0]).text(model['id']);
+                            $(colonne[1]).text(model['data']);
+                            $(colonne[2]).text(model['dimensione']);
+                            $(colonne[3]).text(model['nome']);
+                            $(colonne[4]).text(model['uploader']);
+                            $(colonne[5]).text(model['descrizione']);
                             i++;
                             
                            
