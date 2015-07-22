@@ -680,8 +680,8 @@ class ModelFactory {
         // variabili sono definite
         $bind = "i";
         //$where = " where docenti.id = ? ";
-        $par = array();
-        $par[] = $user->getId();
+        //$par = array();
+        //$par[] = $user->getId();
         
         if(isset($uploader) && isset($nome)){echo " (ENTRAMBI) ";
             $where .= "where models.uploader = ? and models.nome = ? ";
@@ -693,14 +693,14 @@ class ModelFactory {
         if(isset($uploader)){echo " (SOLO UPLOADER) ";
             $where .= "where lower(models.uploader) like lower(?) ";
             $bind .="s";
-            $par[] = "%".$uploader."%";
+            //$par[] = "%".$uploader."%";
         }
         
         else
         if(isset($nome)){echo " (SOLO NOME) ";
             $where .= "where lower(models.nome) like lower(?) ";
             $bind .="s";
-            $par[] = "%".$nome."%";
+            //$par[] = "%".$nome."%";
         }
         
         $query = "select 
