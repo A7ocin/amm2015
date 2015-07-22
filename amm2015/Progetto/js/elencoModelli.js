@@ -26,7 +26,7 @@ $(document).ready(function () {
             matricola: _matricola
         };*/
         $.ajax({
-            url: 'docente/filtra_esami',
+            url: 'amministratore/filtra_modelli',
             data : par,
             dataType: 'json',
             success: function (data, state) {
