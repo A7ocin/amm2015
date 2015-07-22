@@ -1,8 +1,7 @@
 <h2 class="icon-title" id="h-iscrizione">Users database</h2>
-<h4>Admin's infos</h1>
+<h4>User's infos</h1>
 <ul class="none">
-    <li><strong>Name:</strong> <?= $user->getNome() ?></li>
-    <li><strong>Surname:</strong> <?= $user->getCognome() ?></li>
+    <li><strong>Name:</strong> <?= $user->getUsername() ?></li>
 </ul>
 
 <?php if (count($utenti) > 0) { ?>

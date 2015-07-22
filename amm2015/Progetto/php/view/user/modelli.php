@@ -1,8 +1,7 @@
 <h2 class="icon-title" id="h-iscrizione">3d models database</h2>
-<h4>Artist's infos</h1>
+<h4>User's infos</h1>
 <ul class="none">
-    <li><strong>Name:</strong> <?= $user->getNome() ?></li>
-    <li><strong>Surname:</strong> <?= $user->getCognome() ?></li>
+    <li><strong>Userame:</strong> <?= $user->getUsername() ?></li>
 </ul>
 
 <?php if (count($models) > 0) { ?>

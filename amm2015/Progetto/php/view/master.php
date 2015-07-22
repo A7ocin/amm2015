@@ -88,7 +88,7 @@ if (!$vd->isJson()) {
                             <h2 class="icon-title">External links</h2>
                             <ul>
                                 <li><a href="http://www.unica.it/">University of Cagliari</a></li>
-                                <li><a href="http://www.unica.it/">CS faculty website</a></li>
+                                <li><a href="http://www.informatica.unica.it/">CS faculty website</a></li>
                             </ul>
                         </li>
                     </ul>
