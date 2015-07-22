@@ -672,6 +672,115 @@ class ModelFactory {
         return $stmt->affected_rows;
     }
     
+    public function &ricercaModelli($uploader, 
+            $nome) {
+        $esami = array();
+        
+        // costruisco la where "a pezzi" a seconda di quante 
+        // variabili sono definite
+        $bind = "i";
+        //$where = " where docenti.id = ? ";
+        $par = array();
+        $par[] = $user->getId();
+        
+        if(isset($uploader) && isset($nome)){
+            $where .= "where models.uploader = ? and models.nome = ? ";
+            $bind .="ss";
+            //$par[] = $insegnamento;
+        }
+        
+        if(isset($uploader)){
+            $where .= "where lower(models.uploader) like lower(?) ";
+            $bind .="s";
+            $par[] = "%".$uploader."%";
+        }
+        
+        if(isset($nome)){
+            $where .= "where lower(models.nome) like lower(?) ";
+            $bind .="s";
+            $par[] = "%".$nome."%";
+        }
+        
+        $query = "select 
+                  models.id models_nome,
+                  models.data models_data,
+				  models.dimensione models_dimensione,
+                  models.nome models_nome,
+                  models.uploader models_uploader,
+				  models.descrizione models_descrizione
+
+                  from models 
+                  ".$where;
+        
+        $mysqli = Db::getInstance()->connectDb();
+        if (!isset($mysqli)) {
+            error_log("[ricercaEsami] impossibile inizializzare il database");
+            $mysqli->close();
+            return $esami;
+        }
+
+        $stmt = $mysqli->stmt_init();
+        //$stmt->prepare($query);
+        if (!$stmt) {
+            error_log("[ricercaEsami] impossibile" .
+                    " inizializzare il prepared statement");
+            $mysqli->close();
+            return $esami;
+        }
+
+        /*switch (count($par)) {
+            case 1:
+                if (!$stmt->bind_param($bind, $par[0])) {
+                    error_log("[ricercaEsami] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return $esami;
+                }
+                break;
+            case 2:
+                if (!$stmt->bind_param($bind, $par[0], $par[1])) {
+                    error_log("[ricercaEsami] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return $esami;
+                }
+                break;
+
+            case 3:
+                if (!$stmt->bind_param($bind, $par[0], $par[1], $par[2])) {
+                    error_log("[ricercaEsami] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return $esami;
+                }
+                break;
+
+            case 4:
+                if (!$stmt->bind_param($bind, $par[0], $par[1], $par[2], $par[3])) {
+                    error_log("[ricercaEsami] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return $esami;
+                }
+                break;
+
+            case 5:
+                if (!$stmt->bind_param($bind, $par[0], $par[1], $par[2], $par[3], $par[4])) {
+                    error_log("[ricercaEsami] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return $esami;
+                }
+                break;
+
+           
+        }*/
+
+        $modelli = self::caricaModelliDaStmt($stmt);
+        $mysqli->close();
+        return $modelli;
+    }
+    
     
 }
 

@@ -9,10 +9,10 @@
                 <strong>Administrator</strong>: username: nicola, password: garau
             </li>
             <li>
-                <strong>Artist</strong>
+                <strong>Artist</strong>: username: artista, password: pennello
             </li>
             <li>
-                <strong>User</strong>
+                <strong>User</strong>: username: user, password: user
             </li>
         </ul>
 </p>

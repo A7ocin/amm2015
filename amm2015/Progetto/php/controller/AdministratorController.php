@@ -218,7 +218,7 @@ class AdministratorController extends BaseController {
                         } else {
                             $insegnamento_id = null;
                             
-                        }*/
+                        }
 
                         if (isset($request['matricola']) && ($request['matricola'] != '')) {
                             $matricola = filter_var($request['matricola'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
@@ -228,12 +228,12 @@ class AdministratorController extends BaseController {
                         } else {
                             $matricola = null;
                             
-                        }
+                        }*/
 
-                        if (isset($request['cognome'])) {
-                            $cognome = $request['cognome'];
+                        if (isset($request['uploader'])) {
+                            $uploader = $request['uploader'];
                         }else{
-                            $cognome = null;
+                            $uploader = null;
                         }
 
                         if (isset($request['nome'])) {
@@ -243,10 +243,14 @@ class AdministratorController extends BaseController {
                         }
 
                         
-                        $esami = EsameFactory::instance()->ricercaEsami(
+                        /*$esami = EsameFactory::instance()->ricercaEsami(
                                 $user, 
                                 $insegnamento_id, 
-                                $matricola, $nome, $cognome);
+                                $matricola, $nome, $cognome);*/
+                                
+                        $esami = ModelFactory::instance()->ricercaModelli(
+                                $uploader, 
+                                $nome);
 
                         break;
 
