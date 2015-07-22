@@ -3,7 +3,7 @@
 $json = array();
 $json['errori'] = $errori;
 $json['modelli'] = array();
-foreach($modelli as $modello){
+foreach($modelli as $modello){ echo " (el_modelli_json foreach) ";
      /* @var $modello Modello */
     $element = array();
     $element['id'] = $modello->getId();

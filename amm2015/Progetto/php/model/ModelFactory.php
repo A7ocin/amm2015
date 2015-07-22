@@ -412,7 +412,7 @@ class ModelFactory {
         return $models;
     }*/
     
-    private function &caricaModelliDaStmt(mysqli_stmt $stmt){
+    private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ";
         $models = array();
          if (!$stmt->execute()) {
             error_log("[caricaInsegnamentoDaStmt] impossibile" .
@@ -443,7 +443,7 @@ class ModelFactory {
         return $models;
     }
 
-    public function creaDaArray($row){
+    public function creaDaArray($row){echo " (CreaDaArray) ";
         $model = new Model();
         $model->setId($row['models_id']);
         $model->setDimensione($row['models_dimensione']);
@@ -683,19 +683,21 @@ class ModelFactory {
         $par = array();
         $par[] = $user->getId();
         
-        if(isset($uploader) && isset($nome)){
+        if(isset($uploader) && isset($nome)){echo " (ENTRAMBI) ";
             $where .= "where models.uploader = ? and models.nome = ? ";
             $bind .="ss";
             //$par[] = $insegnamento;
         }
         
-        if(isset($uploader)){
+        else
+        if(isset($uploader)){echo " (SOLO UPLOADER) ";
             $where .= "where lower(models.uploader) like lower(?) ";
             $bind .="s";
             $par[] = "%".$uploader."%";
         }
         
-        if(isset($nome)){
+        else
+        if(isset($nome)){echo " (SOLO NOME) ";
             $where .= "where lower(models.nome) like lower(?) ";
             $bind .="s";
             $par[] = "%".$nome."%";
@@ -713,7 +715,7 @@ class ModelFactory {
                   ".$where;
         
         $mysqli = Db::getInstance()->connectDb();
-        if (!isset($mysqli)) {
+        if (!isset($mysqli)) {echo " (718 ModelFactory) ";
             error_log("[ricercaEsami] impossibile inizializzare il database");
             $mysqli->close();
             return $esami;
@@ -721,7 +723,7 @@ class ModelFactory {
 
         $stmt = $mysqli->stmt_init();
         //$stmt->prepare($query);
-        if (!$stmt) {
+        if (!$stmt) {echo " (726 ModelFactory) ";
             error_log("[ricercaEsami] impossibile" .
                     " inizializzare il prepared statement");
             $mysqli->close();
