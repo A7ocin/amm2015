@@ -680,11 +680,12 @@ class ModelFactory {
         // variabili sono definite
         $bind = "i";
         //$where = " where docenti.id = ? ";
+        $where .= "where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
         //$par = array();
         //$par[] = $user->getId();
         
         if(isset($uploader) && isset($nome)){echo " (ENTRAMBI) ";
-            $where .= "where models.uploader = ? and models.nome = ? ";
+            $where .= "where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
             $bind .="ss";
             //$par[] = $insegnamento;
         }
