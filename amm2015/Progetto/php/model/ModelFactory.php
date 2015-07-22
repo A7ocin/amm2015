@@ -673,7 +673,7 @@ class ModelFactory {
     }
     
     public function &ricercaModelli($uploader, $nome) {
-        $modelli = array();
+        $models = array();
         
         // costruisco la where "a pezzi" a seconda di quante 
         // variabili sono definite
@@ -718,7 +718,7 @@ class ModelFactory {
         if (!isset($mysqli)) {echo " (718 ModelFactory) ";
             error_log("[ricercaEsami] impossibile inizializzare il database");
             $mysqli->close();
-            return $esami;
+            return $models;
         }
 
         $stmt = $mysqli->stmt_init();
@@ -727,12 +727,12 @@ class ModelFactory {
             error_log("[ricercaEsami] impossibile" .
                     " inizializzare il prepared statement");
             $mysqli->close();
-            return $esami;
+            return $models;
         }
 
-        $modelli = self::caricaModelliDaStmt($stmt);
+        $models = self::caricaModelliDaStmt($stmt);
         $mysqli->close();
-        return $modelli;
+        return $models;
     }
     
     
