@@ -199,7 +199,7 @@ class AdministratorController extends BaseController {
                     // visualizzazione dell'elenco esami
                     case 'el_modelli':echo " (CASE ELENCA MODELLI) ";
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
-                        $modelli = ModelFactory:: getModelsPerAdministrator();
+                        $modelli = ModelFactory:: getModelsPerAdministrator($user);
                         $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
                         $vd->addScript("../js/elencoModelli.js");
