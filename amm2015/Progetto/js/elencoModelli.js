@@ -15,16 +15,16 @@ $(document).ready(function () {
         if(_insegnamento === 'qualsiasi'){
             _insegnamento = '';
         }*/
-        var _nome = $("#nome").val();
         var _uploader = $("#uploader").val();
+        var _nome = $("#nome").val();
         //var _matricola = $("#matricola").val();
         
         var par = {
             //insegnamento : _insegnamento,
-            nome: _nome,
             //cognome:_cognome,
             //matricola: _matricola
-            uploader _uploader
+            uploader _uploader,
+            nome: _nome
         };
         $.ajax({
             url: 'administrator/filtra_modelli',
@@ -47,7 +47,7 @@ $(document).ready(function () {
                         //cancello tutti gli elementi dalla tabella
                         $("#tabella_modelli tbody").empty();
                        
-                        // aggingo le righe
+                        // aggiungo le righe
                         var i = 0;
                         for(var key in data['modelli']){
                             var model = data['modelli'][key];
