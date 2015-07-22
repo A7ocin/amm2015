@@ -415,7 +415,7 @@ class ModelFactory {
     private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ";
         $models = array();
          if (!$stmt->execute()) {
-            error_log("[caricaInsegnamentoDaStmt] impossibile" .
+            error_log("[caricaModelliDaStmt] impossibile" .
                     " eseguire lo statement");
             return null;
         }
@@ -680,25 +680,26 @@ class ModelFactory {
         // variabili sono definite
         $bind = "i";
         //$where = " where docenti.id = ? ";
+        $where = " where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
         //$par = array();
         //$par[] = $user->getId();
         
         if(isset($uploader) && isset($nome)){echo " (ENTRAMBI) ";
-            $where = "where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
+            $where = " where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
             $bind .="ss";
             //$par[] = $insegnamento;
         }
         
         else
         if(isset($uploader)){echo " (SOLO UPLOADER) ";
-            $where = "where lower(models.uploader) like lower(?) ";
+            $where = " where lower(models.uploader) like lower(?) ";
             $bind .="s";
             //$par[] = "%".$uploader."%";
         }
         
         else
         if(isset($nome)){echo " (SOLO NOME) ";
-            $where = "where lower(models.nome) like lower(?) ";
+            $where = " where lower(models.nome) like lower(?) ";
             $bind .="s";
             //$par[] = "%".$nome."%";
         }

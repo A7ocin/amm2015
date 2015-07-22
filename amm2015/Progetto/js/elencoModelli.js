@@ -33,7 +33,7 @@ $(document).ready(function () {
                 if(data['errori'].length === 0){
                     // nessun errore
                     $(".error").hide();
-                    if(data['modelli'].length === 0){
+                    if(data['models'].length === 0){
                         // mostro il messaggio per nessun elemento
                         $("#nessuno").show();
                        
@@ -48,8 +48,8 @@ $(document).ready(function () {
                        
                         // aggingo le righe
                         var i = 0;
-                        for(var key in data['modelli']){
-                            var model = data['modelli'][key];
+                        for(var key in data['models']){
+                            var model = data['models'][key];
                             $("#tabella_modelli tbody").append(
                                 "<tr id=\"row_" + i + "\" >\n\
                                        <td>a</td>\n\
