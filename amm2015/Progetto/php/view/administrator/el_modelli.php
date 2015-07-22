@@ -36,7 +36,15 @@
     </thead>
     <tbody>
 
-        
+        <tr >
+            <td> id </td>
+            <td> data </td>
+            <td> dimensione </td>
+            <td> nome </td>
+            <td> uploader </td>
+            <td> descrizione </td>
+
+        </tr>
 
     </tbody>
 </table>
