@@ -417,7 +417,8 @@ class ModelFactory {
          if (!$stmt->execute()) {
             error_log("[caricaModelliDaStmt] impossibile" .
                     " eseguire lo statement");
-            return null;
+            $returnNull = null;
+            return $returnNull;
         }
 
         $row = array();
