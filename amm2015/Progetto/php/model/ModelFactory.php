@@ -677,15 +677,15 @@ class ModelFactory {
         
         // costruisco la where "a pezzi" a seconda di quante 
         // variabili sono definite
-        $bind = "i";
+        //$bind = "i";
         //$where = " where docenti.id = ? ";
         $where = " where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
-        //$par = array();
+        $par = array();
         //$par[] = $user->getId();
         
         if(isset($uploader) && isset($nome)){echo " (ENTRAMBI) ";
             $where = " where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
-            $bind .="ss";
+            $bind ="ss";
             //$par[] = $insegnamento;
             $par[] = "%".$uploader."%";
             $par[] = "%".$nome."%";
@@ -694,14 +694,14 @@ class ModelFactory {
         else
         if(isset($uploader)){echo " (SOLO UPLOADER) ";
             $where = " where lower(models.uploader) like lower(?) ";
-            $bind .="s";
+            $bind ="s";
             $par[] = "%".$uploader."%";
         }
         
         else
         if(isset($nome)){echo " (SOLO NOME) ";
             $where = " where lower(models.nome) like lower(?) ";
-            $bind .="s";
+            $bind ="s";
             $par[] = "%".$nome."%";
         }
         
@@ -724,7 +724,7 @@ class ModelFactory {
         }
 
         $stmt = $mysqli->stmt_init();
-        //$stmt->prepare($query);
+        $stmt->prepare($query);
         if (!$stmt) {echo " (726 ModelFactory) ";
             error_log("[ricercaEsami] impossibile" .
                     " inizializzare il prepared statement");
