@@ -197,7 +197,7 @@ class AdministratorController extends BaseController {
                         break;
 
                     // visualizzazione dell'elenco esami
-                    case 'el_modelli':
+                    case 'el_modelli':echo " (CASE FILTRA MODELLI) ";
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
@@ -205,7 +205,7 @@ class AdministratorController extends BaseController {
                         break;
 
                     // gestione della richiesta ajax di filtro esami
-                    case 'filtra_modelli':
+                    case 'filtra_modelli':echo " (CASE FILTRA MODELLI) ";
                         $vd->toggleJson();
                         $vd->setSottoPagina('el_modelli_json');
                         $errori = array();
