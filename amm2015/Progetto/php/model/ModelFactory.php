@@ -672,7 +672,7 @@ class ModelFactory {
         return $stmt->affected_rows;
     }
     
-    public function &ricercaModelli($uploader, $nome) {
+    public function &ricercaModelli($uploader, $nome) {echo "( RICERCA MODELLI )";
         $models = array();
         
         // costruisco la where "a pezzi" a seconda di quante 

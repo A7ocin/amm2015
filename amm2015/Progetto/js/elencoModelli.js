@@ -19,12 +19,13 @@ $(document).ready(function () {
         var _uploader = $("#uploader").val();
         //var _matricola = $("#matricola").val();
         
-        /*var par = {
-            insegnamento : _insegnamento,
+        var par = {
+            //insegnamento : _insegnamento,
             nome: _nome,
-            cognome:_cognome,
-            matricola: _matricola
-        };*/
+            //cognome:_cognome,
+            //matricola: _matricola
+            uploader _uploader
+        };
         $.ajax({
             url: 'administrator/filtra_modelli',
             data : par,
