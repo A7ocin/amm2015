@@ -672,9 +672,8 @@ class ModelFactory {
         return $stmt->affected_rows;
     }
     
-    public function &ricercaModelli($uploader, 
-            $nome) {
-        $esami = array();
+    public function &ricercaModelli($uploader, $nome) {
+        $modelli = array();
         
         // costruisco la where "a pezzi" a seconda di quante 
         // variabili sono definite
@@ -730,54 +729,6 @@ class ModelFactory {
             $mysqli->close();
             return $esami;
         }
-
-        /*switch (count($par)) {
-            case 1:
-                if (!$stmt->bind_param($bind, $par[0])) {
-                    error_log("[ricercaEsami] impossibile" .
-                            " effettuare il binding in input");
-                    $mysqli->close();
-                    return $esami;
-                }
-                break;
-            case 2:
-                if (!$stmt->bind_param($bind, $par[0], $par[1])) {
-                    error_log("[ricercaEsami] impossibile" .
-                            " effettuare il binding in input");
-                    $mysqli->close();
-                    return $esami;
-                }
-                break;
-
-            case 3:
-                if (!$stmt->bind_param($bind, $par[0], $par[1], $par[2])) {
-                    error_log("[ricercaEsami] impossibile" .
-                            " effettuare il binding in input");
-                    $mysqli->close();
-                    return $esami;
-                }
-                break;
-
-            case 4:
-                if (!$stmt->bind_param($bind, $par[0], $par[1], $par[2], $par[3])) {
-                    error_log("[ricercaEsami] impossibile" .
-                            " effettuare il binding in input");
-                    $mysqli->close();
-                    return $esami;
-                }
-                break;
-
-            case 5:
-                if (!$stmt->bind_param($bind, $par[0], $par[1], $par[2], $par[3], $par[4])) {
-                    error_log("[ricercaEsami] impossibile" .
-                            " effettuare il binding in input");
-                    $mysqli->close();
-                    return $esami;
-                }
-                break;
-
-           
-        }*/
 
         $modelli = self::caricaModelliDaStmt($stmt);
         $mysqli->close();
