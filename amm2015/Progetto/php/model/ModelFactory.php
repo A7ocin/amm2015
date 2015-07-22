@@ -672,7 +672,7 @@ class ModelFactory {
         return $stmt->affected_rows;
     }
     
-    public function &ricercaModelli($uploader, $nome) {echo "( RICERCA MODELLI )";
+    public function &ricercaModelli($uploader, $nome) {echo "( RICERCA MODELLI ) ".$uploader." ".$nome;
         $models = array();
         
         // costruisco la where "a pezzi" a seconda di quante 
@@ -687,20 +687,22 @@ class ModelFactory {
             $where = " where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
             $bind .="ss";
             //$par[] = $insegnamento;
+            $par[] = "%".$uploader."%";
+            $par[] = "%".$nome."%";
         }
         
         else
         if(isset($uploader)){echo " (SOLO UPLOADER) ";
             $where = " where lower(models.uploader) like lower(?) ";
             $bind .="s";
-            //$par[] = "%".$uploader."%";
+            $par[] = "%".$uploader."%";
         }
         
         else
         if(isset($nome)){echo " (SOLO NOME) ";
             $where = " where lower(models.nome) like lower(?) ";
             $bind .="s";
-            //$par[] = "%".$nome."%";
+            $par[] = "%".$nome."%";
         }
         
         $query = "select 
