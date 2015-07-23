@@ -9,8 +9,8 @@ $(document).ready(function () {
     $("#tabella_modelli").hide();
     
     $('#filtra').click(function(e){
-        // impedisco il submit
-        e.preventDefault(); 
+        // impedisco il submit	<-------------------------------------
+        //e.preventDefault(); 
         /*var _insegnamento = $( "#insegnamento option:selected" ).attr('value');
         if(_insegnamento === 'qualsiasi'){
             _insegnamento = '';
