@@ -2,17 +2,17 @@
 
 $json = array();
 $json['errori'] = $errori;
-$json['models'] = array();
-foreach($models as $model){ echo " (el_modelli_json foreach) ";
-     /* @var $model Model */
+$json['modelli'] = array();
+foreach($modelli as $modello){ echo " (el_modelli_json foreach) ";
+     /* @var $modello Model */
     $element = array();
-    $element['id'] = $model->getId();
-    $element['data'] = $model->getData()->format('Y-m-d');
-    $element['dimensione'] = $model->getDimensione();
-    $element['nome'] = $model->getNome();
-    $element['uploader'] = $model->getUploader();
-    $element['descrizione'] = $model->getDescrizione();
-    $json['models'][] = $element;
+    $element['id'] = $modello->getId();
+    $element['data'] = $modello->getData()->format('Y-m-d');
+    $element['dimensione'] = $modello->getDimensione();
+    $element['nome'] = $modello->getNome();
+    $element['uploader'] = $modello->getUploader();
+    $element['descrizione'] = $modello->getDescrizione();
+    $json['modelli'][] = $element;
     
 }
 echo json_encode($json);
