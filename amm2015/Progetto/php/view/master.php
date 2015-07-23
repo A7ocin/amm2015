@@ -151,10 +151,8 @@ if (!$vd->isJson()) {
                     </div>
                     <div class="validator">
                         <p>
-                            <a href="http://validator.w3.org/check/referer" class="xhtml" title="Questa pagina contiene HTML valido">
-                                <abbr title="eXtensible HyperText Markup Language">HTML</abbr> Valido</a>
-                            <a href="http://jigsaw.w3.org/css-validator/check/referer" class="css" title="Questa pagina ha CSS validi">
-                                <abbr title="Cascading Style Sheets">CSS</abbr> Valido</a>
+                            <a href="https://github.com/A7ocin/amm2015">Github's page</a>
+                            <a href="http://spano.sc.unica.it/amm2015/garauNicola/amm2015/Progetto/php/login">Info</a> 
                         </p>
                     </div>
                 </footer>
