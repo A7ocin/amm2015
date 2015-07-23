@@ -739,7 +739,7 @@ class ModelFactory {
                     error_log("[ricercaModelli] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();
-                    return $esami;
+                    return $models_f;
                 }
                 break;
             case 2:
@@ -747,9 +747,10 @@ class ModelFactory {
                     error_log("[ricercaModelli] impossibile" .
                             " effettuare il binding in input");
                     $mysqli->close();
-                    return $esami;
+                    return $models_f;
                 }
                 break;
+        }
 
         $models_f = self::caricaModelliDaStmt($stmt);
         $mysqli->close();
