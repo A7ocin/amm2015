@@ -10,7 +10,7 @@ $(document).ready(function () {
     
     $('#filtra').click(function(e){
         // impedisco il submit	<-------------------------------------
-        //e.preventDefault(); 
+        e.preventDefault(); 
         /*var _insegnamento = $( "#insegnamento option:selected" ).attr('value');
         if(_insegnamento === 'qualsiasi'){
             _insegnamento = '';
@@ -31,7 +31,7 @@ $(document).ready(function () {
             data : par,
             dataType: 'json',
             success: function (data, state) {
-                if(data['errori'].length === 0){
+                //if(data['errori'].length === 0){
                     // nessun errore
                     $(".error").hide();
                     if(data['models'].length === 0){
@@ -76,12 +76,12 @@ $(document).ready(function () {
                            
                         }
                     }
-                }else{
+                }/*else{
                     $(".error").show();
                     $(".error ul").empty();
                     for(var k in data['errori']){
                         $(".error ul").append("<li>"+ data['errori'][k] + "<\li>");
-                    }
+                    }*/
                 }
                
             },
