@@ -197,7 +197,7 @@ class AdministratorController extends BaseController {
                         break;
 
                     // visualizzazione dell'elenco esami
-                    case 'el_modelli':echo " (CASE ELENCA MODELLI) ";
+                    case 'el_modelli'://echo " (CASE ELENCA MODELLI) ";
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         $models = ModelFactory::instance()->getModelsPerAdministrator($user);
                         $vd->setSottoPagina('el_modelli');
@@ -206,7 +206,7 @@ class AdministratorController extends BaseController {
                         break;
 
                     // gestione della richiesta ajax di filtro esami
-                    case 'filtra_modelli':echo " (CASE FILTRA MODELLI) "; //<--------------------------
+                    case 'filtra_modelli'://echo " (CASE FILTRA MODELLI) "; //<--------------------------
                         $vd->toggleJson();
                         $vd->setSottoPagina('el_modelli_json');
                         $errori = array();
@@ -231,13 +231,13 @@ class AdministratorController extends BaseController {
                             
                         }*/
 
-                        if (isset($request['uploader'])) {echo " (RICHIESTA UPLOADER) ";
+                        if (isset($request['uploader'])) {//echo " (RICHIESTA UPLOADER) ";
                             $uploader = $request['uploader'];
                         }else{
                             $uploader = null;
                         }
 
-                        if (isset($request['nome'])) {echo " (RICHIESTA NOME) ";
+                        if (isset($request['nome'])) {//echo " (RICHIESTA NOME) ";
                             $nome = $request['nome'];
                         }else{
                             $nome = null;
@@ -248,7 +248,7 @@ class AdministratorController extends BaseController {
                                 $user, 
                                 $insegnamento_id, 
                                 $matricola, $nome, $cognome);*/
-                        echo " (uploader e nome) ".$uploader." ".$nome;      
+                        //echo " (uploader e nome) ".$uploader." ".$nome;      
                         $models_f = ModelFactory::instance()->ricercaModelli($uploader, $nome);
 						//$models = ModelFactory::instance()->getModelsPerAdministrator($user);
 

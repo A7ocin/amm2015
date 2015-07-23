@@ -30,7 +30,7 @@ $(document).ready(function () {
             url: 'administrator/filtra_modelli',
             data : par,
             dataType: 'json',
-            success: function (data, state) {$("#tabella_modelli").show();
+            success: function (data, state) {
                 if(data['errori'].length === 0){
                     // nessun errore
                     $(".error").hide();
