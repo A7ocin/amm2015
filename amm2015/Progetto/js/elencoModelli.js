@@ -30,7 +30,7 @@ $(document).ready(function () {
             url: 'administrator/filtra_modelli',
             data : par,
             dataType: 'json',
-            success: function (data, state) {
+            /*success: function (data, state) {
                 if(data['errori'].length === 0){
                     // nessun errore
                     $(".error").hide();
@@ -39,7 +39,7 @@ $(document).ready(function () {
                         $("#nessuno").show();
                        
                         // nascondo la tabella
-                        //$("#tabella_modelli").hide();
+                        $("#tabella_modelli").hide();
                     }else{
                         // nascondo il messaggio per nessun elemento
                         $("#nessuno").hide();
@@ -84,7 +84,7 @@ $(document).ready(function () {
                     }
                 }
                
-            },
+            }*/,
             error: function (data, state) {
             }
         
