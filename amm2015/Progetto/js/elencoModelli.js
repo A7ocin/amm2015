@@ -33,7 +33,7 @@ $(document).ready(function () {
             success: function (data, state) {
                 //if(data['errori'].length === 0){
                     // nessun errore
-                    $(".error").hide();
+                    //$(".error").hide();
                     if(data['models'].length === 0){
                         // mostro il messaggio per nessun elemento
                         $("#nessuno").show();
