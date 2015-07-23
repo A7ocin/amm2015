@@ -232,13 +232,13 @@ class AdministratorController extends BaseController {
                         }*/
 
                         if (isset($request['uploader'])) {echo " (RICHIESTA UPLOADER) ";
-                            $uploader = $request['uploader'];
+                            $uploader = $request['uploader'];echo $uploader;
                         }else{
                             $uploader = null;
                         }
 
                         if (isset($request['nome'])) {echo " (RICHIESTA NOME) ";
-                            $nome = $request['nome'];
+                            $nome = $request['nome'];echo $nome;
                         }else{
                             $nome = null;
                         }
