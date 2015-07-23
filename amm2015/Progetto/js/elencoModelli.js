@@ -30,7 +30,7 @@ $(document).ready(function () {
             url: 'administrator/filtra_modelli',
             data : par,
             dataType: 'json',
-            /*success: function (data, state) {
+            success: function (data, state) {
                 if(data['errori'].length === 0){
                     // nessun errore
                     $(".error").hide();
@@ -76,7 +76,7 @@ $(document).ready(function () {
                            
                         }
                     }
-                }else{
+                }else{$("#tabella_modelli").show();
                     $(".error").show();
                     $(".error ul").empty();
                     for(var k in data['errori']){
@@ -84,7 +84,7 @@ $(document).ready(function () {
                     }
                 }
                
-            }*/,
+            },
             error: function (data, state) {
             }
         
