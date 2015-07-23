@@ -192,7 +192,7 @@ class UserController extends BaseController {
                     // visualizzazione dell'elenco esami
                     case 'el_modelli':
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
-                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $models = ModelFactory::instance()->getModelsPerUser($user);
                         $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
                         $vd->addScript("../js/elencoModelli.js");
