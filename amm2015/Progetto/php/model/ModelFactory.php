@@ -412,7 +412,7 @@ class ModelFactory {
         return $models;
     }*/
     
-    private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ".$stmt;
+    private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ";
         $models = array();
          if (!$stmt->execute()) {echo " ERRORE 1 ";
             error_log("[caricaModelliDaStmt] impossibile" .
@@ -732,6 +732,24 @@ class ModelFactory {
             $mysqli->close();
             return $models_f;
         }
+        
+        switch (count($par)) {
+            case 1:
+                if (!$stmt->bind_param($bind, $par[0])) {
+                    error_log("[ricercaModelli] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return $esami;
+                }
+                break;
+            case 2:
+                if (!$stmt->bind_param($bind, $par[0], $par[1])) {
+                    error_log("[ricercaModelli] impossibile" .
+                            " effettuare il binding in input");
+                    $mysqli->close();
+                    return $esami;
+                }
+                break;
 
         $models_f = self::caricaModelliDaStmt($stmt);
         $mysqli->close();
