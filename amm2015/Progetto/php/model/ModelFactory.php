@@ -412,7 +412,7 @@ class ModelFactory {
         return $models;
     }*/
     
-    private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ";
+    private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ".$stmt;
         $models = array();
          if (!$stmt->execute()) {echo " ERRORE 1 ";
             error_log("[caricaModelliDaStmt] impossibile" .
