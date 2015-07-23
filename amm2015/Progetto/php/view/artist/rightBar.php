@@ -81,23 +81,20 @@ switch ($vd->getSottoPagina()) {
     <?php default:
         ?>
         <p>
-            Seleziona una delle  seguentifunzionalit&agrave; disponibili per 
-            la gestione dei tuoi insegnamenti:
+            Select one of the following sections of your 3D world:
         </p>
         <ol>
             <li>
-                <strong>Anagrafica</strong> per modificare i tuoi dati 
-                anagrafici e la tua password.
+                <strong>Personal Infos</strong> to edit your account's infos, such as your email or password.
             </li>
             <li>
-                <strong>Appelli</strong> per visualizzare e/o creare appelli di esame
-                per i tuoi insegnamenti.
+                <strong>3d models database</strong> to view all the beautiful models on our database.
             </li>
             <li>
-                <strong>Esami</strong> per registrare gli statini di esame.
+                <strong>Users List</strong> to access the complete list of our users.
             </li>
             <li>
-                <strong>Elenco Esami</strong> per visualizzare gli statini di esame.
+                <strong>Search models</strong> to search for a model.
             </li>
         </ol>
         <?php break; ?>
