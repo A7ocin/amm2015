@@ -195,7 +195,7 @@ class ArtistController extends BaseController {
                         $models = ModelFactory::instance()->getModelsPerArtist($user);
                         $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
-                        $vd->addScript("../js/elencoModelli.js");
+                        $vd->addScript("../js/elencoModelliArtist.js");
                         break;
 
                     // gestione della richiesta ajax di filtro esami

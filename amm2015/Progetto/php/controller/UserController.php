@@ -195,7 +195,7 @@ class UserController extends BaseController {
                         $models = ModelFactory::instance()->getModelsPerUser($user);
                         $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
-                        $vd->addScript("../js/elencoModelli.js");
+                        $vd->addScript("../js/elencoModelliUser.js");
                         break;
 
                     // gestione della richiesta ajax di filtro esami
