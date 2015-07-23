@@ -414,7 +414,7 @@ class ModelFactory {
     
     private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ";
         $models = array();
-         if (!$stmt->execute()) {
+         if (!$stmt->execute()) {echo " ERRORE 1 ";
             error_log("[caricaModelliDaStmt] impossibile" .
                     " eseguire lo statement");
             $returnNull = null;
@@ -429,7 +429,7 @@ class ModelFactory {
                 $row['models_nome'],
                 $row['models_uploader'],
                 $row['models_descrizione']);
-        if (!$bind) {
+        if (!$bind) {echo " ERRORE 2 ";
             error_log("[caricaInsegnamentoDaStmt] impossibile" .
                     " effettuare il binding in output");
             return null;
