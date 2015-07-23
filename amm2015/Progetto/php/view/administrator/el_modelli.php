@@ -6,7 +6,7 @@
 </div>
 <div class="input-form">
     <h3>Filter</h3>
-    <form method="post" action="administrator/pagina?admin&uploader<?=request['uploader'] ?>">		
+    <form method="post" action="administrator/pagina?admin&uploader=<?=$request['uploader'] ?>">		
         <label for="uploader">Uploader</label>
         <input name="uploader" id="uploader" type="text"/>
         <br/>
