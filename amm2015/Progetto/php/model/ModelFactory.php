@@ -412,9 +412,9 @@ class ModelFactory {
         return $models;
     }*/
     
-    private function &caricaModelliDaStmt(mysqli_stmt $stmt){echo " (caricaModelliDaStmt) ";
+    private function &caricaModelliDaStmt(mysqli_stmt $stmt){//echo " (caricaModelliDaStmt) ";
         $models = array();
-         if (!$stmt->execute()) {echo " ERRORE 1 ";
+         if (!$stmt->execute()) {//echo " ERRORE 1 ";
             error_log("[caricaModelliDaStmt] impossibile" .
                     " eseguire lo statement");
             $returnNull = null;
@@ -429,7 +429,7 @@ class ModelFactory {
                 $row['models_nome'],
                 $row['models_uploader'],
                 $row['models_descrizione']);
-        if (!$bind) {echo " ERRORE 2 ";
+        if (!$bind) {//echo " ERRORE 2 ";
             error_log("[caricaInsegnamentoDaStmt] impossibile" .
                     " effettuare il binding in output");
             return null;
@@ -444,7 +444,7 @@ class ModelFactory {
         return $models;
     }
 
-    public function creaDaArray($row){echo " (CreaDaArray) ";
+    public function creaDaArray($row){//echo " (CreaDaArray) ";
         $model = new Model();
         $model->setId($row['models_id']);
         $model->setDimensione($row['models_dimensione']);
@@ -673,7 +673,7 @@ class ModelFactory {
         return $stmt->affected_rows;
     }
     
-    public function &ricercaModelli($uploader, $nome) {echo "( RICERCA MODELLI ) ".$uploader." ".$nome;
+    public function &ricercaModelli($uploader, $nome) {//echo "( RICERCA MODELLI ) ".$uploader." ".$nome;
         $models_f = array();
         
         // costruisco la where "a pezzi" a seconda di quante 
@@ -684,7 +684,7 @@ class ModelFactory {
         $par = array();
         //$par[] = $user->getId();
         
-        if(isset($uploader) && isset($nome)){echo " (ENTRAMBI) ";
+        if(isset($uploader) && isset($nome)){//echo " (ENTRAMBI) ";
             $where = " where lower(models.uploader) like lower(?) and lower(models.nome) like lower(?) ";
             $bind ="ss";
             //$par[] = $insegnamento;
@@ -693,14 +693,14 @@ class ModelFactory {
         }
         
         else
-        if(isset($uploader)){echo " (SOLO UPLOADER) ";
+        if(isset($uploader)){//echo " (SOLO UPLOADER) ";
             $where = " where lower(models.uploader) like lower(?) ";
             $bind ="s";
             $par[] = "%".$uploader."%";
         }
         
         else
-        if(isset($nome)){echo " (SOLO NOME) ";
+        if(isset($nome)){//echo " (SOLO NOME) ";
             $where = " where lower(models.nome) like lower(?) ";
             $bind ="s";
             $par[] = "%".$nome."%";
@@ -718,7 +718,7 @@ class ModelFactory {
                   ".$where;
         
         $mysqli = Db::getInstance()->connectDb();
-        if (!isset($mysqli)) {echo " (718 ModelFactory) ";
+        if (!isset($mysqli)) {//echo " (718 ModelFactory) ";
             error_log("[ricercaEsami] impossibile inizializzare il database");
             $mysqli->close();
             return $models_f;
@@ -726,7 +726,7 @@ class ModelFactory {
 
         $stmt = $mysqli->stmt_init();
         $stmt->prepare($query);
-        if (!$stmt) {echo " (726 ModelFactory) ";
+        if (!$stmt) {//echo " (726 ModelFactory) ";
             error_log("[ricercaEsami] impossibile" .
                     " inizializzare il prepared statement");
             $mysqli->close();
