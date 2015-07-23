@@ -4,5 +4,5 @@
     <li class="<?= $vd->getSottoPagina() == 'anagrafica' ? 'current_page_item' : '' ?>"><a href="user/anagrafica<?= $vd->scriviToken('?')?>">Personal Infos</a></li>
     <li class="<?= $vd->getSottoPagina() == 'appelli' ? 'current_page_item' : '' ?>"><a href="user/modelli<?= $vd->scriviToken('?')?>">3d models database</a></li>
     <li class="<?= $vd->getSottoPagina() == 'reg_esami' ? 'current_page_item' : '' ?>"><a href="user/utenti<?= $vd->scriviToken('?')?>">Users list</a></li>
-    <li class="<?= $vd->getSottoPagina() == 'el_esami' ? 'current_page_item' : '' ?>"><a href="user/el_esami<?= $vd->scriviToken('?')?>">Elenco Esami</a></li>
+    <li class="<?= $vd->getSottoPagina() == 'el_modelli' ? 'current_page_item' : '' ?>"><a href="user/el_modelli<?= $vd->scriviToken('?')?>">Search Models</a></li>
 </ul>

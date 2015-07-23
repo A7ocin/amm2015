@@ -39,12 +39,12 @@ switch ($vd->getSottoPagina()) {
         include 'reg_esami_step3.php';
         break;
     
-    case 'el_esami':
-        include 'el_esami.php';
+    case 'el_modelli':
+        include 'el_modelli.php';
         break;
     
-    case 'el_esami_json':
-        include 'el_esami_json.php';
+    case 'el_modelli_json':
+        include 'el_modelli_json.php';
         break;
         ?>
         
@@ -64,7 +64,7 @@ switch ($vd->getSottoPagina()) {
             </li>
             <li><a href="user/modelli<?= $vd->scriviToken('?')?>" id="pnl-iscrizione">3d models database</a></li>
             <li><a href="user/utenti<?= $vd->scriviToken('?')?>" id="pnl-libretto">Users list</a></li>
-            <li><a href="user/el_esami<?= $vd->scriviToken('?')?>" id="pnl-cerca">Elenco Esami</a></li>
+            <li><a href="user/el_modelli<?= $vd->scriviToken('?')?>" id="pnl-cerca">Search Models</a></li>
         </ul>
         <?php
         break;

@@ -190,43 +190,24 @@ class ArtistController extends BaseController {
                         break;
 
                     // visualizzazione dell'elenco esami
-                    case 'el_esami':
+                    case 'el_modelli':
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
-                        $vd->setSottoPagina('el_esami');
+                        $models = ModelFactory::instance()->getModelsPerAdministrator($user);
+                        $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
-                        $vd->addScript("../js/elencoEsami.js");
+                        $vd->addScript("../js/elencoModelli.js");
                         break;
 
                     // gestione della richiesta ajax di filtro esami
-                    case 'filtra_esami':
+                    case 'filtra_modelli':
                         $vd->toggleJson();
-                        $vd->setSottoPagina('el_esami_json');
+                        $vd->setSottoPagina('el_modelli_json');
                         $errori = array();
 
-                        /*if (isset($request['insegnamento']) && ($request['insegnamento'] != '')) {
-                            $insegnamento_id = filter_var($request['insegnamento'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-                            if($insegnamento_id == null){
-                                $errori['insegnamento'] = "Specificare un identificatore valido";
-                            }
-                        } else {
-                            $insegnamento_id = null;
-                            
-                        }*/
-
-                        if (isset($request['matricola']) && ($request['matricola'] != '')) {
-                            $matricola = filter_var($request['matricola'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
-                            if($matricola == null){
-                                $errori['matricola'] = "Specificare una matricola valida";
-                            }
-                        } else {
-                            $matricola = null;
-                            
-                        }
-
-                        if (isset($request['cognome'])) {
-                            $cognome = $request['cognome'];
+                        if (isset($request['uploader'])) {
+                            $uploader = $request['uploader'];
                         }else{
-                            $cognome = null;
+                            $uploader = null;
                         }
 
                         if (isset($request['nome'])) {
@@ -234,12 +215,8 @@ class ArtistController extends BaseController {
                         }else{
                             $nome = null;
                         }
-
-                        
-                        $esami = EsameFactory::instance()->ricercaEsami(
-                                $user, 
-                                $insegnamento_id, 
-                                $matricola, $nome, $cognome);
+    
+                        $models_f = ModelFactory::instance()->ricercaModelli($uploader, $nome);
 
                         break;
 
