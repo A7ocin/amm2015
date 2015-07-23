@@ -6,7 +6,6 @@
 $(document).ready(function () {
     
     $(".error").hide();
-    $("#tabella_modelli").hide();
     
     $('#filtra').click(function(e){
         // impedisco il submit	<-------------------------------------
@@ -39,7 +38,6 @@ $(document).ready(function () {
                         $("#nessuno").show();
                        
                         // nascondo la tabella
-                        $("#tabella_modelli").hide();
                     }else{
                         // nascondo il messaggio per nessun elemento
                         $("#nessuno").hide();
@@ -76,7 +74,7 @@ $(document).ready(function () {
                            
                         }
                     }
-                }else{$("#tabella_modelli").show();
+                }else{
                     $(".error").show();
                     $(".error ul").empty();
                     for(var k in data['errori']){
