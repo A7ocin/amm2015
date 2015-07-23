@@ -76,13 +76,13 @@ $(document).ready(function () {
                            
                         }
                     }
-                /*}else{
+               /* }else{
                     $(".error").show();
                     $(".error ul").empty();
                     for(var k in data['errori']){
                         $(".error ul").append("<li>"+ data['errori'][k] + "<\li>");
-                    }*/
-                }
+                    }
+                }*/
                
             },
             error: function (data, state) {
