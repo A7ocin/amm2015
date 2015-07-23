@@ -206,7 +206,7 @@ class AdministratorController extends BaseController {
                         break;
 
                     // gestione della richiesta ajax di filtro esami
-                    case 'filtra_modelli':echo " (CASE FILTRA MODELLI) "; //<--------------------------
+                    case 'filtra_modelli':echo " (CASE FILTRA MODELLI) ".$uploader." ".$nome; //<--------------------------
                         $vd->toggleJson();
                         $vd->setSottoPagina('el_modelli_json');
                         $errori = array();
