@@ -207,7 +207,6 @@ class AdministratorController extends BaseController {
 
                     // gestione della richiesta ajax di filtro esami
                     case 'filtra_modelli':echo " (CASE FILTRA MODELLI) ";
-						$models = ModelFactory::instance()->getModelsPerAdministrator($user);
                         $vd->toggleJson();
                         $vd->setSottoPagina('el_modelli_json');
                         $errori = array();
@@ -250,7 +249,8 @@ class AdministratorController extends BaseController {
                                 $insegnamento_id, 
                                 $matricola, $nome, $cognome);*/
                                 
-                        $models = ModelFactory::instance()->ricercaModelli($uploader, $nome);
+                        //$models = ModelFactory::instance()->ricercaModelli($uploader, $nome);
+						$models = ModelFactory::instance()->getModelsPerAdministrator($user);
 
                         break;
 
