@@ -10,7 +10,7 @@ $(document).ready(function () {
     
     $('#filtra').click(function(e){
         // impedisco il submit	<-------------------------------------
-        e.preventDefault(); 
+        //e.preventDefault(); 
         /*var _insegnamento = $( "#insegnamento option:selected" ).attr('value');
         if(_insegnamento === 'qualsiasi'){
             _insegnamento = '';
