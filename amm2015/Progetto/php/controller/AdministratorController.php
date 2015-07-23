@@ -231,13 +231,13 @@ class AdministratorController extends BaseController {
                             
                         }*/
 
-                        if (isset($request['uploader'])) {echo " (RICHIESTA UPLOADER) ".$request['uploader'];
+                        if (isset($request['uploader'])) {echo " (RICHIESTA UPLOADER) ";
                             $uploader = $request['uploader'];
                         }else{
                             $uploader = null;
                         }
 
-                        if (isset($request['nome'])) {echo " (RICHIESTA NOME) ".$request['nome'];
+                        if (isset($request['nome'])) {echo " (RICHIESTA NOME) ";
                             $nome = $request['nome'];
                         }else{
                             $nome = null;
@@ -248,7 +248,7 @@ class AdministratorController extends BaseController {
                                 $user, 
                                 $insegnamento_id, 
                                 $matricola, $nome, $cognome);*/
-                                
+                        echo " (uploader e nome) ".$uploader." ".$nome;      
                         $models_f = ModelFactory::instance()->ricercaModelli($uploader, $nome);
 						//$models = ModelFactory::instance()->getModelsPerAdministrator($user);
 
