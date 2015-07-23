@@ -6,6 +6,7 @@
 $(document).ready(function () {
     
     $(".error").hide();
+    $("#tabella_modelli").hide();
     
     $('#filtra').click(function(e){
         // impedisco il submit	<-------------------------------------
