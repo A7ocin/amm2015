@@ -10,7 +10,7 @@ $(document).ready(function () {
     
     $('#filtra').click(function(e){
         // impedisco il submit	<-------------------------------------
-        //e.preventDefault(); 
+        e.preventDefault(); 
         /*var _insegnamento = $( "#insegnamento option:selected" ).attr('value');
         if(_insegnamento === 'qualsiasi'){
             _insegnamento = '';
@@ -34,13 +34,13 @@ $(document).ready(function () {
                 if(data['errori'].length === 0){
                     // nessun errore
                     $(".error").hide();
-                    if(data['models'].length === 0){
+                    /*if(data['models'].length === 0){
                         // mostro il messaggio per nessun elemento
                         $("#nessuno").show();
                        
                         // nascondo la tabella
                         $("#tabella_modelli").hide();
-                    }else{
+                    }else{*/
                         // nascondo il messaggio per nessun elemento
                         $("#nessuno").hide();
                         $("#tabella_modelli").show();
@@ -75,7 +75,7 @@ $(document).ready(function () {
                             
                            
                         }
-                    }
+                   // }
                 }else{
                     $(".error").show();
                     $(".error ul").empty();
