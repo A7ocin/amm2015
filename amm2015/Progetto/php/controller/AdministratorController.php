@@ -200,9 +200,9 @@ class AdministratorController extends BaseController {
                     case 'el_modelli':echo " (CASE ELENCA MODELLI) ";
                         //$insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                         $models = ModelFactory::instance()->getModelsPerAdministrator($user);
-                        $vd->addScript("../js/elencoModelli.js");
                         $vd->setSottoPagina('el_modelli');
                         $vd->addScript("../js/jquery-2.1.1.min.js");
+                        $vd->addScript("../js/elencoModelli.js");
                         break;
 
                     // gestione della richiesta ajax di filtro esami
