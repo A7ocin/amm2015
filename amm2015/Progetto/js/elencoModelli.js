@@ -36,13 +36,13 @@ $(document).ready(function () {
                     //$(".error").hide();
                     if(data['models'].length === 0){
                         // mostro il messaggio per nessun elemento
-                        $("#nessuno").show();
+                        //$("#nessuno").show();
                        
                         // nascondo la tabella
                         $("#tabella_modelli").hide();
                     }else{
                         // nascondo il messaggio per nessun elemento
-                        $("#nessuno").hide();
+                        //$("#nessuno").hide();
                         $("#tabella_modelli").show();
                         //cancello tutti gli elementi dalla tabella
                         $("#tabella_modelli tbody").empty();
