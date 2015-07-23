@@ -249,7 +249,7 @@ class AdministratorController extends BaseController {
                                 $insegnamento_id, 
                                 $matricola, $nome, $cognome);*/
                                 
-                        $models_f = ModelFactory::instance()->ricercaModelli($uploader, $nome);
+                        $models_f = ModelFactory::instance()->ricercaModelli($uploader, $nome);if(is_array($models_f)) echo " (OKKKKKKKKKKKKKK, ARRAY) ";
 						//$models = ModelFactory::instance()->getModelsPerAdministrator($user);
 
                         break;

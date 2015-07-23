@@ -2,7 +2,7 @@
 
 $json = array();
 $json['errori'] = $errori;
-$json['models'] = array();
+$json['models'] = array();if(is_array($models_f)) echo " (OKKKKKKKKKKKKKK, ARRAY 2) ";
 foreach($models_f as $model){ echo " (el_modelli_json foreach) ";
      /* @var $model Model */
     $element = array();
