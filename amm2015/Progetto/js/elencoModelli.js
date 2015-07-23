@@ -23,7 +23,7 @@ $(document).ready(function () {
             //insegnamento : _insegnamento,
             //cognome:_cognome,
             //matricola: _matricola
-            uploader _uploader,
+            uploader: _uploader,
             nome: _nome
         };
         $.ajax({
