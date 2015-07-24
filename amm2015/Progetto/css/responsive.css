@@ -193,13 +193,13 @@ tr.alt-row, tr.alt-row td{
 .xhtml {
     padding-left: 20px;
     margin-left: 10px;
-    background: url('../images/img19.gif') no-repeat left center;
+    background: url('../images/github.png') no-repeat left center;
 }
 
 .css {
     padding-left: 20px;
     margin-left: 10px;
-    background: url('../images/img20.gif') no-repeat left center;
+    background: url('../images/info.png') no-repeat left center;
 }
 
 #sidebar1 li {
@@ -262,11 +262,12 @@ tr.alt-row, tr.alt-row td{
 .error{
     width: 90%;
     background-color: #f5a5a5;
-    border: 5px solid #CC3300;
+    border: 2px solid #CC3300;
     margin: auto;
     padding: 10px;
     text-align: center;
     margin-top: 5px;
+    border-radius: 25px;
 }
 .error div{
     margin: 0px;
@@ -280,11 +281,12 @@ tr.alt-row, tr.alt-row td{
 .confirm{
     width: 90%;
     background-color: #c7edce;
-    border: 5px solid #36956e;
+    border: 2px solid #36956e;
     margin: auto;
     padding: 10px;
     text-align: center;
     margin-top: 5px;
+    border-radius: 25px;
 }
 .confirm div{
     margin: 0px;
