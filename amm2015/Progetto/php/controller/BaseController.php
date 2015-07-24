@@ -54,6 +54,11 @@ class BaseController {
                     if ($this->loggedIn())
                         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
+                    
+                case 'info':
+					$this->showInfoPage();
+					break;
+					
                 default : $this->showLoginPage();
             }
         } else {

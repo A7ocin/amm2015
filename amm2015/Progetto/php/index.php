@@ -34,6 +34,11 @@ class FrontController {
                     $controller = new BaseController();
                     $controller->handleInput($request);
                     break;
+                
+                case "info":
+                    $controller = new BaseController();
+                    $controller->handleInput($request);
+                    break;
 
                 // studente
                 case 'studente':
