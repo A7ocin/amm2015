@@ -55,7 +55,7 @@ class BaseController {
                         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
                     
-                case 'info':
+                case 'info':echo "DUE";
 					$this->showInfoPage();
 					break;
 					
@@ -100,7 +100,7 @@ class BaseController {
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
     }
     
-    protected function showInfoPage($vd) {
+    protected function showInfoPage($vd) {echo "TRE";
         // mostro la pagina di login
         $vd->setTitolo("TTDM - info");
         $vd->setMenuFile(basename(__DIR__) . '/../view/info/menu.php');

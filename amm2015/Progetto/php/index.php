@@ -35,7 +35,7 @@ class FrontController {
                     $controller->handleInput($request);
                     break;
                 
-                case "info":
+                case "info":echo "UNO";
                     $controller = new BaseController();
                     $controller->handleInput($request);
                     break;
