@@ -661,14 +661,19 @@ class ModelFactory {
 				return 0;
 			}
 		}
+		
+		$mysqli->autocommit(false);
 
         if (!$stmt->execute()) {
             error_log("[modificaDB] impossibile" .
                     " eseguire lo statement");
+            $mysqli->rollback();
             $mysqli->close();
             return 0;
         }
-
+		
+		$mysqli->commit();
+        $mysqli->autocommit(true);
         $mysqli->close();
         return $stmt->affected_rows;
     }
