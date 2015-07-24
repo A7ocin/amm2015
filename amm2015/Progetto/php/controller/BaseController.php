@@ -99,6 +99,16 @@ class BaseController {
         $vd->setRightBarFile(basename(__DIR__) . '/../view/login/rightBar.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
     }
+    
+    protected function showInfoPage($vd) {
+        // mostro la pagina di login
+        $vd->setTitolo("TTDM - info");
+        $vd->setMenuFile(basename(__DIR__) . '/../view/info/menu.php');
+        $vd->setLogoFile(basename(__DIR__) . '/../view/info/logo.php');
+        $vd->setLeftBarFile(basename(__DIR__) . '/../view/info/leftBar.php');
+        $vd->setRightBarFile(basename(__DIR__) . '/../view/info/rightBar.php');
+        $vd->setContentFile(basename(__DIR__) . '/../view/info/content.php');
+    }
 
     /**
      * Imposta la vista master.php per visualizzare la pagina di gestione
