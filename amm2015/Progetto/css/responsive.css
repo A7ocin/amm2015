@@ -206,6 +206,14 @@ tr.alt-row, tr.alt-row td{
     background: url('../images/info.png') no-repeat left center;
 }
 
+.back {
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    background: url('../images/back.png') no-repeat left center;
+}
+
 #sidebar1 li {
     list-style: none;
 }
