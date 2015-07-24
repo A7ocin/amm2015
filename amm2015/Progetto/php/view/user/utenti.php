@@ -10,7 +10,7 @@
             <tr>
                 <th class="iscrizione-col-small">Username</th>
                 <th class="iscrizione-col-small">City</th>
-                <th class="iscrizione-col-small">Email (Mb)</th>
+                <th class="iscrizione-col-small">Email</th>
             </tr>
         </thead>
         <tbody>

@@ -106,8 +106,8 @@ class FrontController {
     public static function write404() {
         // impostiamo il codice della risposta http a 404 (file not found)
         header('HTTP/1.0 404 Not Found');
-        $titolo = "File non trovato!";
-        $messaggio = "La pagina che hai richiesto non &egrave; disponibile";
+        $titolo = "File not found!";
+        $messaggio = "The page you requested is not available";
         include_once('error.php');
         exit();
     }
@@ -119,8 +119,8 @@ class FrontController {
     public static function write403() {
         // impostiamo il codice della risposta http a 404 (file not found)
         header('HTTP/1.0 403 Forbidden');
-        $titolo = "Accesso negato";
-        $messaggio = "Non hai i diritti per accedere a questa pagina";
+        $titolo = "Access denied";
+        $messaggio = "You don't have the rights to access this page";
         $login = true;
         include_once('error.php');
         exit();

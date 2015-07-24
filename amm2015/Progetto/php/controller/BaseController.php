@@ -128,7 +128,7 @@ class BaseController {
     
     protected function showHomeAdministrator($vd) {
         // mostro la home degli admin
-        $vd->setTitolo("TTDM - Administrator's page");
+        $vd->setTitolo("TTDM - Administrator page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/administrator/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/administrator/logo.php');
         $vd->setLeftBarFile(basename(__DIR__) . '/../view/administrator/leftBar.php');
@@ -154,7 +154,7 @@ class BaseController {
     
     protected function showHomeArtist($vd) {
         // mostro la home degli artisti
-        $vd->setTitolo("TTDM - Artist's page");
+        $vd->setTitolo("TTDM - Artist page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/artist/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/artist/logo.php');
         $vd->setLeftBarFile(basename(__DIR__) . '/../view/artist/leftBar.php');
@@ -164,7 +164,7 @@ class BaseController {
     
     protected function showHomeUser($vd) {
         // mostro la home degli user
-        $vd->setTitolo("TTDM - User's page");
+        $vd->setTitolo("TTDM - User page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/user/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/user/logo.php');
         $vd->setLeftBarFile(basename(__DIR__) . '/../view/user/leftBar.php');
@@ -234,7 +234,7 @@ class BaseController {
             $_SESSION[self::role] = $user->getRuolo();
             $this->showHomeUtente($vd);
         } else {
-            $vd->setMessaggioErrore("Utente sconosciuto o password errata");
+            $vd->setMessaggioErrore("Unknown user or wrong password");
             $this->showLoginPage($vd);
         }
     }
@@ -267,49 +267,49 @@ class BaseController {
 
         if (isset($request['via'])) {
             if (!$user->setVia($request['via'])) {
-                $msg[] = '<li>La via specificata non &egrave; corretta</li>';
+                $msg[] = '<li>The address is incorrect</li>';
             }
         }
         if (isset($request['civico'])) {
             if (!$user->setNumeroCivico($request['civico'])) {
-                $msg[] = '<li>Il formato del numero civico non &egrave; corretto</li>';
+                $msg[] = '<li>The address number is incorrect</li>';
             }
         }
         if (isset($request['citta'])) {
             if (!$user->setCitta($request['citta'])) {
-                $msg[] = '<li>La citt&agrave; specificata non &egrave; corretta</li>';
+                $msg[] = '<li>The city is incorrect</li>';
             }
         }
         if (isset($request['provincia'])) {
             if (!$user->setProvincia($request['provincia'])) {
-                $msg[] = '<li>La provincia specificata &egrave; corretta</li>';
+                $msg[] = '<li>The district is incorrect</li>';
             }
         }
         if (isset($request['cap'])) {
             if (!$user->setCap($request['cap'])) {
-                $msg[] = '<li>Il CAP specificato non &egrave; corretto</li>';
+                $msg[] = '<li>The zip code is incorrect</li>';
             }
         }
         if (isset($request['eta'])) {
             if (!$user->setEta($request['eta'])) {
-                $msg[] = '<li>L eta specificata non &egrave; corretta</li>';
+                $msg[] = '<li>The age is incorrect</li>';
             }
         }
         if (isset($request['caricamenti'])) {
             if (!$user->setCaricamenti($request['caricamenti'])) {
-                $msg[] = '<li>I caricamenti specificati non sono corretti</li>';
+                $msg[] = '<li>The uploads are incorrect</li>';
             }
         }
         if (isset($request['descrizione_personale'])) {
             if (!$user->setDescrizionePersonale($request['descrizione_personale'])) {
-                $msg[] = '<li>La descrizione personale specificata non &egrave; corretta</li>';
+                $msg[] = '<li>The personal description is incorrect</li>';
             }
         }
 
         // salviamo i dati se non ci sono stati errori
         if (count($msg) == 0) {
             if (UserFactory::instance()->salva($user) != 1) {
-                $msg[] = '<li>Salvataggio non riuscito</li>';
+                $msg[] = '<li>Sorry, I wasn\'t able to save :-(</li>';
             }
         }
     }
@@ -324,14 +324,14 @@ class BaseController {
     protected function aggiornaEmail($user, &$request, &$msg) {
         if (isset($request['email'])) {
             if (!$user->setEmail($request['email'])) {
-                $msg[] = '<li>L\'indirizzo email specificato non &egrave; corretto</li>';
+                $msg[] = '<li>The email address is incorrect</li>';
             }
         }
         
         // salviamo i dati se non ci sono stati errori
         if (count($msg) == 0) {
             if (UserFactory::instance()->salva($user) != 1) {
-                $msg[] = '<li>Salvataggio non riuscito</li>';
+                $msg[] = '<li>Sorry, I wasn\'t able to save :-(</li>';
             }
         }
     }
@@ -347,17 +347,17 @@ class BaseController {
         if (isset($request['pass1']) && isset($request['pass2'])) {
             if ($request['pass1'] == $request['pass2']) {
                 if (!$user->setPassword($request['pass1'])) {
-                    $msg[] = '<li>Il formato della password non &egrave; corretto</li>';
+                    $msg[] = '<li>The password\'s format is not correct</li>';
                 }
             } else {
-                $msg[] = '<li>Le due password non coincidono</li>';
+                $msg[] = '<li>The two passwords are not the same</li>';
             }
         }
         
         // salviamo i dati se non ci sono stati errori
         if (count($msg) == 0) {
             if (UserFactory::instance()->salva($user) != 1) {
-                $msg[] = '<li>Salvataggio non riuscito</li>';
+                $msg[] = '<li>Sorry, I wasn\'t able to save :-(</li>';
             }
         }
     }
@@ -372,7 +372,7 @@ class BaseController {
         if (count($msg) > 0) {
             // ci sono messaggi di errore nell'array,
             // qualcosa e' andato storto...
-            $error = "Si sono verificati i seguenti errori \n<ul>\n";
+            $error = "The following errors have occurred \n<ul>\n";
             foreach ($msg as $m) {
                 $error = $error . $m . "\n";
             }
