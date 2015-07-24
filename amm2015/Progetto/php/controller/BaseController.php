@@ -54,21 +54,17 @@ class BaseController {
                     if ($this->loggedIn())
                         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
-                    
-                case 'info':echo "DUE";
-					$this->showInfoPage();
-					break;
 					
                 default : $this->showLoginPage();
             }
-        } else {echo "QUATTRO";
+        } else {
             if ($this->loggedIn()) {
                 //utente autenticato
                 // questa variabile viene poi utilizzata dalla vista
                 $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
 
                 $this->showHomeUtente($vd);
-            } else {echo "CINQUE";
+            } else {
                 // utente non autenticato
                 $this->showLoginPage($vd);
             }
@@ -98,16 +94,6 @@ class BaseController {
         $vd->setLeftBarFile(basename(__DIR__) . '/../view/login/leftBar.php');
         $vd->setRightBarFile(basename(__DIR__) . '/../view/login/rightBar.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
-    }
-    
-    protected function showInfoPage($vd) {echo "TRE";
-        // mostro la pagina di login
-        $vd->setTitolo("TTDM - info");
-        $vd->setMenuFile(basename(__DIR__) . '/../view/info/menu.php');
-        $vd->setLogoFile(basename(__DIR__) . '/../view/info/logo.php');
-        $vd->setLeftBarFile(basename(__DIR__) . '/../view/info/leftBar.php');
-        $vd->setRightBarFile(basename(__DIR__) . '/../view/info/rightBar.php');
-        $vd->setContentFile(basename(__DIR__) . '/../view/info/content.php');
     }
 
     /**
