@@ -190,13 +190,13 @@ tr.alt-row, tr.alt-row td{
 
 /* decorazioni degli elementi */
 
-.xhtml {
+.github {
     padding-left: 20px;
     margin-left: 10px;
     background: url('../images/github.png') no-repeat left center;
 }
 
-.css {
+.info {
     padding-left: 20px;
     margin-left: 10px;
     background: url('../images/info.png') no-repeat left center;

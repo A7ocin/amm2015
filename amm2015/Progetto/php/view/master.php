@@ -151,8 +151,8 @@ if (!$vd->isJson()) {
                     </div>
                     <div class="validator">
                         <p>
-                            <a href="https://github.com/A7ocin/amm2015">Github</a>
-                            <a href="http://spano.sc.unica.it/amm2015/garauNicola/amm2015/Progetto/html/info.html">Info</a> 
+                            <a href="https://github.com/A7ocin/amm2015" class="github">Github</a>
+                            <a href="http://spano.sc.unica.it/amm2015/garauNicola/amm2015/Progetto/html/info.html" class="info">Info</a> 
                         </p>
                     </div>
                 </footer>
