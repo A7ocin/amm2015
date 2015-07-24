@@ -61,14 +61,14 @@ class BaseController {
 					
                 default : $this->showLoginPage();
             }
-        } else {
+        } else {echo "QUATTRO";
             if ($this->loggedIn()) {
                 //utente autenticato
                 // questa variabile viene poi utilizzata dalla vista
                 $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
 
                 $this->showHomeUtente($vd);
-            } else {
+            } else {echo "CINQUE";
                 // utente non autenticato
                 $this->showLoginPage($vd);
             }
