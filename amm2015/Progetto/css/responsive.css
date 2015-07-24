@@ -8,11 +8,13 @@ body{
 
 #page{
     background-color: #bebebe;
+    border-radius: 25px;
 }
 
 #header, #footer{
     background-color: #FF9933;
     color: white;
+    border-radius: 25px;
 
 }
 
@@ -449,33 +451,7 @@ tr.alt-row, tr.alt-row td{
         background: url('../images/logout.png') no-repeat left center;
     }
 
-    #header:before, #footer:before {
-        left: 0;
-        border-width: 20px 0 0 20px;
-        content: "______________________________________________________________________________________________________";
-        color: transparent;
-        position: absolute;
-        display: block;
-        border-style: solid;
-        border-color: #2b2b27 transparent transparent transparent;
-        margin-top: 110px;
-
-    }
-
-    #header:after, #footer:after {
-        right: 0;
-        border-width: 20px 20px 0px 0px;
-        content: "______________________________________________________________________________________________________";
-        color: transparent;
-        position: absolute;
-        display: block;
-        border-style: solid;
-        border-color: #2b2b27 transparent transparent transparent;
-        margin-top: 110px;
-
-    }
-
-
+    
     div#logo h1 {
         background-image: url('../images/logo.jpg');
         background-repeat: no-repeat;
@@ -579,8 +555,9 @@ tr.alt-row, tr.alt-row td{
         height: 130px;
         margin:auto;
         margin-top: 15px;
-        border: 1px solid grey;
+        border: 2px solid grey;
         position: relative;
+        border-radius: 25px;
     }
 
     .panel li a{
