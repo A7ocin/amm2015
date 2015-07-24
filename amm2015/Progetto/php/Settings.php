@@ -1,13 +1,13 @@
 <?php
 
 /**
- * Classe che contiene una lista di variabili di configurazione
+ * Configuration class
  *
  * @author Nicola Garau
  */
 class Settings {
 
-    // variabili di accesso per il database
+    // database access variables
     public static $db_host = 'localhost';
     public static $db_user = 'garauNicola';
     public static $db_password = 'scimpanze6785';
@@ -16,20 +16,18 @@ class Settings {
     private static $appPath;
 
     /**
-     * Restituisce il path relativo nel server corrente dell'applicazione
-     * Lo uso perche' la mia configurazione locale e' ovviamente diversa da quella 
-     * pubblica. Gestisco il problema una volta per tutte in questo script
+     * It switches between localhost and the public server
      */
     public static function getApplicationPath() {
         if (!isset(self::$appPath)) {
-            // restituisce il server corrente
+            // return the current server
             switch ($_SERVER['HTTP_HOST']) {
                 case 'localhost':
-                    // configurazione locale
+                    // local configuration
                     self::$appPath = 'http://' . $_SERVER['HTTP_HOST'] . '/amm2015/Progetto/';
                     break;
                 case 'spano.sc.unica.it':
-                    // configurazione pubblica
+                    // public configuration
                     self::$appPath = 'http://' . $_SERVER['HTTP_HOST'] . '/amm2015/garauNicola/amm2015/Progetto/';
                     break;
 
