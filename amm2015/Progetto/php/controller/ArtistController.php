@@ -299,7 +299,7 @@ class ArtistController extends BaseController {
     /**
      * Search a model by id
      * @param int $id the requested id
-     * @param array $models a Model arrat
+     * @param array $models a Model array
      * @return Modello the model with the requested id, null otherwise
      */
     private function cercaModelloPerId($id, &$models) {
