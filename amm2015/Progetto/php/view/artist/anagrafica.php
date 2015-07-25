@@ -10,7 +10,7 @@
     <h3>Generic Infos</h3>
 
     <form method="post" action="artist/anagrafica<?= '?'.$vd->scriviToken()?>">
-        <input type="hidden" name="cmd" value="ufficio"/>
+        <input type="hidden" name="cmd" value="personalInfo"/>
         <label for="citta">City :</label>
         <input type="text" name="citta" id="citta" value="<?= $user->getCitta() ?>"/>
         <br/>

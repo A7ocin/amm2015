@@ -159,7 +159,6 @@ class AdministratorController extends BaseController {
                             $intVal = filter_var($request['modello'], FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
                             if (isset($intVal)) {
                                 $mod_model = $this->cercaModelloPerId($intVal, $models);
-                                $insegnamenti = InsegnamentoFactory::instance()->getListaInsegnamentiPerDocente($user);
                             }
                         }
                         $this->showHomeUtente($vd);
@@ -207,7 +206,7 @@ class AdministratorController extends BaseController {
                         $nuovo->setId(-1);
                         $nuovo->setUploader($user->getUsername());
                         $this->updateModello($nuovo, $request, $msg);
-                        $this->creaFeedbackUtente($msg, $vd, "Modello creato");
+                        $this->creaFeedbackUtente($msg, $vd, "Model created");
                         if (count($msg) == 0) {
                             $vd->setSottoPagina('modelli');
                             if (ModelFactory::instance()->nuovo($nuovo) != 1) {
@@ -230,7 +229,7 @@ class AdministratorController extends BaseController {
                                     }
                                 }
 
-                                $this->creaFeedbackUtente($msg, $vd, "Modello eliminato");
+                                $this->creaFeedbackUtente($msg, $vd, "Model deleted");
                             }
                         }
                         $models = ModelFactory::instance()->getModelsPerAdministrator($user);
