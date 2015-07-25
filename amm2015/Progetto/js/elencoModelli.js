@@ -1,7 +1,3 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 $(document).ready(function () {
     
@@ -9,20 +5,12 @@ $(document).ready(function () {
     $("#tabella_modelli").hide();
     
     $('#filtra').click(function(e){
-        // impedisco il submit	<-------------------------------------
+        // prevent submit
         e.preventDefault(); 
-        /*var _insegnamento = $( "#insegnamento option:selected" ).attr('value');
-        if(_insegnamento === 'qualsiasi'){
-            _insegnamento = '';
-        }*/
         var _uploader = $("#uploader").val();
         var _nome = $("#nome").val();
-        //var _matricola = $("#matricola").val();
         
         var par = {
-            //insegnamento : _insegnamento,
-            //cognome:_cognome,
-            //matricola: _matricola
             uploader: _uploader,
             nome: _nome
         };
@@ -31,23 +19,14 @@ $(document).ready(function () {
             data : par,
             dataType: 'json',
             success: function (data, state) {
-                //if(data['errori'].length === 0){
-                    // nessun errore
-                    //$(".error").hide();
                     if(data['models'].length === 0){
-                        // mostro il messaggio per nessun elemento
-                        //$("#nessuno").show();
-                       
-                        // nascondo la tabella
                         $("#tabella_modelli").hide();
                     }else{
-                        // nascondo il messaggio per nessun elemento
-                        //$("#nessuno").hide();
                         $("#tabella_modelli").show();
-                        //cancello tutti gli elementi dalla tabella
+                        //delete all the table entries
                         $("#tabella_modelli tbody").empty();
                        
-                        // aggiungo le righe
+                        // add rows
                         var i = 0;
                         for(var key in data['models']){
                             var model = data['models'][key];
@@ -75,15 +54,7 @@ $(document).ready(function () {
                             
                            
                         }
-                    }
-               /* }else{
-                    $(".error").show();
-                    $(".error ul").empty();
-                    for(var k in data['errori']){
-                        $(".error ul").append("<li>"+ data['errori'][k] + "<\li>");
-                    }
-                }*/
-               
+                    }               
             },
             error: function (data, state) {
             }
