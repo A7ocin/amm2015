@@ -4,31 +4,21 @@
  * Classe che rappresenta un generico utente del sistema
  */
 class User {
-
-    /**
-     * Costante che definisce il ruolo docente
-     */
-    const Docente = 1;
-    
-    /**
-     * Costante che definisce il ruolo studente
-     */
-    const Studente = 2;
     
     /**
      * Costante che definisce il ruolo administrator
      */
-    const Administrator = 3;
+    const Administrator = 1;
 
 	/**
      * Costante che definisce il ruolo artist
      */
-    const Artist = 4;
+    const Artist = 2;
     
     /**
      * Costante che definisce il ruolo utente
      */
-    const Utente = 5;
+    const Utente = 3;
     
     /**
      * Username per l'autenticazione
@@ -217,8 +207,6 @@ class User {
      */
     public function setRuolo($ruolo) {
         switch ($ruolo) {
-            case self::Docente:
-            case self::Studente:
             case self::Administrator:
             case self::Artist:
             case self::Utente:

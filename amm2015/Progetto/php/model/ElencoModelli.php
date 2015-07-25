@@ -6,7 +6,7 @@ include_once 'Model.php';
  *
  * @author Davide Spano
  */
-class ElencoEsami {
+class ElencoModelli {
 
     
     /**
@@ -52,63 +52,7 @@ class ElencoEsami {
         return $this->id;
     }
 
-    /**
-     * Aggiunge un modello alla lista
-     * @param Model $modello il modello da aggiungere
-     * @return boolean true se il modello e' stato aggiunto correttamente,
-     * false se era gia' presente in lista e non e' stato aggiunto
-     */
-    public function aggiungiEsame(Esame $esame) {
-        $pos = $this->posizione($esame);
-        if($pos > -1){
-            // esame gia' inserito
-            return false;
-        }
-        $this->modelli[] = $modello;
-        return true;
-    }
-
     
-    /**
-     * Rimuove un modello dalla lista
-     * @param Model $modello l'modello della lista
-     * @return boolean true se l'modello e' stato rimosso, false altrimenti (es. 
-     * non era in lista)
-     */
-    public function rimuoviEsame(Esame $modello) {
-        $pos = $this->posizione($modello);
-        echo var_dump($pos);
-        if ($pos > -1) {
-            array_splice($this->modelli, $pos, 1);
-            return true;
-        }
-
-        return false;
-    }
-
-    
-    /**
-     * Restituisce la lista di modelli
-     * @return array
-     */
-    public function &getEsami() {
-        return $this->modelli;
-    }
-
-    /**
-     * Trova la posizione di un modello nella lista
-     * @param Model $modello l'modello da trovare
-     * @return int la posizione dell'modello se presente, false altrimenti
-     */
-    private function posizione(Esame $modello) {
-        for ($i = 0; $i < count($this->modelli); $i++) {
-            if ($this->modelli[$i]->equals($modello)) {
-                return $i;
-            }
-        }
-        return -1;
-    }
-
 }
 
 ?>
