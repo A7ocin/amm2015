@@ -87,36 +87,36 @@ class BaseController {
     }
 	
 	    /**
--     * Imposta la vista master.php per visualizzare la pagina di gestione
--     * dello studente
--     * @param ViewDescriptor $vd il descrittore della vista
--     */
--    protected function showHomeStudente($vd) {
--        // mostro la home degli studenti
--
--        $vd->setTitolo("esAMMi - gestione studente ");
--        $vd->setMenuFile(basename(__DIR__) . '/../view/studente/menu.php');
--        $vd->setLogoFile(basename(__DIR__) . '/../view/studente/logo.php');
--        $vd->setLeftBarFile(basename(__DIR__) . '/../view/studente/leftBar.php');
--        $vd->setRightBarFile(basename(__DIR__) . '/../view/studente/rightBar.php');
--        $vd->setContentFile(basename(__DIR__) . '/../view/studente/content.php');
--    }
--
--    /**
--     * Imposta la vista master.php per visualizzare la pagina di gestione
--     * del docente
--     * @param ViewDescriptor $vd il descrittore della vista
--     */
--    protected function showHomeDocente($vd) {
--        // mostro la home dei docenti
--        $vd->setTitolo("esAMMi - gestione docente ");
--        $vd->setMenuFile(basename(__DIR__) . '/../view/docente/menu.php');
--        $vd->setLogoFile(basename(__DIR__) . '/../view/docente/logo.php');
--        $vd->setLeftBarFile(basename(__DIR__) . '/../view/docente/leftBar.php');
--        $vd->setRightBarFile(basename(__DIR__) . '/../view/docente/rightBar.php');
--        $vd->setContentFile(basename(__DIR__) . '/../view/docente/content.php');
--    }
--    
+     * Imposta la vista master.php per visualizzare la pagina di gestione
+     * dello studente
+     * @param ViewDescriptor $vd il descrittore della vista
+     */
+    protected function showHomeStudente($vd) {
+        // mostro la home degli studenti
+
+        $vd->setTitolo("esAMMi - gestione studente ");
+        $vd->setMenuFile(basename(__DIR__) . '/../view/studente/menu.php');
+        $vd->setLogoFile(basename(__DIR__) . '/../view/studente/logo.php');
+        $vd->setLeftBarFile(basename(__DIR__) . '/../view/studente/leftBar.php');
+        $vd->setRightBarFile(basename(__DIR__) . '/../view/studente/rightBar.php');
+        $vd->setContentFile(basename(__DIR__) . '/../view/studente/content.php');
+    }
+
+    /**
+     * Imposta la vista master.php per visualizzare la pagina di gestione
+     * del docente
+     * @param ViewDescriptor $vd il descrittore della vista
+     */
+    protected function showHomeDocente($vd) {
+        // mostro la home dei docenti
+        $vd->setTitolo("esAMMi - gestione docente ");
+        $vd->setMenuFile(basename(__DIR__) . '/../view/docente/menu.php');
+        $vd->setLogoFile(basename(__DIR__) . '/../view/docente/logo.php');
+        $vd->setLeftBarFile(basename(__DIR__) . '/../view/docente/leftBar.php');
+        $vd->setRightBarFile(basename(__DIR__) . '/../view/docente/rightBar.php');
+        $vd->setContentFile(basename(__DIR__) . '/../view/docente/content.php');
+    }
+    
      
 
     protected function showHomeAdministrator($vd) {
