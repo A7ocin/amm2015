@@ -253,7 +253,7 @@ class UserFactory {
      * @return Studente un oggetto Studente nel caso sia stato trovato,
      * NULL altrimenti
      */
-    public function cercaUtentePerId($id, $role) {
+    public function cercaUtentePerId($id, $role) {echo " QUA ".$id." ".$role;
         $intval = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
         if (!isset($intval)) {
             return null;
