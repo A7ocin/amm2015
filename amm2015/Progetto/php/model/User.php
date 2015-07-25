@@ -8,17 +8,17 @@ class User {
     /**
      * Costante che definisce il ruolo administrator
      */
-    const Administrator = 1;
+    const Administrator = 3;
 
 	/**
      * Costante che definisce il ruolo artist
      */
-    const Artist = 2;
+    const Artist = 4;
     
     /**
      * Costante che definisce il ruolo utente
      */
-    const Utente = 3;
+    const Utente = 5;
     
     /**
      * Username per l'autenticazione
