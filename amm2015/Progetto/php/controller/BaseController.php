@@ -13,6 +13,7 @@ class BaseController {
 
     const user = 'user';
     const role = 'role';
+    const impersonato = '_imp';
 
     /**
      * Constructor
@@ -84,6 +85,39 @@ class BaseController {
         $vd->setRightBarFile(basename(__DIR__) . '/../view/login/rightBar.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
     }
+	
+	    /**
+-     * Imposta la vista master.php per visualizzare la pagina di gestione
+-     * dello studente
+-     * @param ViewDescriptor $vd il descrittore della vista
+-     */
+-    protected function showHomeStudente($vd) {
+-        // mostro la home degli studenti
+-
+-        $vd->setTitolo("esAMMi - gestione studente ");
+-        $vd->setMenuFile(basename(__DIR__) . '/../view/studente/menu.php');
+-        $vd->setLogoFile(basename(__DIR__) . '/../view/studente/logo.php');
+-        $vd->setLeftBarFile(basename(__DIR__) . '/../view/studente/leftBar.php');
+-        $vd->setRightBarFile(basename(__DIR__) . '/../view/studente/rightBar.php');
+-        $vd->setContentFile(basename(__DIR__) . '/../view/studente/content.php');
+-    }
+-
+-    /**
+-     * Imposta la vista master.php per visualizzare la pagina di gestione
+-     * del docente
+-     * @param ViewDescriptor $vd il descrittore della vista
+-     */
+-    protected function showHomeDocente($vd) {
+-        // mostro la home dei docenti
+-        $vd->setTitolo("esAMMi - gestione docente ");
+-        $vd->setMenuFile(basename(__DIR__) . '/../view/docente/menu.php');
+-        $vd->setLogoFile(basename(__DIR__) . '/../view/docente/logo.php');
+-        $vd->setLeftBarFile(basename(__DIR__) . '/../view/docente/leftBar.php');
+-        $vd->setRightBarFile(basename(__DIR__) . '/../view/docente/rightBar.php');
+-        $vd->setContentFile(basename(__DIR__) . '/../view/docente/content.php');
+-    }
+-    
+     
 
     protected function showHomeAdministrator($vd) {
         // show admins' home
@@ -122,6 +156,18 @@ class BaseController {
     protected function showHomeUtente($vd) {
         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
         switch ($user->getRuolo()) {
+-            case User::Studente:
+-                $this->showHomeStudente($vd);
+-                break;
+-
+-            case User::Docente:
+-                $this->showHomeDocente($vd);
+-                break;
+-
+-            /*case User::Amministratore:
+-                $this->showHomeAmministratore($vd);
+-                break;*/
+-                
             case User::Administrator:echo "QUA";
                 $this->showHomeAdministrator($vd);
                 break;
@@ -135,6 +181,19 @@ class BaseController {
                 break;
         }
     }
+    
+    /**
+-     * Imposta la variabile del descrittore della vista legato 
+-     * all'utente da impersonare nel caso sia stato specificato nella richiesta
+-     * @param ViewDescriptor $vd il descrittore della vista
+-     * @param array $request la richiesta
+-     */
+-    protected function setImpToken(ViewDescriptor $vd, &$request) {
+-
+-        if (array_key_exists('_imp', $request)) {
+-            $vd->setImpToken($request['_imp']);
+-        }
+-    }
 
     /**
      * Authentication procedure
