@@ -91,6 +91,24 @@ class Model {
         return $this->dimensione;
     }
     
+        /**
+     * Modifica il valore massimo per il numero di iscritti all'modello
+     * @param int $dimensione la nuova dimensione del corso
+     * @return boolean true se il valore e' stato impostato correttamente, false
+     * altrimenti (per esempio se ci sono gia' piu' iscritti del valore passato)
+     */
+    public function setDimensione($dimensione) {
+        $intVal = filter_var($dimensione, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
+        if (!isset($intVal)) {
+            return false;
+        }
+        if ($intVal < count($this->iscritti)) {
+            return false;
+        }
+        $this->dimensione = $intVal;
+        return true;
+    }
+    
     /**
      * Restituisce il nome
      * @return int
