@@ -123,7 +123,7 @@ class BaseController {
     protected function showHomeUtente($vd) {
         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
         switch ($user->getRuolo()) {
-            case User::Administrator:echo "QUA";
+            case User::Administrator:
                 $this->showHomeAdministrator($vd);
                 break;
                 
