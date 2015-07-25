@@ -5,52 +5,42 @@ include_once basename(__DIR__) . '/../model/User.php';
 include_once basename(__DIR__) . '/../model/UserFactory.php';
 
 /**
- * Controller che gestisce gli utenti non autenticati, 
- * fornendo le funzionalita' comuni anche agli altri controller
+ * This is the controller used by the not logged users 
  *
- * @author Davide Spano
+ * @author Nicola Garau
  */
 class BaseController {
 
     const user = 'user';
     const role = 'role';
-    const impersonato = '_imp';
 
     /**
-     * Costruttore
+     * Constructor
      */
     public function __construct() {
         
     }
 
     /**
-     * Metodo per gestire l'input dell'utente. Le sottoclassi lo sovrascrivono
-     * @param type $request la richiesta da gestire
+     * This method handles the user's input 
+     * @param type $request the request
      */
     public function handleInput(&$request) {
-        // creo il descrittore della vista
+        // create the view descriptor
         $vd = new ViewDescriptor();
-
-
-        // imposto la pagina
+        
+        // set page
         $vd->setPagina($request['page']);
 
-        // imposto il token per impersonare un utente (nel lo stia facendo)
-        $this->setImpToken($vd, $request);
-
-        // gestion dei comandi
-        // tutte le variabili che vengono create senza essere utilizzate 
-        // direttamente in questo switch, sono quelle che vengono poi lette
-        // dalla vista, ed utilizzano le classi del modello
-
+        // switch between commands
         if (isset($request["cmd"])) {
-            // abbiamo ricevuto un comando
+            // command received
             switch ($request["cmd"]) {
                 case 'login':
                     $username = isset($request['user']) ? $request['user'] : '';
                     $password = isset($request['password']) ? $request['password'] : '';
                     $this->login($vd, $username, $password);
-                    // questa variabile viene poi utilizzata dalla vista
+                    // this variable will be used by the view
                     if ($this->loggedIn())
                         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
                     break;
@@ -59,35 +49,34 @@ class BaseController {
             }
         } else {
             if ($this->loggedIn()) {
-                //utente autenticato
-                // questa variabile viene poi utilizzata dalla vista
+                // authentication done
                 $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
 
                 $this->showHomeUtente($vd);
             } else {
-                // utente non autenticato
+                // user not logged in 
                 $this->showLoginPage($vd);
             }
         }
 
-        // richiamo la vista
+        // call the view
         require basename(__DIR__) . '/../view/master.php';
     }
 
     /**
-     * Verifica se l'utente sia correttamente autenticato
-     * @return boolean true se l'utente era gia' autenticato, false altrimenti
+     * Verify if the user is logged in
+     * @return boolean true if the user is logged in, false otherwise
      */
     protected function loggedIn() {
         return isset($_SESSION) && array_key_exists(self::user, $_SESSION);
     }
 
     /**
-     * Imposta la vista master.php per visualizzare la pagina di login
-     * @param ViewDescriptor $vd il descrittore della vista
+     * Set master.php view for the login
+     * @param ViewDescriptor $vd the view descriptor
      */
     protected function showLoginPage($vd) {
-        // mostro la pagina di login
+        // show login page
         $vd->setTitolo("TTDM - login");
         $vd->setMenuFile(basename(__DIR__) . '/../view/login/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/login/logo.php');
@@ -96,39 +85,8 @@ class BaseController {
         $vd->setContentFile(basename(__DIR__) . '/../view/login/content.php');
     }
 
-    /**
-     * Imposta la vista master.php per visualizzare la pagina di gestione
-     * dello studente
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
-    protected function showHomeStudente($vd) {
-        // mostro la home degli studenti
-
-        $vd->setTitolo("esAMMi - gestione studente ");
-        $vd->setMenuFile(basename(__DIR__) . '/../view/studente/menu.php');
-        $vd->setLogoFile(basename(__DIR__) . '/../view/studente/logo.php');
-        $vd->setLeftBarFile(basename(__DIR__) . '/../view/studente/leftBar.php');
-        $vd->setRightBarFile(basename(__DIR__) . '/../view/studente/rightBar.php');
-        $vd->setContentFile(basename(__DIR__) . '/../view/studente/content.php');
-    }
-
-    /**
-     * Imposta la vista master.php per visualizzare la pagina di gestione
-     * del docente
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
-    protected function showHomeDocente($vd) {
-        // mostro la home dei docenti
-        $vd->setTitolo("esAMMi - gestione docente ");
-        $vd->setMenuFile(basename(__DIR__) . '/../view/docente/menu.php');
-        $vd->setLogoFile(basename(__DIR__) . '/../view/docente/logo.php');
-        $vd->setLeftBarFile(basename(__DIR__) . '/../view/docente/leftBar.php');
-        $vd->setRightBarFile(basename(__DIR__) . '/../view/docente/rightBar.php');
-        $vd->setContentFile(basename(__DIR__) . '/../view/docente/content.php');
-    }
-    
     protected function showHomeAdministrator($vd) {
-        // mostro la home degli admin
+        // show admins' home
         $vd->setTitolo("TTDM - Administrator page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/administrator/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/administrator/logo.php');
@@ -136,25 +94,9 @@ class BaseController {
         $vd->setRightBarFile(basename(__DIR__) . '/../view/administrator/rightBar.php');
         $vd->setContentFile(basename(__DIR__) . '/../view/administrator/content.php');
     }
-
-    /**
-     * Imposta la vista master.php per visualizzare la pagina di gestione
-     * dell'amministratore
-     * @param ViewDescriptor $vd il descrittore della vista
-     */
-    /*protected function showHomeAmministratore($vd) {
-        // mostro la home degli amministratori
-
-        $vd->setTitolo("esAMMi - Super User ");
-        $vd->setMenuFile(basename(__DIR__) . '/../view/amministratore/menu.php');
-        $vd->setLogoFile(basename(__DIR__) . '/../view/amministratore/logo.php');
-        $vd->setLeftBarFile(basename(__DIR__) . '/../view/amministratore/leftBar.php');
-        $vd->setRightBarFile(basename(__DIR__) . '/../view/amministratore/rightBar.php');
-        $vd->setContentFile(basename(__DIR__) . '/../view/amministratore/content.php');
-    }*/
     
     protected function showHomeArtist($vd) {
-        // mostro la home degli artisti
+        // show artists' home
         $vd->setTitolo("TTDM - Artist page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/artist/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/artist/logo.php');
@@ -164,7 +106,7 @@ class BaseController {
     }
     
     protected function showHomeUser($vd) {
-        // mostro la home degli user
+        // show users' home
         $vd->setTitolo("TTDM - User page");
         $vd->setMenuFile(basename(__DIR__) . '/../view/user/menu.php');
         $vd->setLogoFile(basename(__DIR__) . '/../view/user/logo.php');
@@ -174,24 +116,12 @@ class BaseController {
     }
 
     /**
-     * Seleziona quale pagina mostrare in base al ruolo dell'utente corrente
-     * @param ViewDescriptor $vd il descrittore della vista
+     * Switch between roles to select the homepage
+     * @param ViewDescriptor $vd the view descriptor
      */
     protected function showHomeUtente($vd) {
         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
         switch ($user->getRuolo()) {
-            case User::Studente:
-                $this->showHomeStudente($vd);
-                break;
-
-            case User::Docente:
-                $this->showHomeDocente($vd);
-                break;
-
-            /*case User::Amministratore:
-                $this->showHomeAmministratore($vd);
-                break;*/
-                
             case User::Administrator:
                 $this->showHomeAdministrator($vd);
                 break;
@@ -207,30 +137,17 @@ class BaseController {
     }
 
     /**
-     * Imposta la variabile del descrittore della vista legato 
-     * all'utente da impersonare nel caso sia stato specificato nella richiesta
-     * @param ViewDescriptor $vd il descrittore della vista
-     * @param array $request la richiesta
-     */
-    protected function setImpToken(ViewDescriptor $vd, &$request) {
-
-        if (array_key_exists('_imp', $request)) {
-            $vd->setImpToken($request['_imp']);
-        }
-    }
-
-    /**
-     * Procedura di autenticazione 
-     * @param ViewDescriptor $vd descrittore della vista
-     * @param string $username lo username specificato
-     * @param string $password la password specificata
+     * Authentication procedure
+     * @param ViewDescriptor $vd The view descriptor
+     * @param string $username the username
+     * @param string $password the password
      */
     protected function login($vd, $username, $password) {
-        // carichiamo i dati dell'utente
+        // set user data
 
         $user = UserFactory::instance()->caricaUtente($username, $password);
         if (isset($user) && $user->esiste()) {
-            // utente autenticato
+            // authentication done
             $_SESSION[self::user] = $user->getId();
             $_SESSION[self::role] = $user->getRuolo();
             $this->showHomeUtente($vd);
@@ -241,28 +158,26 @@ class BaseController {
     }
 
     /**
-     * Procedura di logout dal sistema 
-     * @param type $vd il descrittore della pagina
+     * Logout procedure
+     * @param type $vd The view descriptor
      */
     protected function logout($vd) {
-        // reset array $_SESSION
         $_SESSION = array();
-        // termino la validita' del cookie di sessione
+        // End of cookies' validity
         if (session_id() != '' || isset($_COOKIE[session_name()])) {
-            // imposto il termine di validita' al mese scorso
+            // go back by a month
             setcookie(session_name(), '', time() - 2592000, '/');
         }
-        // distruggo il file di sessione
+        // destroy session file
         session_destroy();
         $this->showLoginPage($vd);
     }
 
     /**
-     * Aggiorno l'indirizzo di un utente (comune a Studente e Docente)
-     * @param User $user l'utente da aggiornare
-     * @param array $request la richiesta http da gestire
-     * @param array $msg riferimento ad un array da riempire con eventuali
-     * messaggi d'errore
+     * Update the address
+     * @param User $user the user
+     * @param array $request the request
+     * @param array $msg an error array
      */
     protected function aggiornaIndirizzo($user, &$request, &$msg) {
 
@@ -307,7 +222,7 @@ class BaseController {
             }
         }
 
-        // salviamo i dati se non ci sono stati errori
+        // save if there are not errors
         if (count($msg) == 0) {
             if (UserFactory::instance()->salva($user) != 1) {
                 $msg[] = '<li>Sorry, I wasn\'t able to save :-(</li>';
@@ -316,11 +231,10 @@ class BaseController {
     }
 
     /**
-     * Aggiorno l'indirizzo email di un utente (comune a Studente e Docente)
-     * @param User $user l'utente da aggiornare
-     * @param array $request la richiesta http da gestire
-     * @param array $msg riferimento ad un array da riempire con eventuali
-     * messaggi d'errore
+     * Update the email address
+     * @param User $user the user
+     * @param array $request the request
+     * @param array $msg an error array
      */
     protected function aggiornaEmail($user, &$request, &$msg) {
         if (isset($request['email'])) {
@@ -329,7 +243,7 @@ class BaseController {
             }
         }
         
-        // salviamo i dati se non ci sono stati errori
+        // save if there are not errors
         if (count($msg) == 0) {
             if (UserFactory::instance()->salva($user) != 1) {
                 $msg[] = '<li>Sorry, I wasn\'t able to save :-(</li>';
@@ -338,11 +252,10 @@ class BaseController {
     }
 
     /**
-     * Aggiorno la password di un utente (comune a Studente e Docente)
-     * @param User $user l'utente da aggiornare
-     * @param array $request la richiesta http da gestire
-     * @param array $msg riferimento ad un array da riempire con eventuali
-     * messaggi d'errore
+     * Update the password
+     * @param User $user the user
+     * @param array $request the request
+     * @param array $msg an error array
      */
     protected function aggiornaPassword($user, &$request, &$msg) {
         if (isset($request['pass1']) && isset($request['pass2'])) {
@@ -355,7 +268,7 @@ class BaseController {
             }
         }
         
-        // salviamo i dati se non ci sono stati errori
+        // save if there are not errors
         if (count($msg) == 0) {
             if (UserFactory::instance()->salva($user) != 1) {
                 $msg[] = '<li>Sorry, I wasn\'t able to save :-(</li>';
@@ -364,24 +277,22 @@ class BaseController {
     }
 
     /**
-     * Crea un messaggio di feedback per l'utente 
-     * @param array $msg lista di messaggi di errore
-     * @param ViewDescriptor $vd il descrittore della pagina
-     * @param string $okMsg il messaggio da mostrare nel caso non ci siano errori
+     * Create a feedback message for the user
+     * @param array $msg the list of error messages
+     * @param ViewDescriptor $vd the view descriptor
+     * @param string $okMsg the 'ok' message
      */
     protected function creaFeedbackUtente(&$msg, $vd, $okMsg) {
         if (count($msg) > 0) {
-            // ci sono messaggi di errore nell'array,
-            // qualcosa e' andato storto...
+            // something went wrong...
             $error = "The following errors have occurred \n<ul>\n";
             foreach ($msg as $m) {
                 $error = $error . $m . "\n";
             }
-            // imposto il messaggio di errore
+            // set the error message
             $vd->setMessaggioErrore($error);
         } else {
-            // non ci sono messaggi di errore, la procedura e' andata
-            // quindi a buon fine, mostro un messaggio di conferma
+            // set ok message
             $vd->setMessaggioConferma($okMsg);
         }
     }
