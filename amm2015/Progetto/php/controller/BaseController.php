@@ -156,18 +156,18 @@ class BaseController {
     protected function showHomeUtente($vd) {
         $user = UserFactory::instance()->cercaUtentePerId($_SESSION[self::user], $_SESSION[self::role]);
         switch ($user->getRuolo()) {
--            case User::Studente:
--                $this->showHomeStudente($vd);
--                break;
--
--            case User::Docente:
--                $this->showHomeDocente($vd);
--                break;
--
--            /*case User::Amministratore:
--                $this->showHomeAmministratore($vd);
--                break;*/
--                
+            case User::Studente:
+                $this->showHomeStudente($vd);
+                break;
+
+            case User::Docente:
+                $this->showHomeDocente($vd);
+                break;
+
+            /*case User::Amministratore:
+                $this->showHomeAmministratore($vd);
+                break;*/
+                
             case User::Administrator:echo "QUA";
                 $this->showHomeAdministrator($vd);
                 break;
@@ -183,17 +183,17 @@ class BaseController {
     }
     
     /**
--     * Imposta la variabile del descrittore della vista legato 
--     * all'utente da impersonare nel caso sia stato specificato nella richiesta
--     * @param ViewDescriptor $vd il descrittore della vista
--     * @param array $request la richiesta
--     */
--    protected function setImpToken(ViewDescriptor $vd, &$request) {
--
--        if (array_key_exists('_imp', $request)) {
--            $vd->setImpToken($request['_imp']);
--        }
--    }
+     * Imposta la variabile del descrittore della vista legato 
+     * all'utente da impersonare nel caso sia stato specificato nella richiesta
+     * @param ViewDescriptor $vd il descrittore della vista
+     * @param array $request la richiesta
+     */
+    protected function setImpToken(ViewDescriptor $vd, &$request) {
+
+        if (array_key_exists('_imp', $request)) {
+            $vd->setImpToken($request['_imp']);
+        }
+    }
 
     /**
      * Authentication procedure
