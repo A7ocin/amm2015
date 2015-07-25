@@ -4,7 +4,7 @@ include_once 'User.php';
 include_once 'Dipartimento.php';
 
 /**
- * Classe che rappresenta un Docente
+ * User class
  *
  * @author Nicola Garau
  */
@@ -13,10 +13,10 @@ class Utente extends User {
     private $eta;
 
     /**
-     * Costruttore
+     * Constructor
      */
     public function __construct() {
-        // richiamiamo il costruttore della superclasse
+        //superclass constructor call
         parent::__construct();
         $this->setRuolo(User::Utente);
     }

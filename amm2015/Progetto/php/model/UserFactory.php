@@ -7,9 +7,9 @@ include_once 'Utente.php';
 include_once 'Db.php';
 
 /**
- * Classe per la creazione degli utenti del sistema
+ * UserFactory class
  *
- * @author Davide Spano
+ * @author Nicola Garau
  */
 class UserFactory {
 
@@ -19,10 +19,6 @@ class UserFactory {
         
     }
 
-    /**
-     * Restiuisce un singleton per creare utenti
-     * @return \UserFactory
-     */
     public static function instance() {
         if (!isset(self::$singleton)) {
             self::$singleton = new UserFactory();
@@ -31,12 +27,6 @@ class UserFactory {
         return self::$singleton;
     }
 
-    /**
-     * Carica un utente tramite username e password
-     * @param string $username
-     * @param string $password
-     * @return \User|\Docente|\Studente
-     */
     public function caricaUtente($username, $password) {
 
 
@@ -47,7 +37,7 @@ class UserFactory {
             return null;
         }
 
-        // ora cerco un admin
+        // find an admin
         $query = "select 
                administrator.id administrator_id,
                administrator.nome administrator_nome,
@@ -83,12 +73,12 @@ class UserFactory {
 		
         $administrator = self::caricaAdministratorDaStmt($stmt);
         if (isset($administrator)) {
-            // ho trovato un admin
+            // found an admin
             $mysqli->close();
             return $administrator;
         }
         
-        //ora cerco un artista
+        //find an artist
         $query = "select 
                artist.username artist_username,
                artist.password artist_password,
@@ -123,12 +113,12 @@ class UserFactory {
 		
         $artist = self::caricaArtistDaStmt($stmt);
         if (isset($artist)) {
-            // ho trovato un artista
+            // found an artist
             $mysqli->close();
             return $artist;
         }
         
-        //pra cerco un utente
+        //find user
         $query = "select 
                user.username user_username,
                user.password user_password,
@@ -159,16 +149,12 @@ class UserFactory {
 		
         $user = self::caricaUserDaStmt($stmt);
         if (isset($user)) {
-            // ho trovato un utente
+            // found user
             $mysqli->close();
             return $user;
         }
     }
-    
-    /**
-     * Restituisce un array con gli admin presenti nel sistema
-     * @return array
-     */
+
     public function &getListaAdministrator() {
         $administrator = array();
         $query = "select 
@@ -246,13 +232,6 @@ class UserFactory {
         return $users;
     }
 
-
-    /**
-     * Cerca uno studente per id
-     * @param int $id
-     * @return Studente un oggetto Studente nel caso sia stato trovato,
-     * NULL altrimenti
-     */
     public function cercaUtentePerId($id, $role) {
         $intval = filter_var($id, FILTER_VALIDATE_INT, FILTER_NULL_ON_FAILURE);
         if (!isset($intval)) {
@@ -382,7 +361,6 @@ class UserFactory {
         }
     }
 
-    
     public function creaAdministratorDaArray($row) {
         $administrator = new Administrator();
         $administrator->setId($row['administrator_id']);
@@ -441,11 +419,6 @@ class UserFactory {
         return $artist;
     }
 
-    /**
-     * Salva i dati relativi ad un utente sul db
-     * @param User $user
-     * @return il numero di righe modificate
-     */
     public function salva(User $user) {
         $mysqli = Db::getInstance()->connectDb();
         if (!isset($mysqli)) {
