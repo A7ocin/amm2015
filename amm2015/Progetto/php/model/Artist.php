@@ -4,7 +4,7 @@ include_once 'User.php';
 include_once 'Dipartimento.php';
 
 /**
- * Classe che rappresenta un Docente
+ * Artist class
  *
  * @author Nicola Garau
  */
@@ -15,10 +15,10 @@ class Artist extends User {
     private $descrizione_personale;
 
     /**
-     * Costruttore
+     * Constructor
      */
     public function __construct() {
-        // richiamiamo il costruttore della superclasse
+        // superclass constructor call
         parent::__construct();
         $this->setRuolo(User::Artist);
     }

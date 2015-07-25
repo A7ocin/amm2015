@@ -28,10 +28,10 @@
         <tr>
             <th>Id</th>
             <th>Data</th>
-            <th>Dimensione</th>
-            <th>Nome</th>
+            <th>Dimension (Mb)</th>
+            <th>Name</th>
             <th>Uploader</th>
-            <th>Descrizione</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>

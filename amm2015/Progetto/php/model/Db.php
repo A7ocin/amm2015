@@ -1,17 +1,12 @@
 <?php
 include_once basename(__DIR__) . '/../Settings.php';
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  * Description of Db
  *
- * @author amm
+ * @author Nicola Garau
  */
 class Db {
-    //put your code here
     
     private function __construct() {
         
@@ -19,7 +14,7 @@ class Db {
     
     private static $singleton;
     /**
-     *  Restituisce un singleton per la connessione al Db
+     *  Return a singleton to connect to the database
      * @return \Db
      */
     public static function getInstance(){
@@ -31,9 +26,8 @@ class Db {
     }
     
     /**
-     * Restituisce una connessione funzionante al db
-     * @return \mysqli una connessione funzionante al db dell'applicazione,
-     * null in caso di errore
+     * Return a connection to the Db
+     * @return \mysqli a connection to the Db or null in case of error
      */
     public function connectDb(){
         $mysqli = new mysqli();

@@ -18,25 +18,8 @@ switch ($vd->getSottoPagina()) {
         include 'modelli_crea.php';
         break;
     
-    case 'appelli_iscritti':
-        include 'modelli.php';
-        include 'appelli_iscritti.php';
-        break;
-    
     case 'utenti':
         include 'utenti.php';
-        break;
-    
-    case 'reg_esami_step1':
-        include 'reg_esami_step1.php';
-        break;
-    
-    case 'reg_esami_step2':
-        include 'reg_esami_step2.php';
-        break;
-    
-     case 'reg_esami_step3':
-        include 'reg_esami_step3.php';
         break;
     
     case 'el_modelli':

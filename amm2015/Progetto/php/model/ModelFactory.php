@@ -8,7 +8,7 @@ include_once 'Artist.php';
 include_once 'Utente.php';
 
 /**
- * Classe per creare oggetti di tipo Modello
+ * ModelFactory class
  *
  * @author Nicola Garau
  */
@@ -21,7 +21,7 @@ class ModelFactory {
     
     
     /**
-     * Restiuisce un singleton per creare modelli
+     * Returns a singleton to create models
      * @return \ModelFactory
      */
     public static function instance(){

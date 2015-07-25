@@ -4,17 +4,17 @@ include_once 'User.php';
 include_once 'Dipartimento.php';
 
 /**
- * Classe che rappresenta un Docente
+ * Aministrator class
  *
  * @author Nicola Garau
  */
 class Administrator extends User {
 
     /**
-     * Costruttore
+     * Constructor
      */
     public function __construct() {
-        // richiamiamo il costruttore della superclasse
+        // superclass constructor call
         parent::__construct();
         $this->setRuolo(User::Administrator);
     }
