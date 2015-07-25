@@ -4,6 +4,7 @@ include_once 'User.php';
 include_once 'Administrator.php';
 include_once 'Artist.php';
 include_once 'Utente.php';
+include_once 'Db.php';
 
 /**
  * Classe per la creazione degli utenti del sistema
