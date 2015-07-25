@@ -10,7 +10,7 @@
     <h3>Ufficio</h3>
 
     <form method="post" action="administrator/anagrafica<?= '?'.$vd->scriviToken()?>">
-        <input type="hidden" name="cmd" value="ufficio"/>
+        <input type="hidden" name="cmd" value="personalInfo"/>
         <label for="via">Residence address :</label>
         <input type="text" name="via" id="via" value="<?= $user->getVia() ?>"/>
         <br>
