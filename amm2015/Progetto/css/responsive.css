@@ -133,7 +133,6 @@ table {
     border-collapse: collapse;
     margin-top:10px;
     line-height: 1.2em;
-    width: 100%;
     font-size: 14px;
     margin-bottom: 10px;
 }
@@ -653,10 +652,11 @@ tr.alt-row, tr.alt-row td{
     }
 
     #menu{
-        position: relative;
+        position: absolute;
         float: right;
         display: inline-block;
-		padding-top: 100px;
+		    padding-top: 80px;
+        padding-left  : 100px;
     }
 
     #menu ul{
