@@ -585,17 +585,17 @@ tr.alt-row, tr.alt-row td{
     }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1024px){
+@media only screen and (min-width: 700px) and (max-width: 1024px){
     body{
         font: 18px/20px "Jura", Arial, sans-serif;
     }
     #header, footer{
         padding: 10px;
-        min-height: 170px;
+        min-height: 140px;
         position: relative;
         padding-left: 20px;
         padding-right: 20px;
-        border-bottom: 10px solid gray;
+        border-bottom: 30px solid gray;
         margin: 1px;
         background-color: #FF9933;
     } 
@@ -603,21 +603,21 @@ tr.alt-row, tr.alt-row td{
     #sidebar1 {
         float: left;
         width: 200px;
-        padding-left: 5px;
-        padding-right: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
 
     }
 
     #sidebar1 li {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     #sidebar2 {
         float: left;
         clear:both;
         width: 200px;
-        padding-left: 5px;
-        padding-right: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     #sidebar1 ul{
@@ -630,12 +630,26 @@ tr.alt-row, tr.alt-row td{
         margin-right: 5px;
         padding-top: 20px;
         padding-bottom: 20px;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     #logo{
         position: absolute;
+    }
+    
+    div#logo h1 {
+        background-image: url('../images/logo.jpg');
+        background-repeat: no-repeat;
+        background-position: center left;
+        height: 190px;
+        vertical-align: middle;
+        padding-left: 100px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        line-height: 100px;
+        color: #ffffff;
+        display: block;
     }
 
     #menu{
@@ -749,7 +763,7 @@ tr.alt-row, tr.alt-row td{
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
     body{
         font: 18px/20px "Jura", Arial, sans-serif;
     }

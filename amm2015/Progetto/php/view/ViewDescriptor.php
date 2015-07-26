@@ -3,7 +3,7 @@
 /**
  * Struttura dati per popolare la vista generica master.php
  *
- * @author amm
+ * @author Nicola Garau
  */
 class ViewDescriptor {
     /**
