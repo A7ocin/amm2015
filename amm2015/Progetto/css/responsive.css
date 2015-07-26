@@ -773,7 +773,7 @@ tr.alt-row, tr.alt-row td{
         position: relative;
         padding-left: 20px;
         padding-right: 20px;
-        border-bottom: 10px solid gray;
+        border-bottom: 30px solid gray;
         margin: 0px;
         background-color: #FF9933;
     } 
@@ -804,12 +804,19 @@ tr.alt-row, tr.alt-row td{
     }
 
     #menu{
-        display: none;
+       text-align: center;
+    }
+    
+    #menu ul{
+        position: relative;
+        display: inline-block;
+        list-style: none;
+
 
     }
 
     select.menu {
-        width: 100%;
+        display: none;
     }
 
     .social{
