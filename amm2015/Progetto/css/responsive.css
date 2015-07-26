@@ -795,6 +795,8 @@ tr.alt-row, tr.alt-row td{
 
     #content {
         padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     #logo{
